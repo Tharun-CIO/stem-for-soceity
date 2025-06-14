@@ -44,7 +44,7 @@ const Login = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/lovable-uploads/6a4f0de8-6869-43d7-8444-cc8cd87c0958.png')`
+            backgroundImage: `url('/lovable-uploads/eebaefc1-61bb-4b5d-8cb5-7c18b5573382.png')`
           }}
         >
           {/* Overlay for better text readability */}
