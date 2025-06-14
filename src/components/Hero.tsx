@@ -14,51 +14,51 @@ const Hero = () => {
         <div className="absolute top-1/3 right-1/3 w-8 h-8 bg-blue-200 rounded-full animate-bounce delay-300"></div>
       </div>
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
         <div className="text-center">
-          <p className="text-blue-600 text-sm font-medium mb-4 animate-fade-in">
-            Empowering culture investmens through STEM learning
+          <p className="text-blue-600 text-sm font-medium mb-6 animate-fade-in tracking-wide">
+            Empowering culture investments through STEM learning
           </p>
           
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 animate-fade-in leading-tight">
             Let's <span className="text-blue-600">Innovate, Incubate and Impact</span> the world together!
           </h1>
           
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto animate-fade-in">
+          <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto animate-fade-in leading-relaxed">
             Join Us with our online Real-world challenges
           </p>
           
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 animate-fade-in">
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 animate-fade-in shadow-lg">
             EXPLORE OUR PROGRAMS
           </Button>
         </div>
         
         {/* Statistics Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-          <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Communication</h3>
-            <p className="text-gray-600 text-sm mb-4">Engaging team communication skills through virtual collaboration</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
+          <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-fade-in border border-gray-100">
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Communication</h3>
+            <p className="text-gray-600 text-sm mb-6 leading-relaxed">Engaging team communication skills through virtual collaboration</p>
             <div className="flex items-center justify-between">
-              <span className="text-2xl font-bold text-blue-600">500+</span>
-              <span className="text-sm text-gray-500">Students</span>
+              <span className="text-3xl font-bold text-blue-600">500+</span>
+              <span className="text-sm text-gray-500 font-medium">Students</span>
             </div>
           </div>
           
-          <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in delay-150">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Quality</h3>
-            <p className="text-gray-600 text-sm mb-4">Trained Individuals</p>
+          <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-fade-in delay-150 border border-gray-100">
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Quality</h3>
+            <p className="text-gray-600 text-sm mb-6 leading-relaxed">Trained Individuals</p>
             <div className="flex items-center justify-between">
-              <span className="text-2xl font-bold text-blue-600">22,000+</span>
-              <span className="text-sm text-gray-500">Graduates</span>
+              <span className="text-3xl font-bold text-blue-600">22,000+</span>
+              <span className="text-sm text-gray-500 font-medium">Graduates</span>
             </div>
           </div>
           
-          <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in delay-300">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Content</h3>
-            <p className="text-gray-600 text-sm mb-4">Browse Our Courses</p>
+          <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-fade-in delay-300 border border-gray-100">
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Content</h3>
+            <p className="text-gray-600 text-sm mb-6 leading-relaxed">Browse Our Courses</p>
             <div className="flex items-center justify-between">
-              <span className="text-2xl font-bold text-blue-600">100+</span>
-              <span className="text-sm text-gray-500">Courses</span>
+              <span className="text-3xl font-bold text-blue-600">100+</span>
+              <span className="text-sm text-gray-500 font-medium">Courses</span>
             </div>
           </div>
         </div>

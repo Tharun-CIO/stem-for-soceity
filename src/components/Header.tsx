@@ -6,24 +6,24 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mr-3 hover:scale-110 transition-transform duration-300">
-              <span className="text-white font-bold text-lg">S</span>
+            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4 hover:scale-110 transition-transform duration-300 shadow-lg">
+              <span className="text-white font-bold text-xl">S</span>
             </div>
-            <span className="text-xl font-bold text-gray-900">STEM FOR SOCIETY</span>
+            <span className="text-2xl font-bold text-gray-900 tracking-tight">STEM FOR SOCIETY</span>
           </div>
           
           {/* Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-10">
             {['Home', 'Courses', 'About', 'Contact'].map((item) => (
               <a
                 key={item}
                 href="#"
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 relative group"
+                className="text-gray-700 hover:text-blue-600 font-semibold text-lg transition-colors duration-300 relative group"
               >
                 {item}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
@@ -33,10 +33,10 @@ const Header = () => {
           
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="hover:scale-105 transition-transform duration-300">
+            <Button variant="outline" className="hover:scale-105 transition-transform duration-300 font-semibold px-6 py-2 border-2">
               Partner with Us
             </Button>
-            <Button className="bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all duration-300">
+            <Button className="bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all duration-300 font-semibold px-6 py-2 shadow-lg">
               Login
             </Button>
           </div>
@@ -62,16 +62,16 @@ const Header = () => {
                 <a
                   key={item}
                   href="#"
-                  className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300"
+                  className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
                 >
                   {item}
                 </a>
               ))}
-              <div className="pt-4 space-y-2">
-                <Button variant="outline" className="w-full">
+              <div className="pt-4 space-y-3">
+                <Button variant="outline" className="w-full font-semibold">
                   Partner with Us
                 </Button>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                <Button className="w-full bg-blue-600 hover:bg-blue-700 font-semibold">
                   Login
                 </Button>
               </div>
