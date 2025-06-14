@@ -38,69 +38,89 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex">
-      {/* Left side - DNA Logo and Background */}
-      <div className="flex-1 relative bg-gradient-to-br from-sky-300 via-sky-400 to-sky-500 overflow-hidden">
-        {/* Cloud-like background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-white/20 rounded-full blur-3xl"></div>
-          <div className="absolute top-40 right-32 w-48 h-48 bg-white/15 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-40 left-1/4 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+      {/* Left side - Cover Image with Logo */}
+      <div className="flex-1 relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/lovable-uploads/6a4f0de8-6869-43d7-8444-cc8cd87c0958.png')`
+          }}
+        >
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/20"></div>
         </div>
 
-        {/* DNA Logo */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-          <div className="relative">
-            {/* DNA Helix Design */}
+        {/* Logo in center */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center">
+          {/* DNA Helix Circle Logo */}
+          <div className="relative mb-8">
             <div className="w-80 h-80 relative">
               <svg viewBox="0 0 320 320" className="w-full h-full">
-                {/* DNA Helix strands */}
+                {/* Circular DNA Helix strands */}
                 <g className="animate-pulse">
-                  {/* Left strand */}
-                  <path
-                    d="M80 40 Q120 80 80 120 Q40 160 80 200 Q120 240 80 280"
-                    stroke="rgba(255,255,255,0.8)"
+                  {/* Outer DNA helix circle */}
+                  <circle
+                    cx="160"
+                    cy="160"
+                    r="120"
+                    stroke="rgba(255,255,255,0.9)"
+                    strokeWidth="12"
+                    fill="none"
+                    strokeDasharray="30 15"
+                    className="drop-shadow-2xl"
+                  />
+                  
+                  {/* Inner DNA helix circle */}
+                  <circle
+                    cx="160"
+                    cy="160"
+                    r="90"
+                    stroke="rgba(30,58,138,0.8)"
                     strokeWidth="8"
                     fill="none"
-                    className="drop-shadow-lg"
+                    strokeDasharray="20 10"
+                    className="drop-shadow-xl animate-spin"
+                    style={{ animationDuration: '20s' }}
                   />
-                  {/* Right strand */}
-                  <path
-                    d="M240 40 Q200 80 240 120 Q280 160 240 200 Q200 240 240 280"
-                    stroke="rgba(255,255,255,0.8)"
-                    strokeWidth="8"
-                    fill="none"
-                    className="drop-shadow-lg"
-                  />
-                  {/* Connecting bars */}
-                  {[60, 100, 140, 180, 220, 260].map((y, index) => (
-                    <line
-                      key={index}
-                      x1="85"
-                      y1={y}
-                      x2="235"
-                      y2={y}
-                      stroke="rgba(30,58,138,0.7)"
-                      strokeWidth="4"
-                      className="drop-shadow-md"
-                    />
-                  ))}
+                  
+                  {/* DNA connecting lines */}
+                  {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, index) => {
+                    const x1 = 160 + 90 * Math.cos((angle * Math.PI) / 180);
+                    const y1 = 160 + 90 * Math.sin((angle * Math.PI) / 180);
+                    const x2 = 160 + 120 * Math.cos((angle * Math.PI) / 180);
+                    const y2 = 160 + 120 * Math.sin((angle * Math.PI) / 180);
+                    
+                    return (
+                      <line
+                        key={index}
+                        x1={x1}
+                        y1={y1}
+                        x2={x2}
+                        y2={y2}
+                        stroke="rgba(255,255,255,0.7)"
+                        strokeWidth="4"
+                        className="drop-shadow-lg"
+                      />
+                    );
+                  })}
                 </g>
                 
                 {/* Central text */}
                 <text
                   x="160"
-                  y="140"
+                  y="145"
                   textAnchor="middle"
-                  className="fill-white text-4xl font-bold tracking-wider drop-shadow-2xl"
+                  className="fill-white text-5xl font-bold tracking-wider drop-shadow-2xl"
                   style={{ fontFamily: 'sans-serif' }}
                 >
                   STEM
                 </text>
                 <text
                   x="160"
-                  y="180"
+                  y="185"
                   textAnchor="middle"
-                  className="fill-white text-lg font-medium tracking-wide drop-shadow-xl"
+                  className="fill-white text-xl font-medium tracking-wide drop-shadow-2xl"
                   style={{ fontFamily: 'sans-serif' }}
                 >
                   FOR SOCIETY
@@ -108,20 +128,11 @@ const Login = () => {
               </svg>
             </div>
           </div>
-        </div>
 
-        {/* Bottom text */}
-        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-center z-10">
-          <h1 className="text-white text-3xl md:text-4xl font-light tracking-wide drop-shadow-lg">
+          {/* Tagline */}
+          <h1 className="text-white text-4xl md:text-5xl font-light tracking-wide drop-shadow-2xl max-w-4xl mx-auto leading-tight">
             Let's Innovate, Incubate and Impact the world together!
           </h1>
-        </div>
-
-        {/* Animated figures */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-green-400 to-green-300">
-          <div className="absolute bottom-0 left-1/4 w-4 h-8 bg-red-400 rounded-full animate-bounce"></div>
-          <div className="absolute bottom-0 left-1/2 w-4 h-8 bg-blue-400 rounded-full animate-bounce delay-300"></div>
-          <div className="absolute bottom-0 right-1/4 w-4 h-8 bg-purple-400 rounded-full animate-bounce delay-500"></div>
         </div>
       </div>
 
