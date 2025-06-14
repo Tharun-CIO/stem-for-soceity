@@ -20,7 +20,21 @@ const Header = () => {
           
           {/* Navigation */}
           <nav className="hidden md:flex space-x-10">
-            {['Home', 'Courses', 'About', 'Contact'].map((item) => (
+            <Link
+              to="/"
+              className="text-gray-700 hover:text-blue-600 font-semibold text-lg transition-colors duration-300 relative group"
+            >
+              Home
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+            <Link
+              to="/cover"
+              className="text-gray-700 hover:text-blue-600 font-semibold text-lg transition-colors duration-300 relative group"
+            >
+              Cover
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+            {['Courses', 'About', 'Contact'].map((item) => (
               <a
                 key={item}
                 href="#"
@@ -61,7 +75,19 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200 animate-fade-in">
             <div className="space-y-4">
-              {['Home', 'Courses', 'About', 'Contact'].map((item) => (
+              <Link
+                to="/"
+                className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
+              >
+                Home
+              </Link>
+              <Link
+                to="/cover"
+                className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
+              >
+                Cover
+              </Link>
+              {['Courses', 'About', 'Contact'].map((item) => (
                 <a
                   key={item}
                   href="#"
