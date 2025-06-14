@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,12 +11,12 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center">
+          <Link to="/" className="flex items-center">
             <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4 hover:scale-110 transition-transform duration-300 shadow-lg">
               <span className="text-white font-bold text-xl">S</span>
             </div>
             <span className="text-2xl font-bold text-gray-900 tracking-tight">STEM FOR SOCIETY</span>
-          </div>
+          </Link>
           
           {/* Navigation */}
           <nav className="hidden md:flex space-x-10">
@@ -36,9 +37,11 @@ const Header = () => {
             <Button variant="outline" className="hover:scale-105 transition-transform duration-300 font-semibold px-6 py-2 border-2">
               Partner with Us
             </Button>
-            <Button className="bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all duration-300 font-semibold px-6 py-2 shadow-lg">
-              Login
-            </Button>
+            <Link to="/login">
+              <Button className="bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all duration-300 font-semibold px-6 py-2 shadow-lg">
+                Login
+              </Button>
+            </Link>
           </div>
           
           {/* Mobile menu button */}
@@ -71,9 +74,11 @@ const Header = () => {
                 <Button variant="outline" className="w-full font-semibold">
                   Partner with Us
                 </Button>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 font-semibold">
-                  Login
-                </Button>
+                <Link to="/login" className="block">
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700 font-semibold">
+                    Login
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
