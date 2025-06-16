@@ -1,22 +1,11 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  return (
-    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 shadow-sm">
+  return <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -29,10 +18,7 @@ const Header = () => {
           
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link
-              to="/"
-              className="text-gray-700 hover:text-blue-600 font-semibold text-lg transition-colors duration-300 relative group"
-            >
+            <Link to="/" className="text-gray-700 hover:text-blue-600 font-semibold text-lg transition-colors duration-300 relative group">
               Home
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
@@ -46,10 +32,7 @@ const Header = () => {
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-6 w-[400px] bg-white">
                       <NavigationMenuLink asChild>
-                        <Link
-                          to="/courses"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
+                        <Link to="/courses" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                           <div className="text-sm font-medium leading-none">Explore Courses</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                             Browse our comprehensive course catalog
@@ -57,10 +40,7 @@ const Header = () => {
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <a
-                          href="#"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
+                        <a href="#" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                           <div className="text-sm font-medium leading-none">Seminars/Webinar</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                             Join our live and recorded sessions
@@ -68,10 +48,7 @@ const Header = () => {
                         </a>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <a
-                          href="#"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
+                        <a href="#" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                           <div className="text-sm font-medium leading-none">Certificate Program</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                             Earn recognized certifications
@@ -79,10 +56,7 @@ const Header = () => {
                         </a>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <a
-                          href="#"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
+                        <a href="#" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                           <div className="text-sm font-medium leading-none">Corporate Training</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                             Customized training for organizations
@@ -90,10 +64,7 @@ const Header = () => {
                         </a>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <a
-                          href="#"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
+                        <a href="#" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                           <div className="text-sm font-medium leading-none">Instrumentation Hands-on</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                             Practical training with real equipment
@@ -111,10 +82,7 @@ const Header = () => {
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-6 w-[400px] bg-white">
                       <NavigationMenuLink asChild>
-                        <Link
-                          to="/psychology-counselling"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
+                        <Link to="/psychology-counselling" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                           <div className="text-sm font-medium leading-none">Psychology Counselling</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                             Professional mental health support
@@ -122,10 +90,7 @@ const Header = () => {
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link
-                          to="/career-counselling"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
+                        <Link to="/career-counselling" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                           <div className="text-sm font-medium leading-none">Career Counselling</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                             Expert guidance for your career path
@@ -133,10 +98,7 @@ const Header = () => {
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link
-                          to="/institution-pricing"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
+                        <Link to="/institution-pricing" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                           <div className="text-sm font-medium leading-none">Institution Plan & Pricing</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                             Custom solutions for institutions
@@ -154,10 +116,7 @@ const Header = () => {
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-6 w-[400px] bg-white">
                       <NavigationMenuLink asChild>
-                        <Link
-                          to="/blog"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
+                        <Link to="/blog" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                           <div className="text-sm font-medium leading-none">Scientific Communications</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                             Explore our blog and articles
@@ -165,10 +124,7 @@ const Header = () => {
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link
-                          to="/community"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
+                        <Link to="/community" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                           <div className="text-sm font-medium leading-none">Join the community</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                             Connect with like-minded individuals
@@ -176,10 +132,7 @@ const Header = () => {
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link
-                          to="/campus-ambassador"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
+                        <Link to="/campus-ambassador" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                           <div className="text-sm font-medium leading-none">Campus Ambassador (CA)</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                             Become a campus representative
@@ -192,24 +145,12 @@ const Header = () => {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <Link
-              to="/cover"
-              className="text-gray-700 hover:text-blue-600 font-semibold text-lg transition-colors duration-300 relative group"
-            >
-              Cover
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
+            
 
-            {['About', 'Contact'].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-gray-700 hover:text-blue-600 font-semibold text-lg transition-colors duration-300 relative group"
-              >
+            {['About', 'Contact'].map(item => <a key={item} href="#" className="text-gray-700 hover:text-blue-600 font-semibold text-lg transition-colors duration-300 relative group">
                 {item}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
+              </a>)}
           </nav>
           
           {/* CTA Button */}
@@ -225,10 +166,7 @@ const Header = () => {
           </div>
           
           {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors duration-300"
-          >
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors duration-300">
             <div className="space-y-1">
               <div className={`w-6 h-0.5 bg-gray-600 transition-transform duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></div>
               <div className={`w-6 h-0.5 bg-gray-600 transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></div>
@@ -238,60 +176,32 @@ const Header = () => {
         </div>
         
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200 animate-fade-in">
+        {isMenuOpen && <div className="md:hidden py-4 border-t border-gray-200 animate-fade-in">
             <div className="space-y-4">
-              <Link
-                to="/"
-                className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
-              >
+              <Link to="/" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
                 Home
               </Link>
-              <Link
-                to="/courses"
-                className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
-              >
+              <Link to="/courses" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
                 Courses
               </Link>
-              <Link
-                to="/psychology-counselling"
-                className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
-              >
+              <Link to="/psychology-counselling" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
                 Psychology Counselling
               </Link>
-              <Link
-                to="/career-counselling"
-                className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
-              >
+              <Link to="/career-counselling" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
                 Career Counselling
               </Link>
-              <Link
-                to="/blog"
-                className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
-              >
+              <Link to="/blog" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
                 Blog
               </Link>
-              <Link
-                to="/community"
-                className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
-              >
+              <Link to="/community" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
                 Community
               </Link>
-              <Link
-                to="/cover"
-                className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
-              >
+              <Link to="/cover" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
                 Cover
               </Link>
-              {['About', 'Contact'].map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
-                >
+              {['About', 'Contact'].map(item => <a key={item} href="#" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
                   {item}
-                </a>
-              ))}
+                </a>)}
               <div className="pt-4 space-y-3">
                 <Button variant="outline" className="w-full font-semibold">
                   Partner with Us
@@ -303,11 +213,8 @@ const Header = () => {
                 </Link>
               </div>
             </div>
-          </div>
-        )}
+          </div>}
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;
