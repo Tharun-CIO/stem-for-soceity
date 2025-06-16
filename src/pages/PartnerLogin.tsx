@@ -1,31 +1,23 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useNavigate } from 'react-router-dom';
-
 const PartnerLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberPassword, setRememberPassword] = useState(false);
   const navigate = useNavigate();
-
   const handleSignUp = () => {
     navigate('/signup');
   };
-
-  return (
-    <div className="min-h-screen flex">
+  return <div className="min-h-screen flex">
       {/* Left side - Sky background with DNA logo and running people */}
       <div className="flex-1 relative overflow-hidden">
         {/* Sky Background */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-110" 
-          style={{
-            backgroundImage: `url('/lovable-uploads/0107c03e-de5d-4312-a1ec-89a132b9e0aa.png')`
-          }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-110" style={{
+        backgroundImage: `url('/lovable-uploads/0107c03e-de5d-4312-a1ec-89a132b9e0aa.png')`
+      }}>
           {/* Light overlay for better contrast */}
           <div className="absolute inset-0 bg-blue-200/20"></div>
         </div>
@@ -34,31 +26,13 @@ const PartnerLogin = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center">
           {/* DNA Helix Logo */}
           <div className="mb-4">
-            <svg width="200" height="200" viewBox="0 0 200 200" className="mx-auto">
-              {/* DNA Helix structure */}
-              <path 
-                d="M50 20 Q100 40 150 20 Q100 60 50 80 Q100 100 150 80 Q100 140 50 160 Q100 180 150 160" 
-                fill="none" 
-                stroke="rgba(255,255,255,0.8)" 
-                strokeWidth="6"
-              />
-              <path 
-                d="M150 20 Q100 40 50 20 Q100 60 150 80 Q100 100 50 80 Q100 140 150 160 Q100 180 50 160" 
-                fill="none" 
-                stroke="rgba(255,255,255,0.6)" 
-                strokeWidth="6"
-              />
-              {/* DNA base pairs */}
-              {[30, 50, 70, 90, 110, 130, 150, 170].map((y, i) => (
-                <line key={i} x1="75" y1={y} x2="125" y2={y} stroke="rgba(255,255,255,0.7)" strokeWidth="3" />
-              ))}
-            </svg>
+            
           </div>
           
           {/* STEM FOR SOCIETY Text */}
           <div className="text-white">
-            <h1 className="text-4xl font-bold mb-2">STEM</h1>
-            <p className="text-xl font-light">FOR SOCIETY</p>
+            
+            
           </div>
         </div>
       </div>
@@ -79,33 +53,16 @@ const PartnerLogin = () => {
           {/* Form */}
           <form className="space-y-6">
             <div>
-              <Input 
-                type="email" 
-                placeholder="Email" 
-                value={email} 
-                onChange={e => setEmail(e.target.value)} 
-                className="w-full px-4 py-4 bg-white/60 backdrop-blur-sm border border-white/30 rounded-lg placeholder-gray-600 focus:bg-white/80 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" 
-              />
+              <Input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} className="w-full px-4 py-4 bg-white/60 backdrop-blur-sm border border-white/30 rounded-lg placeholder-gray-600 focus:bg-white/80 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" />
             </div>
 
             <div>
-              <Input 
-                type="password" 
-                placeholder="Confirm Password" 
-                value={password} 
-                onChange={e => setPassword(e.target.value)} 
-                className="w-full px-4 py-4 bg-white/60 backdrop-blur-sm border border-white/30 rounded-lg placeholder-gray-600 focus:bg-white/80 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" 
-              />
+              <Input type="password" placeholder="Confirm Password" value={password} onChange={e => setPassword(e.target.value)} className="w-full px-4 py-4 bg-white/60 backdrop-blur-sm border border-white/30 rounded-lg placeholder-gray-600 focus:bg-white/80 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" />
             </div>
 
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
-                <Checkbox 
-                  id="remember" 
-                  checked={rememberPassword} 
-                  onCheckedChange={checked => setRememberPassword(checked as boolean)} 
-                  className="data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500 bg-white/60 border-white/40" 
-                />
+                <Checkbox id="remember" checked={rememberPassword} onCheckedChange={checked => setRememberPassword(checked as boolean)} className="data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500 bg-white/60 border-white/40" />
                 <label htmlFor="remember" className="text-sm text-gray-700">
                   Remember Password
                 </label>
@@ -157,18 +114,13 @@ const PartnerLogin = () => {
           <div className="text-center">
             <span className="text-gray-700 text-sm">
               Want to partner with us?{' '}
-              <button 
-                onClick={handleSignUp}
-                className="text-blue-500 hover:text-blue-600 font-medium"
-              >
+              <button onClick={handleSignUp} className="text-blue-500 hover:text-blue-600 font-medium">
                 Sign up
               </button>
             </span>
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default PartnerLogin;
