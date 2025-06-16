@@ -2,6 +2,15 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +28,7 @@ const Header = () => {
           </Link>
           
           {/* Navigation */}
-          <nav className="hidden md:flex space-x-10">
+          <nav className="hidden md:flex items-center space-x-8">
             <Link
               to="/"
               className="text-gray-700 hover:text-blue-600 font-semibold text-lg transition-colors duration-300 relative group"
@@ -27,13 +36,162 @@ const Header = () => {
               Home
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            <Link
-              to="/courses"
-              className="text-gray-700 hover:text-blue-600 font-semibold text-lg transition-colors duration-300 relative group"
-            >
-              Courses
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
+
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-blue-600 font-semibold text-lg bg-transparent">
+                    Courses/Trainings
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-3 p-6 w-[400px] bg-white">
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/courses"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">Explore Courses</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Browse our comprehensive course catalog
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <a
+                          href="#"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">Seminars/Webinar</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Join our live and recorded sessions
+                          </p>
+                        </a>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <a
+                          href="#"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">Certificate Program</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Earn recognized certifications
+                          </p>
+                        </a>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <a
+                          href="#"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">Corporate Training</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Customized training for organizations
+                          </p>
+                        </a>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <a
+                          href="#"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">Instrumentation Hands-on</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Practical training with real equipment
+                          </p>
+                        </a>
+                      </NavigationMenuLink>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-blue-600 font-semibold text-lg bg-transparent">
+                    Services
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-3 p-6 w-[400px] bg-white">
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/psychology-counselling"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">Psychology Counselling</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Professional mental health support
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/career-counselling"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">Career Counselling</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Expert guidance for your career path
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/institution-pricing"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">Institution Plan & Pricing</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Custom solutions for institutions
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-blue-600 font-semibold text-lg bg-transparent">
+                    Resources
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-3 p-6 w-[400px] bg-white">
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/blog"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">Scientific Communications</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Explore our blog and articles
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/community"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">Join the community</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Connect with like-minded individuals
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/campus-ambassador"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">Campus Ambassador (CA)</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Become a campus representative
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
             <Link
               to="/cover"
               className="text-gray-700 hover:text-blue-600 font-semibold text-lg transition-colors duration-300 relative group"
@@ -41,7 +199,8 @@ const Header = () => {
               Cover
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            {['Services', 'Resources', 'About', 'Contact'].map((item) => (
+
+            {['About', 'Contact'].map((item) => (
               <a
                 key={item}
                 href="#"
@@ -95,12 +254,36 @@ const Header = () => {
                 Courses
               </Link>
               <Link
+                to="/psychology-counselling"
+                className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
+              >
+                Psychology Counselling
+              </Link>
+              <Link
+                to="/career-counselling"
+                className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
+              >
+                Career Counselling
+              </Link>
+              <Link
+                to="/blog"
+                className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
+              >
+                Blog
+              </Link>
+              <Link
+                to="/community"
+                className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
+              >
+                Community
+              </Link>
+              <Link
                 to="/cover"
                 className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
               >
                 Cover
               </Link>
-              {['Services', 'Resources', 'About', 'Contact'].map((item) => (
+              {['About', 'Contact'].map((item) => (
                 <a
                   key={item}
                   href="#"
