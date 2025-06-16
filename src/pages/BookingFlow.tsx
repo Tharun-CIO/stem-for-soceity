@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import { Button } from '@/components/ui/button';
@@ -445,7 +444,7 @@ const BookingFlow = () => {
                 onClick={() => updateFormData('selectedTime', time)}
               >
                 {time}
-              </button>
+              </Button>
             ))}
           </div>
         </div>
