@@ -7,7 +7,7 @@ const SelectRole = () => {
   const navigate = useNavigate();
 
   const handlePartnerIndividual = () => {
-    navigate('/campus-ambassador');
+    navigate('/partner-login');
   };
 
   const handlePartnerInstitution = () => {
