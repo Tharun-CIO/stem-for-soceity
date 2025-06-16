@@ -147,10 +147,7 @@ const Header = () => {
 
             
 
-            {['About', 'Contact'].map(item => <a key={item} href="#" className="text-gray-700 hover:text-blue-600 font-semibold text-lg transition-colors duration-300 relative group">
-                {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-              </a>)}
+            {['About', 'Contact'].map(item => {})}
           </nav>
           
           {/* CTA Button */}
