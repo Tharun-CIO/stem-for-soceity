@@ -5,11 +5,72 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Share2, Filter, Search, Calendar, MapPin, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import FilterDropdown from '@/components/FilterDropdown';
+
+interface FilterOption {
+  id: string;
+  label: string;
+  checked: boolean;
+}
 
 const Courses = () => {
-  const [selectedSector, setSelectedSector] = useState('');
-  const [selectedAuthor, setSelectedAuthor] = useState('');
-  const [selectedDate, setSelectedDate] = useState('');
+  const [sectorFilters, setSectorFilters] = useState<FilterOption[]>([
+    { id: 'sector1', label: 'Sector 1', checked: true },
+    { id: 'sector2', label: 'Sector 2', checked: true },
+    { id: 'sector3', label: 'Sector 3', checked: true },
+  ]);
+
+  const [courseTypeFilters, setCourseTypeFilters] = useState<FilterOption[]>([
+    { id: 'seminar', label: 'Seminar', checked: true },
+    { id: 'webinar', label: 'Webinar', checked: true },
+    { id: 'mentorship', label: 'Mentorship', checked: true },
+    { id: 'certificate', label: 'Certificate', checked: true },
+    { id: 'handson', label: 'Hands-on', checked: true },
+  ]);
+
+  const [startDateFilters, setStartDateFilters] = useState<FilterOption[]>([
+    { id: 'thisweek', label: 'This Week', checked: true },
+    { id: 'thismonth', label: 'This month', checked: true },
+    { id: 'customrange', label: 'Custom range', checked: true },
+  ]);
+
+  const [modeFilters, setModeFilters] = useState<FilterOption[]>([
+    { id: 'online', label: 'Online', checked: true },
+    { id: 'offline', label: 'Offline', checked: true },
+    { id: 'hybrid', label: 'Hybrid', checked: true },
+  ]);
+
+  const handleFilterChange = (filterType: string, optionId: string, checked: boolean) => {
+    switch (filterType) {
+      case 'sector':
+        setSectorFilters(prev => prev.map(item => 
+          item.id === optionId ? { ...item, checked } : item
+        ));
+        break;
+      case 'courseType':
+        setCourseTypeFilters(prev => prev.map(item => 
+          item.id === optionId ? { ...item, checked } : item
+        ));
+        break;
+      case 'startDate':
+        setStartDateFilters(prev => prev.map(item => 
+          item.id === optionId ? { ...item, checked } : item
+        ));
+        break;
+      case 'mode':
+        setModeFilters(prev => prev.map(item => 
+          item.id === optionId ? { ...item, checked } : item
+        ));
+        break;
+    }
+  };
+
+  const resetFilters = () => {
+    setSectorFilters(prev => prev.map(item => ({ ...item, checked: false })));
+    setCourseTypeFilters(prev => prev.map(item => ({ ...item, checked: false })));
+    setStartDateFilters(prev => prev.map(item => ({ ...item, checked: false })));
+    setModeFilters(prev => prev.map(item => ({ ...item, checked: false })));
+  };
 
   const courses = [
     {
@@ -107,23 +168,41 @@ const Courses = () => {
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center space-x-2">
               <Filter className="h-4 w-4 text-gray-500" />
-              <span className="text-sm font-medium text-gray-700">Filter by</span>
+              <span className="text-sm font-medium text-gray-700">Filter By</span>
             </div>
             
-            <select className="border border-gray-300 rounded px-3 py-1 text-sm">
-              <option>Sector</option>
-            </select>
+            <FilterDropdown
+              title="Sector"
+              options={sectorFilters}
+              onOptionChange={(optionId, checked) => handleFilterChange('sector', optionId, checked)}
+            />
             
-            <select className="border border-gray-300 rounded px-3 py-1 text-sm">
-              <option>Author type</option>
-            </select>
+            <FilterDropdown
+              title="Course type"
+              options={courseTypeFilters}
+              onOptionChange={(optionId, checked) => handleFilterChange('courseType', optionId, checked)}
+            />
             
-            <select className="border border-gray-300 rounded px-3 py-1 text-sm">
-              <option>Publication Date</option>
-            </select>
+            <FilterDropdown
+              title="Start date"
+              options={startDateFilters}
+              onOptionChange={(optionId, checked) => handleFilterChange('startDate', optionId, checked)}
+            />
             
-            <Button variant="ghost" size="sm" className="text-red-500 hover:text-red-600">
-              Reset Filter
+            <FilterDropdown
+              title="Mode"
+              options={modeFilters}
+              onOptionChange={(optionId, checked) => handleFilterChange('mode', optionId, checked)}
+            />
+            
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="text-red-500 hover:text-red-600 flex items-center space-x-1"
+              onClick={resetFilters}
+            >
+              <span className="text-red-500">↻</span>
+              <span>Reset Filter</span>
             </Button>
             
             <div className="ml-auto flex items-center space-x-2">
