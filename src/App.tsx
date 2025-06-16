@@ -15,6 +15,7 @@ import InstitutionPricing from "./pages/InstitutionPricing";
 import Community from "./pages/Community";
 import CampusAmbassador from "./pages/CampusAmbassador";
 import Blog from "./pages/Blog";
+import BlogArticle from "./pages/BlogArticle";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
