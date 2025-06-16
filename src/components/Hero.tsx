@@ -1,9 +1,15 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleExplorePrograms = () => {
+    navigate('/explore-program-dashboard');
+  };
+
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-blue-50 to-white overflow-hidden">
       {/* Animated background elements */}
@@ -28,7 +34,10 @@ const Hero = () => {
             Join Us with our online Real-world challenges
           </p>
           
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 animate-fade-in shadow-lg">
+          <Button 
+            onClick={handleExplorePrograms}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 animate-fade-in shadow-lg"
+          >
             EXPLORE OUR PROGRAMS
           </Button>
         </div>
