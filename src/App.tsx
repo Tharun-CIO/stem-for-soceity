@@ -12,6 +12,7 @@ import CourseDetail from "./pages/CourseDetail";
 import PsychologyCounselling from "./pages/PsychologyCounselling";
 import CareerCounselling from "./pages/CareerCounselling";
 import InstitutionPricing from "./pages/InstitutionPricing";
+import Community from "./pages/Community";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/psychology-counselling" element={<PsychologyCounselling />} />
           <Route path="/career-counselling" element={<CareerCounselling />} />
           <Route path="/institution-pricing" element={<InstitutionPricing />} />
+          <Route path="/community" element={<Community />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
