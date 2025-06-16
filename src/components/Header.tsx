@@ -5,7 +5,9 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { cn } from "@/lib/utils";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  return <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 shadow-sm">
+  
+  return (
+    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -18,8 +20,6 @@ const Header = () => {
           
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            
-
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -29,7 +29,7 @@ const Header = () => {
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-6 w-[400px] bg-white">
                       <NavigationMenuLink asChild>
-                        <Link to="/courses" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        <Link to="/explore-program-dashboard" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                           <div className="text-sm font-medium leading-none">Explore Courses</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                             Browse our comprehensive course catalog
@@ -141,9 +141,6 @@ const Header = () => {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-
-            
-            
           </nav>
           
           {/* CTA Button */}
@@ -169,12 +166,13 @@ const Header = () => {
         </div>
         
         {/* Mobile Navigation */}
-        {isMenuOpen && <div className="md:hidden py-4 border-t border-gray-200 animate-fade-in">
+        {isMenuOpen && (
+          <div className="md:hidden py-4 border-t border-gray-200 animate-fade-in">
             <div className="space-y-4">
               <Link to="/" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
                 Home
               </Link>
-              <Link to="/courses" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
+              <Link to="/explore-program-dashboard" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
                 Courses
               </Link>
               <Link to="/psychology-counselling" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
@@ -206,8 +204,11 @@ const Header = () => {
                 </Link>
               </div>
             </div>
-          </div>}
+          </div>
+        )}
       </div>
-    </header>;
+    </header>
+  );
 };
+
 export default Header;
