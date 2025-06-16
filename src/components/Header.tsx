@@ -28,13 +28,20 @@ const Header = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
+              to="/courses"
+              className="text-gray-700 hover:text-blue-600 font-semibold text-lg transition-colors duration-300 relative group"
+            >
+              Courses
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+            <Link
               to="/cover"
               className="text-gray-700 hover:text-blue-600 font-semibold text-lg transition-colors duration-300 relative group"
             >
               Cover
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            {['Courses', 'About', 'Contact'].map((item) => (
+            {['Services', 'Resources', 'About', 'Contact'].map((item) => (
               <a
                 key={item}
                 href="#"
@@ -53,7 +60,7 @@ const Header = () => {
             </Button>
             <Link to="/login">
               <Button className="bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all duration-300 font-semibold px-6 py-2 shadow-lg">
-                Login
+                LOGIN
               </Button>
             </Link>
           </div>
@@ -82,12 +89,18 @@ const Header = () => {
                 Home
               </Link>
               <Link
+                to="/courses"
+                className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
+              >
+                Courses
+              </Link>
+              <Link
                 to="/cover"
                 className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2"
               >
                 Cover
               </Link>
-              {['Courses', 'About', 'Contact'].map((item) => (
+              {['Services', 'Resources', 'About', 'Contact'].map((item) => (
                 <a
                   key={item}
                   href="#"
@@ -102,7 +115,7 @@ const Header = () => {
                 </Button>
                 <Link to="/login" className="block">
                   <Button className="w-full bg-blue-600 hover:bg-blue-700 font-semibold">
-                    Login
+                    LOGIN
                   </Button>
                 </Link>
               </div>
