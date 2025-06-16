@@ -77,9 +77,11 @@ const InstitutionPricing = () => {
                 <span className="text-gray-500 text-sm">/ Per Year</span>
               </div>
               
-              <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium text-base">
-                GET STARTED
-              </Button>
+              <Link to="/institution-booking">
+                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium text-base">
+                  GET STARTED
+                </Button>
+              </Link>
             </div>
 
             <div className="space-y-4 text-sm">
@@ -113,9 +115,11 @@ const InstitutionPricing = () => {
                 <span className="text-gray-500 text-sm">/ Per Year</span>
               </div>
               
-              <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium text-base">
-                GET STARTED
-              </Button>
+              <Link to="/institution-booking">
+                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium text-base">
+                  GET STARTED
+                </Button>
+              </Link>
             </div>
 
             <div className="space-y-4 text-sm">
