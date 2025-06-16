@@ -79,33 +79,35 @@ const Blog = () => {
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {blogPosts.map((post) => (
-            <div key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-              <img 
-                src={post.image}
-                alt={post.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <span className="inline-block bg-blue-100 text-blue-600 text-sm font-medium px-3 py-1 rounded-full mb-3">
-                  {post.category}
-                </span>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4 line-clamp-2">
-                  {post.title}
-                </h3>
-                <div className="flex items-center text-gray-500 text-sm">
-                  <div className="flex items-center mr-4">
-                    <div className="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center mr-2">
-                      <User className="h-3 w-3" />
+            <Link key={post.id} to="/blog-article" className="group">
+              <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 group-hover:scale-105 transform transition-transform">
+                <img 
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <span className="inline-block bg-blue-100 text-blue-600 text-sm font-medium px-3 py-1 rounded-full mb-3">
+                    {post.category}
+                  </span>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                    {post.title}
+                  </h3>
+                  <div className="flex items-center text-gray-500 text-sm">
+                    <div className="flex items-center mr-4">
+                      <div className="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center mr-2">
+                        <User className="h-3 w-3" />
+                      </div>
+                      <span>{post.author}</span>
                     </div>
-                    <span>{post.author}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Calendar className="h-4 w-4 mr-1" />
-                    <span>{post.date}</span>
+                    <div className="flex items-center">
+                      <Calendar className="h-4 w-4 mr-1" />
+                      <span>{post.date}</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
