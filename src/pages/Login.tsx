@@ -1,189 +1,195 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
+
 const Login = () => {
-  const [userType, setUserType] = useState<'institution' | 'student' | 'individual'>('student');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberPassword, setRememberPassword] = useState(false);
-  const getTitleByUserType = () => {
-    switch (userType) {
-      case 'institution':
-        return 'Partner with us';
-      case 'student':
-        return 'Login as Student';
-      case 'individual':
-        return 'Individual Login';
-      default:
-        return 'Login as Student';
-    }
-  };
-  const getBottomTextByUserType = () => {
-    switch (userType) {
-      case 'institution':
-        return {
-          text: 'Want to partner with us?',
-          link: 'Sign up'
-        };
-      case 'student':
-        return {
-          text: "Don't have an account?",
-          link: 'Create Account'
-        };
-      case 'individual':
-        return {
-          text: "Don't have an account?",
-          link: 'Sign up'
-        };
-      default:
-        return {
-          text: "Don't have an account?",
-          link: 'Create Account'
-        };
-    }
-  };
-  return <div className="min-h-screen flex">
-      {/* Left side - Cover Image with Logo */}
+
+  return (
+    <div className="min-h-screen flex">
+      {/* Left side - Sky background with DNA logo and people */}
       <div className="flex-1 relative overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-        backgroundImage: `url('/lovable-uploads/eebaefc1-61bb-4b5d-8cb5-7c18b5573382.png')`
-      }}>
-          {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/20"></div>
+        {/* Sky Background */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/lovable-uploads/0107c03e-de5d-4312-a1ec-89a132b9e0aa.png')`
+          }}
+        >
+          {/* Light overlay for better contrast */}
+          <div className="absolute inset-0 bg-blue-200/20"></div>
         </div>
 
-        {/* Logo in center */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center">
-          {/* DNA Helix Circle Logo */}
-          <div className="relative mb-8">
-            <div className="w-80 h-80 relative">
-              <svg viewBox="0 0 320 320" className="w-full h-full">
-                {/* Circular DNA Helix strands */}
-                <g className="animate-pulse">
-                  {/* Outer DNA helix circle */}
-                  <circle cx="160" cy="160" r="120" stroke="rgba(255,255,255,0.9)" strokeWidth="12" fill="none" strokeDasharray="30 15" className="drop-shadow-2xl" />
-                  
-                  {/* Inner DNA helix circle */}
-                  <circle cx="160" cy="160" r="90" stroke="rgba(30,58,138,0.8)" strokeWidth="8" fill="none" strokeDasharray="20 10" className="drop-shadow-xl animate-spin" style={{
-                  animationDuration: '20s'
-                }} />
-                  
-                  {/* DNA connecting lines */}
-                  {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, index) => {
-                  const x1 = 160 + 90 * Math.cos(angle * Math.PI / 180);
-                  const y1 = 160 + 90 * Math.sin(angle * Math.PI / 180);
-                  const x2 = 160 + 120 * Math.cos(angle * Math.PI / 180);
-                  const y2 = 160 + 120 * Math.sin(angle * Math.PI / 180);
-                  return <line key={index} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(255,255,255,0.7)" strokeWidth="4" className="drop-shadow-lg" />;
-                })}
-                </g>
-                
-                {/* Central text */}
-                <text x="160" y="145" textAnchor="middle" className="fill-white text-5xl font-bold tracking-wider drop-shadow-2xl" style={{
-                fontFamily: 'sans-serif'
-              }}>
-                  STEM
-                </text>
-                <text x="160" y="185" textAnchor="middle" className="fill-white text-xl font-medium tracking-wide drop-shadow-2xl" style={{
-                fontFamily: 'sans-serif'
-              }}>
-                  FOR SOCIETY
-                </text>
-              </svg>
-            </div>
+        {/* DNA Helix Logo in center-left */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+          <div className="w-64 h-64 relative">
+            <svg viewBox="0 0 256 256" className="w-full h-full">
+              {/* DNA Helix strands forming a circular pattern */}
+              <g>
+                {/* Multiple DNA helix strands */}
+                {[0, 60, 120, 180, 240, 300].map((rotation, index) => (
+                  <g key={index} transform={`rotate(${rotation} 128 128)`}>
+                    <path
+                      d="M 60 128 Q 128 80 196 128 Q 128 176 60 128"
+                      stroke="rgba(255,255,255,0.8)"
+                      strokeWidth="6"
+                      fill="none"
+                      className="drop-shadow-lg"
+                    />
+                    {/* DNA base pairs */}
+                    {[0.2, 0.4, 0.6, 0.8].map((t, i) => {
+                      const x1 = 60 + (196 - 60) * t;
+                      const y1 = 128 + Math.sin(Math.PI * t) * (t < 0.5 ? -48 : 48);
+                      const x2 = 60 + (196 - 60) * t;
+                      const y2 = 128 - Math.sin(Math.PI * t) * (t < 0.5 ? -48 : 48);
+                      return (
+                        <line
+                          key={i}
+                          x1={x1}
+                          y1={y1}
+                          x2={x2}
+                          y2={y2}
+                          stroke="rgba(255,255,255,0.6)"
+                          strokeWidth="3"
+                          className="drop-shadow-sm"
+                        />
+                      );
+                    })}
+                  </g>
+                ))}
+              </g>
+              
+              {/* Central text */}
+              <text
+                x="128"
+                y="115"
+                textAnchor="middle"
+                className="fill-white text-3xl font-bold tracking-wider drop-shadow-2xl"
+                style={{ fontFamily: 'sans-serif' }}
+              >
+                STEM
+              </text>
+              <text
+                x="128"
+                y="145"
+                textAnchor="middle"
+                className="fill-white text-sm font-medium tracking-wide drop-shadow-2xl"
+                style={{ fontFamily: 'sans-serif' }}
+              >
+                FOR SOCIETY
+              </text>
+            </svg>
           </div>
-
-          {/* Tagline */}
-          <h1 className="text-white text-4xl md:text-5xl font-light tracking-wide drop-shadow-2xl max-w-4xl mx-auto leading-tight">
-            Let's Innovate, Incubate and Impact the world together!
-          </h1>
         </div>
       </div>
 
-      {/* Right side - Login Form */}
-      <div className="w-full max-w-md bg-white/95 backdrop-blur-sm flex flex-col justify-center px-8 py-12 relative">
-        {/* User type selector */}
-        <div className="mb-8">
-          <div className="flex space-x-1 bg-gray-100 rounded-lg p-1">
-            
-            <button onClick={() => setUserType('student')} className={`flex-1 py-2 px-3 rounded-md text-xs font-medium transition-all ${userType === 'student' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}>
-              Student
-            </button>
-            
-          </div>
-        </div>
-
-        <div className="space-y-6">
+      {/* Right side - Login Form with glass effect */}
+      <div className="w-full max-w-md bg-white/90 backdrop-blur-sm flex flex-col justify-center px-8 py-12 relative">
+        <div className="space-y-8">
+          {/* Header */}
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">
-              {getTitleByUserType()}
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              Login as Student
             </h2>
             <p className="text-gray-600 text-sm">
               Enter your credentials to proceed further
             </p>
           </div>
 
-          <form className="space-y-4">
+          {/* Form */}
+          <form className="space-y-6">
             <div>
-              <Input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg placeholder-gray-500 focus:border-blue-500 focus:ring-blue-500" />
+              <Input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-4 bg-gray-50 border-0 rounded-lg placeholder-gray-500 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base"
+              />
             </div>
 
             <div>
-              <Input type="password" placeholder="Confirm Password" value={password} onChange={e => setPassword(e.target.value)} className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg placeholder-gray-500 focus:border-blue-500 focus:ring-blue-500" />
+              <Input
+                type="password"
+                placeholder="Confirm Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full px-4 py-4 bg-gray-50 border-0 rounded-lg placeholder-gray-500 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base"
+              />
             </div>
 
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
-                <Checkbox id="remember" checked={rememberPassword} onCheckedChange={checked => setRememberPassword(checked as boolean)} />
+                <Checkbox
+                  id="remember"
+                  checked={rememberPassword}
+                  onCheckedChange={(checked) => setRememberPassword(checked as boolean)}
+                  className="data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500"
+                />
                 <label htmlFor="remember" className="text-sm text-gray-600">
                   Remember Password
                 </label>
               </div>
-              <button type="button" className="text-sm text-blue-600 hover:text-blue-700">
+              <button type="button" className="text-sm text-gray-500 hover:text-gray-700">
                 Forget Password?
               </button>
             </div>
 
-            <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold text-sm tracking-wide">
+            <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-4 rounded-lg font-semibold text-base tracking-wide transition-colors">
               LOGIN
             </Button>
           </form>
 
+          {/* Social Login */}
           <div className="text-center">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-gray-200"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-4 bg-white text-gray-500">or sign in with</span>
+                <span className="px-4 bg-white/90 text-gray-500">or sign in with</span>
               </div>
             </div>
 
-            <div className="mt-4 flex justify-center space-x-3">
-              <button className="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors">
-                <span className="text-xl">G</span>
+            <div className="mt-6 flex justify-center space-x-4">
+              <button className="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors shadow-sm">
+                <svg className="w-5 h-5" viewBox="0 0 24 24">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
               </button>
-              <button className="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors">
-                <span className="text-xl">✉</span>
+              <button className="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors shadow-sm">
+                <svg className="w-5 h-5" fill="#1DA1F2" viewBox="0 0 24 24">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
               </button>
-              <button className="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors">
-                <span className="text-xl">👤</span>
+              <button className="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors shadow-sm">
+                <svg className="w-5 h-5" fill="#0A66C2" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
               </button>
             </div>
           </div>
 
+          {/* Bottom text */}
           <div className="text-center">
             <span className="text-gray-600 text-sm">
-              {getBottomTextByUserType().text}{' '}
-              <button className="text-blue-600 hover:text-blue-700 font-medium">
-                {getBottomTextByUserType().link}
+              Don't have an account?{' '}
+              <button className="text-blue-500 hover:text-blue-600 font-medium">
+                Create Account
               </button>
             </span>
           </div>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default Login;
