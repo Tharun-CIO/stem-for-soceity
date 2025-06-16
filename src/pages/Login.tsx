@@ -3,11 +3,17 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberPassword, setRememberPassword] = useState(false);
+  const navigate = useNavigate();
+
+  const handleCreateAccount = () => {
+    navigate('/signup');
+  };
 
   return (
     <div className="min-h-screen flex">
@@ -124,7 +130,10 @@ const Login = () => {
           <div className="text-center">
             <span className="text-gray-700 text-sm">
               Don't have an account?{' '}
-              <button className="text-blue-500 hover:text-blue-600 font-medium">
+              <button 
+                onClick={handleCreateAccount}
+                className="text-blue-500 hover:text-blue-600 font-medium"
+              >
                 Create Account
               </button>
             </span>
