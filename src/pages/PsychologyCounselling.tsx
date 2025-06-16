@@ -98,9 +98,11 @@ const PsychologyCounselling = () => {
                 </div>
               </div>
               
-              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold">
-                BOOK YOUR SESSION
-              </Button>
+              <Link to="/booking-flow">
+                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold">
+                  BOOK YOUR SESSION
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
