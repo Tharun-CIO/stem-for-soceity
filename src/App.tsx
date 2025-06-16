@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,6 +8,7 @@ import Index from "./pages/Index";
 import Cover from "./pages/Cover";
 import Login from "./pages/Login";
 import PartnerLogin from "./pages/PartnerLogin";
+import PartnerSignUp from "./pages/PartnerSignUp";
 import SignUp from "./pages/SignUp";
 import Courses from "./pages/Courses";
 import CourseDetail from "./pages/CourseDetail";
@@ -39,6 +41,7 @@ const App = () => (
           <Route path="/select-role" element={<SelectRole />} />
           <Route path="/login" element={<Login />} />
           <Route path="/partner-login" element={<PartnerLogin />} />
+          <Route path="/partner-signup" element={<PartnerSignUp />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/course-detail" element={<CourseDetail />} />
