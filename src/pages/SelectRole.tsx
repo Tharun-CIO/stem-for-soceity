@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowUpRight } from 'lucide-react';
@@ -12,7 +11,7 @@ const SelectRole = () => {
   };
 
   const handlePartnerInstitution = () => {
-    navigate('/partner-login');
+    navigate('/institution-login');
   };
 
   return (
