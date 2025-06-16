@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Courses from "./pages/Courses";
 import CourseDetail from "./pages/CourseDetail";
 import PsychologyCounselling from "./pages/PsychologyCounselling";
+import CareerCounselling from "./pages/CareerCounselling";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/courses" element={<Courses />} />
           <Route path="/course-detail" element={<CourseDetail />} />
           <Route path="/psychology-counselling" element={<PsychologyCounselling />} />
+          <Route path="/career-counselling" element={<CareerCounselling />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
