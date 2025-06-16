@@ -1,15 +1,12 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
-
 const Login = () => {
   const [userType, setUserType] = useState<'institution' | 'student' | 'individual'>('student');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberPassword, setRememberPassword] = useState(false);
-
   const getTitleByUserType = () => {
     switch (userType) {
       case 'institution':
@@ -22,31 +19,37 @@ const Login = () => {
         return 'Login as Student';
     }
   };
-
   const getBottomTextByUserType = () => {
     switch (userType) {
       case 'institution':
-        return { text: 'Want to partner with us?', link: 'Sign up' };
+        return {
+          text: 'Want to partner with us?',
+          link: 'Sign up'
+        };
       case 'student':
-        return { text: "Don't have an account?", link: 'Create Account' };
+        return {
+          text: "Don't have an account?",
+          link: 'Create Account'
+        };
       case 'individual':
-        return { text: "Don't have an account?", link: 'Sign up' };
+        return {
+          text: "Don't have an account?",
+          link: 'Sign up'
+        };
       default:
-        return { text: "Don't have an account?", link: 'Create Account' };
+        return {
+          text: "Don't have an account?",
+          link: 'Create Account'
+        };
     }
   };
-
-  return (
-    <div className="min-h-screen flex">
+  return <div className="min-h-screen flex">
       {/* Left side - Cover Image with Logo */}
       <div className="flex-1 relative overflow-hidden">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/lovable-uploads/eebaefc1-61bb-4b5d-8cb5-7c18b5573382.png')`
-          }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: `url('/lovable-uploads/eebaefc1-61bb-4b5d-8cb5-7c18b5573382.png')`
+      }}>
           {/* Overlay for better text readability */}
           <div className="absolute inset-0 bg-black/20"></div>
         </div>
@@ -60,69 +63,32 @@ const Login = () => {
                 {/* Circular DNA Helix strands */}
                 <g className="animate-pulse">
                   {/* Outer DNA helix circle */}
-                  <circle
-                    cx="160"
-                    cy="160"
-                    r="120"
-                    stroke="rgba(255,255,255,0.9)"
-                    strokeWidth="12"
-                    fill="none"
-                    strokeDasharray="30 15"
-                    className="drop-shadow-2xl"
-                  />
+                  <circle cx="160" cy="160" r="120" stroke="rgba(255,255,255,0.9)" strokeWidth="12" fill="none" strokeDasharray="30 15" className="drop-shadow-2xl" />
                   
                   {/* Inner DNA helix circle */}
-                  <circle
-                    cx="160"
-                    cy="160"
-                    r="90"
-                    stroke="rgba(30,58,138,0.8)"
-                    strokeWidth="8"
-                    fill="none"
-                    strokeDasharray="20 10"
-                    className="drop-shadow-xl animate-spin"
-                    style={{ animationDuration: '20s' }}
-                  />
+                  <circle cx="160" cy="160" r="90" stroke="rgba(30,58,138,0.8)" strokeWidth="8" fill="none" strokeDasharray="20 10" className="drop-shadow-xl animate-spin" style={{
+                  animationDuration: '20s'
+                }} />
                   
                   {/* DNA connecting lines */}
                   {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, index) => {
-                    const x1 = 160 + 90 * Math.cos((angle * Math.PI) / 180);
-                    const y1 = 160 + 90 * Math.sin((angle * Math.PI) / 180);
-                    const x2 = 160 + 120 * Math.cos((angle * Math.PI) / 180);
-                    const y2 = 160 + 120 * Math.sin((angle * Math.PI) / 180);
-                    
-                    return (
-                      <line
-                        key={index}
-                        x1={x1}
-                        y1={y1}
-                        x2={x2}
-                        y2={y2}
-                        stroke="rgba(255,255,255,0.7)"
-                        strokeWidth="4"
-                        className="drop-shadow-lg"
-                      />
-                    );
-                  })}
+                  const x1 = 160 + 90 * Math.cos(angle * Math.PI / 180);
+                  const y1 = 160 + 90 * Math.sin(angle * Math.PI / 180);
+                  const x2 = 160 + 120 * Math.cos(angle * Math.PI / 180);
+                  const y2 = 160 + 120 * Math.sin(angle * Math.PI / 180);
+                  return <line key={index} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(255,255,255,0.7)" strokeWidth="4" className="drop-shadow-lg" />;
+                })}
                 </g>
                 
                 {/* Central text */}
-                <text
-                  x="160"
-                  y="145"
-                  textAnchor="middle"
-                  className="fill-white text-5xl font-bold tracking-wider drop-shadow-2xl"
-                  style={{ fontFamily: 'sans-serif' }}
-                >
+                <text x="160" y="145" textAnchor="middle" className="fill-white text-5xl font-bold tracking-wider drop-shadow-2xl" style={{
+                fontFamily: 'sans-serif'
+              }}>
                   STEM
                 </text>
-                <text
-                  x="160"
-                  y="185"
-                  textAnchor="middle"
-                  className="fill-white text-xl font-medium tracking-wide drop-shadow-2xl"
-                  style={{ fontFamily: 'sans-serif' }}
-                >
+                <text x="160" y="185" textAnchor="middle" className="fill-white text-xl font-medium tracking-wide drop-shadow-2xl" style={{
+                fontFamily: 'sans-serif'
+              }}>
                   FOR SOCIETY
                 </text>
               </svg>
@@ -141,36 +107,11 @@ const Login = () => {
         {/* User type selector */}
         <div className="mb-8">
           <div className="flex space-x-1 bg-gray-100 rounded-lg p-1">
-            <button
-              onClick={() => setUserType('institution')}
-              className={`flex-1 py-2 px-3 rounded-md text-xs font-medium transition-all ${
-                userType === 'institution'
-                  ? 'bg-white text-gray-900 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              Institution
-            </button>
-            <button
-              onClick={() => setUserType('student')}
-              className={`flex-1 py-2 px-3 rounded-md text-xs font-medium transition-all ${
-                userType === 'student'
-                  ? 'bg-white text-gray-900 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
+            
+            <button onClick={() => setUserType('student')} className={`flex-1 py-2 px-3 rounded-md text-xs font-medium transition-all ${userType === 'student' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}>
               Student
             </button>
-            <button
-              onClick={() => setUserType('individual')}
-              className={`flex-1 py-2 px-3 rounded-md text-xs font-medium transition-all ${
-                userType === 'individual'
-                  ? 'bg-white text-gray-900 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              Individual
-            </button>
+            
           </div>
         </div>
 
@@ -186,32 +127,16 @@ const Login = () => {
 
           <form className="space-y-4">
             <div>
-              <Input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg placeholder-gray-500 focus:border-blue-500 focus:ring-blue-500"
-              />
+              <Input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg placeholder-gray-500 focus:border-blue-500 focus:ring-blue-500" />
             </div>
 
             <div>
-              <Input
-                type="password"
-                placeholder="Confirm Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg placeholder-gray-500 focus:border-blue-500 focus:ring-blue-500"
-              />
+              <Input type="password" placeholder="Confirm Password" value={password} onChange={e => setPassword(e.target.value)} className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg placeholder-gray-500 focus:border-blue-500 focus:ring-blue-500" />
             </div>
 
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
-                <Checkbox
-                  id="remember"
-                  checked={rememberPassword}
-                  onCheckedChange={(checked) => setRememberPassword(checked as boolean)}
-                />
+                <Checkbox id="remember" checked={rememberPassword} onCheckedChange={checked => setRememberPassword(checked as boolean)} />
                 <label htmlFor="remember" className="text-sm text-gray-600">
                   Remember Password
                 </label>
@@ -259,8 +184,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Login;
