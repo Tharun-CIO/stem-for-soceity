@@ -10,23 +10,38 @@ import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 const BookingFlow = () => {
-  const [currentStep, setCurrentStep] = useState(2);
+  const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    addressLine1: '',
+    addressLine2: '',
+    city: '',
+    state: '',
+    pincode: '',
     email: '',
     country: '',
     mobileNumber: '',
-    selectedPlan: 'premium',
+    selectedServices: {
+      careerChoice: false,
+      cvResumePrep: false,
+      researchProposal: false,
+      lorSopEditing: true,
+      shortlistingAbroad: true,
+      pgPhdAbroad: false,
+      postDocApplication: true,
+      industryJobs: true,
+    },
     selectedDate: null as Date | null,
     selectedTime: '4:30 PM',
   });
 
-  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date(2023, 8, 18)); // September 18, 2023
   const [currentMonth, setCurrentMonth] = useState(new Date(2023, 8)); // September 2023
 
   const steps = [
     { number: 1, title: 'Personal Information' },
     { number: 2, title: 'Contact Information' },
-    { number: 3, title: 'Choose Plan' },
+    { number: 3, title: 'Select service' },
     { number: 4, title: 'Schedule meet' },
   ];
 
@@ -44,6 +59,21 @@ const BookingFlow = () => {
 
   const updateFormData = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const updateServiceSelection = (service: string, checked: boolean) => {
+    setFormData(prev => ({
+      ...prev,
+      selectedServices: {
+        ...prev.selectedServices,
+        [service]: checked
+      }
+    }));
+  };
+
+  const calculateTotalPrice = () => {
+    const selectedCount = Object.values(formData.selectedServices).filter(Boolean).length;
+    return selectedCount * 2000;
   };
 
   const renderStepIndicator = () => (
@@ -71,6 +101,70 @@ const BookingFlow = () => {
     </div>
   );
 
+  const renderPersonalInfo = () => (
+    <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Input
+          placeholder="First Name"
+          value={formData.firstName}
+          onChange={(e) => updateFormData('firstName', e.target.value)}
+          className="bg-gray-100 border-0 h-12"
+        />
+        <Input
+          placeholder="Last Name"
+          value={formData.lastName}
+          onChange={(e) => updateFormData('lastName', e.target.value)}
+          className="bg-gray-100 border-0 h-12"
+        />
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Input
+          placeholder="Address line 1"
+          value={formData.addressLine1}
+          onChange={(e) => updateFormData('addressLine1', e.target.value)}
+          className="bg-gray-100 border-0 h-12"
+        />
+        <Input
+          placeholder="Address line 2"
+          value={formData.addressLine2}
+          onChange={(e) => updateFormData('addressLine2', e.target.value)}
+          className="bg-gray-100 border-0 h-12"
+        />
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Select value={formData.city} onValueChange={(value) => updateFormData('city', value)}>
+          <SelectTrigger className="bg-gray-100 border-0 h-12">
+            <SelectValue placeholder="City" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="mumbai">Mumbai</SelectItem>
+            <SelectItem value="delhi">Delhi</SelectItem>
+            <SelectItem value="bangalore">Bangalore</SelectItem>
+          </SelectContent>
+        </Select>
+        <Select value={formData.state} onValueChange={(value) => updateFormData('state', value)}>
+          <SelectTrigger className="bg-gray-100 border-0 h-12">
+            <SelectValue placeholder="State" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="maharashtra">Maharashtra</SelectItem>
+            <SelectItem value="delhi">Delhi</SelectItem>
+            <SelectItem value="karnataka">Karnataka</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      <Input
+        placeholder="Pincode"
+        value={formData.pincode}
+        onChange={(e) => updateFormData('pincode', e.target.value)}
+        className="bg-gray-100 border-0 h-12"
+      />
+    </div>
+  );
+
   const renderContactInfo = () => (
     <div className="space-y-6">
       <div className="relative">
@@ -88,8 +182,8 @@ const BookingFlow = () => {
         <div className="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
           <span className="text-yellow-800 text-sm font-bold">!</span>
         </div>
-        <span className="text-yellow-800 text-sm">Check your inbox and click the verification link.</span>
-        <Button className="ml-auto bg-blue-600 hover:bg-blue-700 text-white px-6">
+        <span className="text-yellow-800 text-sm flex-1">Check your inbox and click the verification link.</span>
+        <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6">
           Authenticate
         </Button>
       </div>
@@ -117,8 +211,8 @@ const BookingFlow = () => {
         <div className="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
           <span className="text-yellow-800 text-sm font-bold">!</span>
         </div>
-        <span className="text-yellow-800 text-sm">Enter the OTP sent to your mobile number.</span>
-        <Button className="ml-auto bg-blue-600 hover:bg-blue-700 text-white px-6">
+        <span className="text-yellow-800 text-sm flex-1">Enter the OTP sent to your mobile number.</span>
+        <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6">
           Send OTP
         </Button>
       </div>
@@ -130,45 +224,111 @@ const BookingFlow = () => {
     </div>
   );
 
-  const renderChoosePlan = () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-      {/* Standard Plan */}
-      <div className="bg-white border-2 border-gray-200 rounded-lg p-8 text-center">
-        <div className="flex items-center justify-between mb-6">
-          <input
-            type="radio"
-            name="plan"
-            value="standard"
-            checked={formData.selectedPlan === 'standard'}
-            onChange={(e) => updateFormData('selectedPlan', e.target.value)}
-            className="w-5 h-5"
-          />
+  const renderSelectService = () => (
+    <div className="space-y-6">
+      <h2 className="text-2xl font-semibold text-gray-900 mb-6">Want a Specific Service?</h2>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-4">
+          <div className="flex items-center space-x-3">
+            <input
+              type="checkbox"
+              checked={formData.selectedServices.careerChoice}
+              onChange={(e) => updateServiceSelection('careerChoice', e.target.checked)}
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded"
+            />
+            <label className="text-gray-700">Career choice</label>
+          </div>
+          
+          <div className="flex items-center space-x-3">
+            <input
+              type="checkbox"
+              checked={formData.selectedServices.researchProposal}
+              onChange={(e) => updateServiceSelection('researchProposal', e.target.checked)}
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded"
+            />
+            <label className="text-gray-700">Research Proposal editing</label>
+          </div>
+          
+          <div className="flex items-center space-x-3">
+            <input
+              type="checkbox"
+              checked={formData.selectedServices.shortlistingAbroad}
+              onChange={(e) => updateServiceSelection('shortlistingAbroad', e.target.checked)}
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded"
+            />
+            <label className="text-gray-700">Shortlisting Abroad PhD</label>
+          </div>
+          
+          <div className="flex items-center space-x-3">
+            <input
+              type="checkbox"
+              checked={formData.selectedServices.postDocApplication}
+              onChange={(e) => updateServiceSelection('postDocApplication', e.target.checked)}
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded"
+            />
+            <label className="text-gray-700">Post Doc Application</label>
+          </div>
         </div>
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">Standard</h3>
-        <p className="text-gray-600 mb-6">Essential Skills to Shape a Promising Future</p>
-        <div className="text-center">
-          <span className="text-3xl font-bold text-gray-900">₹ 30,000.00</span>
-          <span className="text-gray-500 ml-2">/ Person</span>
+        
+        <div className="space-y-4">
+          <div className="flex items-center space-x-3">
+            <input
+              type="checkbox"
+              checked={formData.selectedServices.cvResumePrep}
+              onChange={(e) => updateServiceSelection('cvResumePrep', e.target.checked)}
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded"
+            />
+            <label className="text-gray-700">CV/Resume prep</label>
+          </div>
+          
+          <div className="flex items-center space-x-3">
+            <input
+              type="checkbox"
+              checked={formData.selectedServices.lorSopEditing}
+              onChange={(e) => updateServiceSelection('lorSopEditing', e.target.checked)}
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded"
+            />
+            <label className="text-gray-700">LOR/SOP editing & preparation</label>
+          </div>
+          
+          <div className="flex items-center space-x-3">
+            <input
+              type="checkbox"
+              checked={formData.selectedServices.pgPhdAbroad}
+              onChange={(e) => updateServiceSelection('pgPhdAbroad', e.target.checked)}
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded"
+            />
+            <label className="text-gray-700">PG/PhD abroad application guidance</label>
+          </div>
+          
+          <div className="flex items-center space-x-3">
+            <input
+              type="checkbox"
+              checked={formData.selectedServices.industryJobs}
+              onChange={(e) => updateServiceSelection('industryJobs', e.target.checked)}
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded"
+            />
+            <label className="text-gray-700">Industry jobs</label>
+          </div>
         </div>
       </div>
-
-      {/* Premium Plan */}
-      <div className="bg-white border-2 border-blue-600 rounded-lg p-8 text-center">
-        <div className="flex items-center justify-between mb-6">
-          <input
-            type="radio"
-            name="plan"
-            value="premium"
-            checked={formData.selectedPlan === 'premium'}
-            onChange={(e) => updateFormData('selectedPlan', e.target.value)}
-            className="w-5 h-5 accent-blue-600"
-          />
+      
+      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-center space-x-3">
+        <div className="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
+          <span className="text-yellow-800 text-sm font-bold">!</span>
         </div>
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">Premium</h3>
-        <p className="text-gray-600 mb-6">Comprehensive Training for a Brighter Tomorrow</p>
-        <div className="text-center">
-          <span className="text-3xl font-bold text-gray-900">₹ 50,000.00</span>
-          <span className="text-gray-500 ml-2">/ Person</span>
+        <span className="text-yellow-800 text-sm">
+          Note: ₹2,000 will be added for each selected course. Total updates automatically.
+        </span>
+      </div>
+      
+      <div className="flex justify-between items-center pt-6 border-t">
+        <div className="text-3xl font-bold text-blue-600">
+          ₹ {calculateTotalPrice().toLocaleString()}.00
+        </div>
+        <div className="text-gray-600">
+          Total Price : ({Object.values(formData.selectedServices).filter(Boolean).length}) * 2000₹
         </div>
       </div>
     </div>
@@ -239,7 +399,7 @@ const BookingFlow = () => {
                   "w-full h-8 rounded",
                   day === 18 ? "bg-blue-600 text-white" : "text-gray-700 hover:bg-blue-100"
                 )}
-                onClick={() => setSelectedDate(new Date(2023, 8, day))}
+                onClick={() => setFormData(prev => ({ ...prev, selectedDate: new Date(2023, 8, day) }))}
               >
                 {day}
               </button>
@@ -285,7 +445,7 @@ const BookingFlow = () => {
                 onClick={() => updateFormData('selectedTime', time)}
               >
                 {time}
-              </Button>
+              </button>
             ))}
           </div>
         </div>
@@ -358,8 +518,9 @@ const BookingFlow = () => {
 
         {/* Form Content */}
         <Card className="p-8 shadow-sm">
+          {currentStep === 1 && renderPersonalInfo()}
           {currentStep === 2 && renderContactInfo()}
-          {currentStep === 3 && renderChoosePlan()}
+          {currentStep === 3 && renderSelectService()}
           {currentStep === 4 && renderScheduleMeet()}
           {currentStep === 5 && renderSuccess()}
         </Card>
