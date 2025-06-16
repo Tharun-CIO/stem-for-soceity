@@ -1,11 +1,15 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  return <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 shadow-sm">
+
+  return (
+    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -145,9 +149,14 @@ const Header = () => {
               </NavigationMenuList>
             </NavigationMenu>
 
-            
-
-            {['About', 'Contact'].map(item => {})}
+            <Link to="/about" className="text-gray-700 hover:text-blue-600 font-semibold text-lg transition-colors duration-300 relative group">
+              About
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+            <Link to="/contact" className="text-gray-700 hover:text-blue-600 font-semibold text-lg transition-colors duration-300 relative group">
+              Contact
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </Link>
           </nav>
           
           {/* CTA Button */}
@@ -173,7 +182,8 @@ const Header = () => {
         </div>
         
         {/* Mobile Navigation */}
-        {isMenuOpen && <div className="md:hidden py-4 border-t border-gray-200 animate-fade-in">
+        {isMenuOpen && (
+          <div className="md:hidden py-4 border-t border-gray-200 animate-fade-in">
             <div className="space-y-4">
               <Link to="/" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
                 Home
@@ -193,12 +203,12 @@ const Header = () => {
               <Link to="/community" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
                 Community
               </Link>
-              <Link to="/cover" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
-                Cover
+              <Link to="/about" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
+                About
               </Link>
-              {['About', 'Contact'].map(item => <a key={item} href="#" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
-                  {item}
-                </a>)}
+              <Link to="/contact" className="block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 py-2">
+                Contact
+              </Link>
               <div className="pt-4 space-y-3">
                 <Button variant="outline" className="w-full font-semibold">
                   Partner with Us
@@ -210,8 +220,11 @@ const Header = () => {
                 </Link>
               </div>
             </div>
-          </div>}
+          </div>
+        )}
       </div>
-    </header>;
+    </header>
+  );
 };
+
 export default Header;
