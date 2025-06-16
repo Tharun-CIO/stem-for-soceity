@@ -93,9 +93,11 @@ const CampusAmbassador = () => {
             Sign up today to embark on this exciting journey. Let's make Stem for Society unforgettable together!
           </p>
           <div className="text-right">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold">
-              REGISTER NOW
-            </Button>
+            <Link to="/campus-ambassador-booking">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold">
+                REGISTER NOW
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

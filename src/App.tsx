@@ -14,6 +14,7 @@ import CareerCounselling from "./pages/CareerCounselling";
 import InstitutionPricing from "./pages/InstitutionPricing";
 import Community from "./pages/Community";
 import CampusAmbassador from "./pages/CampusAmbassador";
+import CampusAmbassadorBooking from "./pages/CampusAmbassadorBooking";
 import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
 import BookingFlow from "./pages/BookingFlow";
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/institution-pricing" element={<InstitutionPricing />} />
           <Route path="/community" element={<Community />} />
           <Route path="/campus-ambassador" element={<CampusAmbassador />} />
+          <Route path="/campus-ambassador-booking" element={<CampusAmbassadorBooking />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog-article" element={<BlogArticle />} />
           <Route path="/booking-flow" element={<BookingFlow />} />
