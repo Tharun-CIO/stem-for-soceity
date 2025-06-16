@@ -1,10 +1,8 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useNavigate } from 'react-router-dom';
-
 const SignUp = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -13,100 +11,23 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [acceptTerms, setAcceptTerms] = useState(false);
   const navigate = useNavigate();
-
   const handleLoginClick = () => {
     navigate('/login');
   };
-
-  return (
-    <div className="min-h-screen flex">
+  return <div className="min-h-screen flex">
       {/* Left side - Sky background with DNA logo and people */}
       <div className="flex-1 relative overflow-hidden">
         {/* Sky Background */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-110" 
-          style={{
-            backgroundImage: `url('/lovable-uploads/0107c03e-de5d-4312-a1ec-89a132b9e0aa.png')`
-          }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-110" style={{
+        backgroundImage: `url('/lovable-uploads/0107c03e-de5d-4312-a1ec-89a132b9e0aa.png')`
+      }}>
           {/* Light overlay for better contrast */}
           <div className="absolute inset-0 bg-blue-200/20"></div>
         </div>
 
         {/* DNA Helix Logo in center-left */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-          <div className="w-80 h-80 relative brightness-125 contrast-110">
-            <svg viewBox="0 0 320 320" className="w-full h-full drop-shadow-2xl">
-              {/* DNA Helix strands forming a circle */}
-              <g className="animate-pulse">
-                {/* Outer DNA helix circle */}
-                <circle
-                  cx="160"
-                  cy="160"
-                  r="120"
-                  stroke="rgba(255,255,255,0.95)"
-                  strokeWidth="12"
-                  fill="none"
-                  strokeDasharray="30 15"
-                  className="drop-shadow-2xl filter brightness-110"
-                />
-                
-                {/* Inner DNA helix circle */}
-                <circle
-                  cx="160"
-                  cy="160"
-                  r="90"
-                  stroke="rgba(30,58,138,0.9)"
-                  strokeWidth="8"
-                  fill="none"
-                  strokeDasharray="20 10"
-                  className="drop-shadow-xl animate-spin filter brightness-125"
-                  style={{ animationDuration: '20s' }}
-                />
-                
-                {/* DNA connecting lines */}
-                {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, index) => {
-                  const x1 = 160 + 90 * Math.cos((angle * Math.PI) / 180);
-                  const y1 = 160 + 90 * Math.sin((angle * Math.PI) / 180);
-                  const x2 = 160 + 120 * Math.cos((angle * Math.PI) / 180);
-                  const y2 = 160 + 120 * Math.sin((angle * Math.PI) / 180);
-                  
-                  return (
-                    <line
-                      key={index}
-                      x1={x1}
-                      y1={y1}
-                      x2={x2}
-                      y2={y2}
-                      stroke="rgba(255,255,255,0.8)"
-                      strokeWidth="4"
-                      className="drop-shadow-lg filter brightness-110"
-                    />
-                  );
-                })}
-              </g>
-              
-              {/* Central text */}
-              <text
-                x="160"
-                y="145"
-                textAnchor="middle"
-                className="fill-white text-5xl font-bold tracking-wider drop-shadow-2xl filter brightness-110"
-                style={{ fontFamily: 'sans-serif' }}
-              >
-                STEM
-              </text>
-              <text
-                x="160"
-                y="185"
-                textAnchor="middle"
-                className="fill-white text-xl font-medium tracking-wide drop-shadow-2xl filter brightness-110"
-                style={{ fontFamily: 'sans-serif' }}
-              >
-                FOR SOCIETY
-              </text>
-            </svg>
-          </div>
+          
         </div>
       </div>
 
@@ -126,62 +47,27 @@ const SignUp = () => {
           {/* Form */}
           <form className="space-y-6">
             <div>
-              <Input 
-                type="text" 
-                placeholder="Name" 
-                value={name} 
-                onChange={e => setName(e.target.value)} 
-                className="w-full px-4 py-4 bg-white/60 backdrop-blur-sm border border-white/30 rounded-lg placeholder-gray-600 focus:bg-white/80 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" 
-              />
+              <Input type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)} className="w-full px-4 py-4 bg-white/60 backdrop-blur-sm border border-white/30 rounded-lg placeholder-gray-600 focus:bg-white/80 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" />
             </div>
 
             <div>
-              <Input 
-                type="email" 
-                placeholder="Email" 
-                value={email} 
-                onChange={e => setEmail(e.target.value)} 
-                className="w-full px-4 py-4 bg-white/60 backdrop-blur-sm border border-white/30 rounded-lg placeholder-gray-600 focus:bg-white/80 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" 
-              />
+              <Input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} className="w-full px-4 py-4 bg-white/60 backdrop-blur-sm border border-white/30 rounded-lg placeholder-gray-600 focus:bg-white/80 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" />
             </div>
 
             <div>
-              <Input 
-                type="tel" 
-                placeholder="Phone number" 
-                value={phone} 
-                onChange={e => setPhone(e.target.value)} 
-                className="w-full px-4 py-4 bg-white/60 backdrop-blur-sm border border-white/30 rounded-lg placeholder-gray-600 focus:bg-white/80 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" 
-              />
+              <Input type="tel" placeholder="Phone number" value={phone} onChange={e => setPhone(e.target.value)} className="w-full px-4 py-4 bg-white/60 backdrop-blur-sm border border-white/30 rounded-lg placeholder-gray-600 focus:bg-white/80 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" />
             </div>
 
             <div>
-              <Input 
-                type="password" 
-                placeholder="Enter Password" 
-                value={password} 
-                onChange={e => setPassword(e.target.value)} 
-                className="w-full px-4 py-4 bg-white/60 backdrop-blur-sm border border-white/30 rounded-lg placeholder-gray-600 focus:bg-white/80 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" 
-              />
+              <Input type="password" placeholder="Enter Password" value={password} onChange={e => setPassword(e.target.value)} className="w-full px-4 py-4 bg-white/60 backdrop-blur-sm border border-white/30 rounded-lg placeholder-gray-600 focus:bg-white/80 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" />
             </div>
 
             <div>
-              <Input 
-                type="password" 
-                placeholder="Confirm Password" 
-                value={confirmPassword} 
-                onChange={e => setConfirmPassword(e.target.value)} 
-                className="w-full px-4 py-4 bg-white/60 backdrop-blur-sm border border-white/30 rounded-lg placeholder-gray-600 focus:bg-white/80 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" 
-              />
+              <Input type="password" placeholder="Confirm Password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} className="w-full px-4 py-4 bg-white/60 backdrop-blur-sm border border-white/30 rounded-lg placeholder-gray-600 focus:bg-white/80 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" />
             </div>
 
             <div className="flex items-center space-x-2">
-              <Checkbox 
-                id="terms" 
-                checked={acceptTerms} 
-                onCheckedChange={checked => setAcceptTerms(checked as boolean)} 
-                className="data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500 bg-white/60 border-white/40" 
-              />
+              <Checkbox id="terms" checked={acceptTerms} onCheckedChange={checked => setAcceptTerms(checked as boolean)} className="data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500 bg-white/60 border-white/40" />
               <label htmlFor="terms" className="text-sm text-gray-700">
                 I accept{' '}
                 <button type="button" className="text-blue-500 hover:text-blue-600 underline">
@@ -217,7 +103,7 @@ const SignUp = () => {
               </button>
               <button className="w-12 h-12 bg-white/60 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center hover:bg-white/80 transition-colors shadow-lg">
                 <svg className="w-5 h-5" fill="#1877F2" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
               </button>
               <button className="w-12 h-12 bg-white/60 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center hover:bg-white/80 transition-colors shadow-lg">
@@ -232,18 +118,13 @@ const SignUp = () => {
           <div className="text-center">
             <span className="text-gray-700 text-sm">
               Already have an account?{' '}
-              <button 
-                onClick={handleLoginClick}
-                className="text-blue-500 hover:text-blue-600 font-medium"
-              >
+              <button onClick={handleLoginClick} className="text-blue-500 hover:text-blue-600 font-medium">
                 Login
               </button>
             </span>
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default SignUp;
