@@ -15,12 +15,12 @@ const CareerCounselling = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <Link to="/">
-              <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-blue-500 text-white border-blue-500 rounded-full px-4">
+              <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-blue-500 text-white border-blue-500 rounded-full px-4 hover:bg-blue-600">
                 <ArrowLeft className="h-4 w-4" />
                 <span>Back</span>
               </Button>
             </Link>
-            <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-blue-500 text-white border-blue-500 rounded-full px-4">
+            <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-blue-500 text-white border-blue-500 rounded-full px-4 hover:bg-blue-600">
               <Share2 className="h-4 w-4" />
               <span>Share</span>
             </Button>
@@ -72,37 +72,37 @@ const CareerCounselling = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
-                <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                <div className="w-1.5 h-1.5 bg-gray-400 rounded-full"></div>
                 <span>Career choice</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                <div className="w-1.5 h-1.5 bg-gray-400 rounded-full"></div>
                 <span>Shortlisting Abroad PhD</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                <div className="w-1.5 h-1.5 bg-gray-400 rounded-full"></div>
                 <span>Post Doc Application</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                <div className="w-1.5 h-1.5 bg-gray-400 rounded-full"></div>
                 <span>PG/PhD abroad application guidance</span>
               </div>
             </div>
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
-                <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                <div className="w-1.5 h-1.5 bg-gray-400 rounded-full"></div>
                 <span>CV/Resume prep</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                <div className="w-1.5 h-1.5 bg-gray-400 rounded-full"></div>
                 <span>Research Proposal editing</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                <div className="w-1.5 h-1.5 bg-gray-400 rounded-full"></div>
                 <span>Industry jobs</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                <div className="w-1.5 h-1.5 bg-gray-400 rounded-full"></div>
                 <span>LOR/SOP editing & preparation</span>
               </div>
             </div>
@@ -112,7 +112,7 @@ const CareerCounselling = () => {
         {/* Pricing Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {/* Basic Plan */}
-          <div className="bg-white rounded-lg border p-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
             <div className="text-center mb-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Basic</h3>
               <p className="text-sm text-gray-600 mb-4">Want a Specific Service ?</p>
@@ -122,14 +122,14 @@ const CareerCounselling = () => {
                 <span className="text-gray-500 text-sm">/ Service</span>
               </div>
               
-              <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2">
+              <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium">
                 GET STARTED
               </Button>
             </div>
           </div>
 
           {/* Standard Plan */}
-          <div className="bg-white rounded-lg border p-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
             <div className="text-center mb-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Standard</h3>
               <p className="text-sm text-gray-600 mb-4">Essential Skills to Shape a Promising Future</p>
@@ -139,37 +139,37 @@ const CareerCounselling = () => {
                 <span className="text-gray-500 text-sm">/ Person</span>
               </div>
               
-              <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2">
+              <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium">
                 GET STARTED
               </Button>
             </div>
 
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-2">
-                <Check className="h-4 w-4 text-green-500" />
+                <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span className="text-gray-600">Extensive candidate profile review</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Check className="h-4 w-4 text-green-500" />
+                <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span className="text-gray-600">Shortlisting of colls & University</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Check className="h-4 w-4 text-green-500" />
+                <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span className="text-gray-600">Enhancing SOP & LOR</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Check className="h-4 w-4 text-green-500" />
+                <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span className="text-gray-600">Refining Research proposal</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Check className="h-4 w-4 text-green-500" />
+                <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span className="text-gray-600">Guidance for application</span>
               </div>
             </div>
           </div>
 
           {/* Premium Plan */}
-          <div className="bg-white rounded-lg border p-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
             <div className="text-center mb-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Premium</h3>
               <p className="text-sm text-gray-600 mb-4">Comprehensive Training for a Brighter Tomorrow</p>
@@ -179,42 +179,42 @@ const CareerCounselling = () => {
                 <span className="text-gray-500 text-sm">/ Person</span>
               </div>
               
-              <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2">
+              <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium">
                 GET STARTED
               </Button>
             </div>
 
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-2">
-                <Check className="h-4 w-4 text-green-500" />
+                <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span className="text-gray-600">Extensive candidate profile review</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Check className="h-4 w-4 text-green-500" />
+                <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span className="text-gray-600">Shortlisting of colls & University</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Check className="h-4 w-4 text-green-500" />
+                <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span className="text-gray-600">Enhancing SOP & LOR</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Check className="h-4 w-4 text-green-500" />
+                <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span className="text-gray-600">Refining Research proposal</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Check className="h-4 w-4 text-green-500" />
+                <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span className="text-gray-600">Guidance for application</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Check className="h-4 w-4 text-green-500" />
+                <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span className="text-gray-600">Connecting with Experts</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Check className="h-4 w-4 text-green-500" />
+                <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span className="text-gray-600">Interview readiness Program</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Check className="h-4 w-4 text-green-500" />
+                <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span className="text-gray-600">Guidance for Funding</span>
               </div>
             </div>
@@ -270,8 +270,8 @@ const CareerCounselling = () => {
             <div>
               <h5 className="font-bold text-lg mb-4">QUICK LINKS</h5>
               <div className="space-y-3">
-                <Button className="bg-blue-700 hover:bg-blue-600 text-white">Register</Button>
-                <Button className="bg-blue-700 hover:bg-blue-600 text-white">Login</Button>
+                <Button className="bg-blue-700 hover:bg-blue-600 text-white w-full">Register</Button>
+                <Button className="bg-blue-700 hover:bg-blue-600 text-white w-full">Login</Button>
               </div>
             </div>
 
