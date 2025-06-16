@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import { Button } from '@/components/ui/button';
@@ -98,8 +97,8 @@ const PsychologyCounselling = () => {
                 </div>
               </div>
               
-              <Link to="/booking-flow">
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold">
+              <Link to="/psychology-booking">
+                <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 text-lg font-semibold">
                   BOOK YOUR SESSION
                 </Button>
               </Link>

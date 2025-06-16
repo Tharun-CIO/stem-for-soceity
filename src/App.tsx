@@ -17,6 +17,8 @@ import CampusAmbassador from "./pages/CampusAmbassador";
 import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
 import BookingFlow from "./pages/BookingFlow";
+import CoursesBookingFlow from "./pages/CoursesBookingFlow";
+import PsychologyBookingFlow from "./pages/PsychologyBookingFlow";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +42,8 @@ const App = () => (
           <Route path="/campus-ambassador" element={<CampusAmbassador />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/booking-flow" element={<BookingFlow />} />
+          <Route path="/courses-booking" element={<CoursesBookingFlow />} />
+          <Route path="/psychology-booking" element={<PsychologyBookingFlow />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
