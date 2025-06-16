@@ -1,92 +1,31 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Mail, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
 const InstitutionLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberPassword, setRememberPassword] = useState(false);
   const navigate = useNavigate();
-
   const handleSignUp = () => {
     // Navigate to institution sign up when implemented
     console.log('Navigate to institution sign up');
   };
-
-  return (
-    <div className="min-h-screen flex">
+  return <div className="min-h-screen flex">
       {/* Left side - Sky background with DNA logo and running people */}
       <div className="flex-1 relative overflow-hidden">
         {/* Sky Background with running people */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
-          style={{
-            backgroundImage: `url('/lovable-uploads/a5059404-73f8-499d-8d54-6b8e153ebda1.png')`
-          }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: `url('/lovable-uploads/a5059404-73f8-499d-8d54-6b8e153ebda1.png')`
+      }}>
         </div>
 
         {/* DNA Helix Logo with "STEM FOR SOCIETY" text positioned as in the reference */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center">
           {/* DNA Helix circular design matching the reference */}
-          <div className="w-80 h-80 flex items-center justify-center">
-            <div className="relative">
-              {/* Outer DNA helix design */}
-              <div className="w-64 h-64 flex items-center justify-center relative">
-                {/* DNA strand design with flowing curves in circular pattern */}
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 200 200">
-                  {/* DNA helix strands in circular pattern */}
-                  <path d="M100,40 Q120,60 130,80 Q140,100 130,120 Q120,140 100,160 Q80,140 70,120 Q60,100 70,80 Q80,60 100,40" 
-                        stroke="rgba(255,255,255,0.7)" strokeWidth="4" fill="none"/>
-                  <path d="M100,40 Q80,60 70,80 Q60,100 70,120 Q80,140 100,160 Q120,140 130,120 Q140,100 130,80 Q120,60 100,40" 
-                        stroke="rgba(255,255,255,0.7)" strokeWidth="4" fill="none"/>
-                  
-                  {/* Additional DNA strands for fuller circle */}
-                  <path d="M160,100 Q140,80 120,70 Q100,60 80,70 Q60,80 40,100 Q60,120 80,130 Q100,140 120,130 Q140,120 160,100" 
-                        stroke="rgba(255,255,255,0.6)" strokeWidth="3" fill="none"/>
-                  <path d="M160,100 Q140,120 120,130 Q100,140 80,130 Q60,120 40,100 Q60,80 80,70 Q100,60 120,70 Q140,80 160,100" 
-                        stroke="rgba(255,255,255,0.6)" strokeWidth="3" fill="none"/>
-                  
-                  {/* DNA base pairs */}
-                  <g stroke="rgba(255,255,255,0.5)" strokeWidth="2">
-                    <line x1="85" y1="65" x2="115" y2="65"/>
-                    <line x1="75" y1="85" x2="125" y2="85"/>
-                    <line x1="85" y1="105" x2="115" y2="105"/>
-                    <line x1="75" y1="125" x2="125" y2="125"/>
-                    <line x1="85" y1="145" x2="115" y2="145"/>
-                  </g>
-                  
-                  {/* DNA nucleotides */}
-                  <g fill="rgba(255,255,255,0.8)">
-                    <circle cx="85" cy="65" r="3"/>
-                    <circle cx="115" cy="65" r="3"/>
-                    <circle cx="75" cy="85" r="3"/>
-                    <circle cx="125" cy="85" r="3"/>
-                    <circle cx="85" cy="105" r="3"/>
-                    <circle cx="115" cy="105" r="3"/>
-                    <circle cx="75" cy="125" r="3"/>
-                    <circle cx="125" cy="125" r="3"/>
-                    <circle cx="85" cy="145" r="3"/>
-                    <circle cx="115" cy="145" r="3"/>
-                  </g>
-                </svg>
-                
-                {/* Center text exactly as in the reference */}
-                <div className="text-center z-10">
-                  <div className="text-white text-4xl font-bold mb-2 tracking-wider">
-                    STEM
-                  </div>
-                  <div className="text-white/90 text-lg tracking-widest">
-                    FOR SOCIETY
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
 
@@ -106,33 +45,16 @@ const InstitutionLogin = () => {
           {/* Form */}
           <form className="space-y-6">
             <div className="relative">
-              <Input 
-                type="email" 
-                placeholder="Email" 
-                value={email} 
-                onChange={e => setEmail(e.target.value)} 
-                className="w-full px-6 py-4 bg-white/90 backdrop-blur-sm border border-white/50 rounded-xl placeholder-gray-400 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" 
-              />
+              <Input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} className="w-full px-6 py-4 bg-white/90 backdrop-blur-sm border border-white/50 rounded-xl placeholder-gray-400 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" />
             </div>
 
             <div className="relative">
-              <Input 
-                type="password" 
-                placeholder="Confirm Password" 
-                value={password} 
-                onChange={e => setPassword(e.target.value)} 
-                className="w-full px-6 py-4 bg-white/90 backdrop-blur-sm border border-white/50 rounded-xl placeholder-gray-400 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" 
-              />
+              <Input type="password" placeholder="Confirm Password" value={password} onChange={e => setPassword(e.target.value)} className="w-full px-6 py-4 bg-white/90 backdrop-blur-sm border border-white/50 rounded-xl placeholder-gray-400 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm" />
             </div>
 
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <Checkbox 
-                  id="remember" 
-                  checked={rememberPassword} 
-                  onCheckedChange={checked => setRememberPassword(checked as boolean)} 
-                  className="data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500 bg-white/90 border-white/60" 
-                />
+                <Checkbox id="remember" checked={rememberPassword} onCheckedChange={checked => setRememberPassword(checked as boolean)} className="data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500 bg-white/90 border-white/60" />
                 <label htmlFor="remember" className="text-sm text-gray-600 font-medium">
                   Remember Password
                 </label>
@@ -180,18 +102,13 @@ const InstitutionLogin = () => {
           <div className="text-center">
             <span className="text-gray-600 text-sm">
               Want to partner with us?{' '}
-              <button 
-                onClick={handleSignUp}
-                className="text-blue-500 hover:text-blue-600 font-medium underline"
-              >
+              <button onClick={handleSignUp} className="text-blue-500 hover:text-blue-600 font-medium underline">
                 Sign up
               </button>
             </span>
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default InstitutionLogin;
