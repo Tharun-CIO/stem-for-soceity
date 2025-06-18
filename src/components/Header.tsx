@@ -36,109 +36,126 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             <Menubar className="border-none bg-transparent p-0 h-auto">
-              {/* Programs Dropdown */}
+              {/* Courses/Trainings Dropdown */}
               <MenubarMenu>
-                <MenubarTrigger className="bg-transparent hover:bg-gray-50 data-[state=open]:bg-gray-50 px-3 py-2 rounded-xl cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-colors">
-                  <span>Programs</span>
+                <MenubarTrigger className="bg-transparent hover:bg-gray-50 data-[state=open]:bg-gray-50 px-4 py-2 rounded-lg cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-colors font-medium">
+                  <span>Courses/Trainings</span>
                   <ChevronDown className="h-4 w-4" />
                 </MenubarTrigger>
-                <MenubarContent className="bg-white/95 backdrop-blur-sm border border-gray-200/80 shadow-xl rounded-xl p-2 min-w-[200px] z-50">
+                <MenubarContent className="bg-white border border-gray-200 shadow-lg rounded-xl p-2 min-w-[220px] z-50">
                   <MenubarItem asChild>
                     <Link 
                       to="/courses" 
-                      className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-200 cursor-pointer"
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-all duration-200 cursor-pointer font-medium"
                     >
-                      Browse Courses
+                      Seminars/Webinar
+                    </Link>
+                  </MenubarItem>
+                  <MenubarItem asChild>
+                    <Link 
+                      to="/courses" 
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-all duration-200 cursor-pointer font-medium"
+                    >
+                      Certificate Program
+                    </Link>
+                  </MenubarItem>
+                  <MenubarItem asChild>
+                    <Link 
+                      to="/courses" 
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-all duration-200 cursor-pointer font-medium"
+                    >
+                      Corporate Training
+                    </Link>
+                  </MenubarItem>
+                  <MenubarItem asChild>
+                    <Link 
+                      to="/courses" 
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-all duration-200 cursor-pointer font-medium"
+                    >
+                      Instrumentation Hands-on
+                    </Link>
+                  </MenubarItem>
+                </MenubarContent>
+              </MenubarMenu>
+
+              {/* Services Dropdown */}
+              <MenubarMenu>
+                <MenubarTrigger className="bg-transparent hover:bg-gray-50 data-[state=open]:bg-gray-50 px-4 py-2 rounded-lg cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-colors font-medium">
+                  <span>Services</span>
+                  <ChevronDown className="h-4 w-4" />
+                </MenubarTrigger>
+                <MenubarContent className="bg-white border border-gray-200 shadow-lg rounded-xl p-2 min-w-[220px] z-50">
+                  <MenubarItem asChild>
+                    <Link 
+                      to="/psychology-counselling" 
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-all duration-200 cursor-pointer font-medium"
+                    >
+                      Psychology Counselling
                     </Link>
                   </MenubarItem>
                   <MenubarItem asChild>
                     <Link 
                       to="/career-counselling" 
-                      className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-200 cursor-pointer"
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-all duration-200 cursor-pointer font-medium"
                     >
                       Career Counselling
                     </Link>
                   </MenubarItem>
                   <MenubarItem asChild>
                     <Link 
-                      to="/psychology-counselling" 
-                      className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-200 cursor-pointer"
+                      to="/institution-pricing" 
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-all duration-200 cursor-pointer font-medium"
                     >
-                      Psychology Counselling
+                      Institution Plan & Pricing
                     </Link>
                   </MenubarItem>
                 </MenubarContent>
               </MenubarMenu>
 
-              {/* For Institutions Dropdown */}
+              {/* Resources Dropdown */}
               <MenubarMenu>
-                <MenubarTrigger className="bg-transparent hover:bg-gray-50 data-[state=open]:bg-gray-50 px-3 py-2 rounded-xl cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-colors">
-                  <span>For Institutions</span>
+                <MenubarTrigger className="bg-transparent hover:bg-gray-50 data-[state=open]:bg-gray-50 px-4 py-2 rounded-lg cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-colors font-medium">
+                  <span>Resources</span>
                   <ChevronDown className="h-4 w-4" />
                 </MenubarTrigger>
-                <MenubarContent className="bg-white/95 backdrop-blur-sm border border-gray-200/80 shadow-xl rounded-xl p-2 min-w-[200px] z-50">
+                <MenubarContent className="bg-white border border-gray-200 shadow-lg rounded-xl p-2 min-w-[220px] z-50">
                   <MenubarItem asChild>
                     <Link 
-                      to="/institution-pricing" 
-                      className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-200 cursor-pointer"
+                      to="/blog" 
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-all duration-200 cursor-pointer font-medium"
                     >
-                      Plans and Pricing
+                      Scientific Communications
+                    </Link>
+                  </MenubarItem>
+                  <MenubarItem asChild>
+                    <Link 
+                      to="/community" 
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-all duration-200 cursor-pointer font-medium"
+                    >
+                      Join the community
                     </Link>
                   </MenubarItem>
                   <MenubarItem asChild>
                     <Link 
                       to="/campus-ambassador" 
-                      className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-200 cursor-pointer"
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-all duration-200 cursor-pointer font-medium"
                     >
-                      Campus Ambassador Program
-                    </Link>
-                  </MenubarItem>
-                </MenubarContent>
-              </MenubarMenu>
-
-              {/* Partner with Us Dropdown */}
-              <MenubarMenu>
-                <MenubarTrigger className="bg-transparent hover:bg-gray-50 data-[state=open]:bg-gray-50 px-3 py-2 rounded-xl cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-colors">
-                  <span>Partner with Us</span>
-                  <ChevronDown className="h-4 w-4" />
-                </MenubarTrigger>
-                <MenubarContent className="bg-white/95 backdrop-blur-sm border border-gray-200/80 shadow-xl rounded-xl p-2 min-w-[200px] z-50">
-                  <MenubarItem asChild>
-                    <Link 
-                      to="/partner-role" 
-                      className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-200 cursor-pointer"
-                    >
-                      Join as Partner
-                    </Link>
-                  </MenubarItem>
-                  <MenubarItem asChild>
-                    <Link 
-                      to="/institution-login" 
-                      className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-200 cursor-pointer"
-                    >
-                      Institution Login
+                      Campus Ambassador (CA)
                     </Link>
                   </MenubarItem>
                 </MenubarContent>
               </MenubarMenu>
             </Menubar>
-
-            <Link to="/community" className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-xl hover:bg-gray-50 transition-colors">
-              Community
-            </Link>
-            <Link to="/blog" className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-xl hover:bg-gray-50 transition-colors">
-              Blog
-            </Link>
             
             <div className="flex items-center space-x-3">
-              <Link to="/login">
-                <Button variant="outline" className="border-[#0389FF] text-[#0389FF] hover:bg-[#0389FF] hover:text-white rounded-xl">
-                  Login
+              <Link to="/partner-role">
+                <Button variant="outline" className="border-[#0389FF] text-[#0389FF] hover:bg-[#0389FF] hover:text-white rounded-lg font-medium">
+                  Partner with us
                 </Button>
               </Link>
-              <Link to="/signup">
-                <Button className="bg-[#0389FF] hover:bg-[#0389FF]/90 text-white rounded-xl">
-                  Sign Up
+              <Link to="/login">
+                <Button className="bg-[#0389FF] hover:bg-[#0389FF]/90 text-white rounded-lg font-medium">
+                  LOGIN
                 </Button>
               </Link>
             </div>
@@ -147,7 +164,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 rounded-xl hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -155,74 +172,99 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200 bg-white/95 backdrop-blur-sm rounded-b-xl">
+          <div className="md:hidden py-4 border-t border-gray-200 bg-white rounded-b-xl">
             <div className="space-y-2">
-              <Link 
-                to="/courses" 
-                className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-xl transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Browse Courses
-              </Link>
-              <Link 
-                to="/career-counselling" 
-                className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-xl transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Career Counselling
-              </Link>
-              <Link 
-                to="/psychology-counselling" 
-                className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-xl transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Psychology Counselling
-              </Link>
-              <Link 
-                to="/institution-pricing" 
-                className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-xl transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Plans and Pricing
-              </Link>
-              <Link 
-                to="/campus-ambassador" 
-                className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-xl transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Campus Ambassador
-              </Link>
-              <Link 
-                to="/partner-role" 
-                className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-xl transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Partner with Us
-              </Link>
-              <Link 
-                to="/community" 
-                className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-xl transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Community
-              </Link>
-              <Link 
-                to="/blog" 
-                className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-xl transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Blog
-              </Link>
+              <div className="space-y-1">
+                <div className="px-4 py-2 text-sm font-medium text-gray-500">Courses/Trainings</div>
+                <Link 
+                  to="/courses" 
+                  className="block px-6 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Seminars/Webinar
+                </Link>
+                <Link 
+                  to="/courses" 
+                  className="block px-6 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Certificate Program
+                </Link>
+                <Link 
+                  to="/courses" 
+                  className="block px-6 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Corporate Training
+                </Link>
+                <Link 
+                  to="/courses" 
+                  className="block px-6 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Instrumentation Hands-on
+                </Link>
+              </div>
+              
+              <div className="space-y-1">
+                <div className="px-4 py-2 text-sm font-medium text-gray-500">Services</div>
+                <Link 
+                  to="/psychology-counselling" 
+                  className="block px-6 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Psychology Counselling
+                </Link>
+                <Link 
+                  to="/career-counselling" 
+                  className="block px-6 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Career Counselling
+                </Link>
+                <Link 
+                  to="/institution-pricing" 
+                  className="block px-6 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Institution Plan & Pricing
+                </Link>
+              </div>
+              
+              <div className="space-y-1">
+                <div className="px-4 py-2 text-sm font-medium text-gray-500">Resources</div>
+                <Link 
+                  to="/blog" 
+                  className="block px-6 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Scientific Communications
+                </Link>
+                <Link 
+                  to="/community" 
+                  className="block px-6 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Join the community
+                </Link>
+                <Link 
+                  to="/campus-ambassador" 
+                  className="block px-6 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Campus Ambassador (CA)
+                </Link>
+              </div>
               
               <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
-                <Link to="/login" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="outline" className="w-full border-[#0389FF] text-[#0389FF] hover:bg-[#0389FF] hover:text-white rounded-xl">
-                    Login
+                <Link to="/partner-role" onClick={() => setIsMenuOpen(false)}>
+                  <Button variant="outline" className="w-full border-[#0389FF] text-[#0389FF] hover:bg-[#0389FF] hover:text-white rounded-lg">
+                    Partner with us
                   </Button>
                 </Link>
-                <Link to="/signup" onClick={() => setIsMenuOpen(false)}>
-                  <Button className="w-full bg-[#0389FF] hover:bg-[#0389FF]/90 text-white rounded-xl">
-                    Sign Up
+                <Link to="/login" onClick={() => setIsMenuOpen(false)}>
+                  <Button className="w-full bg-[#0389FF] hover:bg-[#0389FF]/90 text-white rounded-lg">
+                    LOGIN
                   </Button>
                 </Link>
               </div>
