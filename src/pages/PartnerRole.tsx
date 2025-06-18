@@ -25,10 +25,10 @@ const PartnerRole = () => {
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-20"></div>
       
-      {/* Main Content Container */}
-      <div className="relative z-10 min-h-screen flex">
+      {/* Desktop Layout */}
+      <div className="hidden lg:flex relative z-10 min-h-screen">
         {/* Left Section - Logo */}
-        <div className="hidden lg:flex lg:w-1/2 relative items-center justify-center">
+        <div className="lg:w-1/2 relative flex items-center justify-center">
           <div className="text-center text-white">
             <img 
               src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
@@ -41,9 +41,9 @@ const PartnerRole = () => {
         </div>
 
         {/* Right Section - Role Selection */}
-        <div className="w-full lg:w-1/2 relative">
+        <div className="lg:w-1/2 relative">
           {/* White transparent overlay with curved left corner */}
-          <div className="absolute inset-0 bg-white/90 lg:rounded-l-3xl"></div>
+          <div className="absolute inset-0 bg-white/90 rounded-l-3xl"></div>
           
           {/* Content Container with scroll */}
           <div className="relative z-10 h-full max-h-screen overflow-y-auto flex items-center justify-center px-4 md:px-8 py-8">
@@ -103,67 +103,67 @@ const PartnerRole = () => {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Layout */}
-        <div className="lg:hidden absolute inset-0 flex flex-col">
-          {/* Mobile Logo */}
-          <div className="flex-1 flex items-center justify-center pt-16">
-            <div className="text-center text-white">
-              <img 
-                src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
-                alt="STEM for Society Logo" 
-                className="h-24 w-24 mx-auto mb-4 opacity-50"
-              />
-              <h1 className="text-2xl font-bold mb-2">STEM FOR SOCIETY</h1>
-              <p className="text-sm">Let's Innovate, Incubate and Impact!</p>
-            </div>
+      {/* Mobile Layout */}
+      <div className="lg:hidden relative z-10 min-h-screen flex flex-col">
+        {/* Mobile Logo */}
+        <div className="flex-1 flex items-center justify-center pt-16">
+          <div className="text-center text-white">
+            <img 
+              src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
+              alt="STEM for Society Logo" 
+              className="h-24 w-24 mx-auto mb-4 opacity-50"
+            />
+            <h1 className="text-2xl font-bold mb-2">STEM FOR SOCIETY</h1>
+            <p className="text-sm">Let's Innovate, Incubate and Impact!</p>
           </div>
-          
-          {/* Mobile Content with white overlay and curved corners */}
-          <div className="flex-1 relative">
-            <div className="absolute inset-0 bg-white/90 rounded-t-3xl"></div>
-            <div className="relative z-10 max-h-[60vh] overflow-y-auto flex items-start justify-center px-4 pt-8 pb-4">
-              <div className="w-full max-w-sm">
-                <div className="text-center mb-6">
-                  <h1 className="text-2xl font-bold text-gray-800 mb-1">
-                    Select your Role
-                  </h1>
-                  <p className="text-gray-600 text-sm">
-                    Choose your partner type
-                  </p>
-                </div>
+        </div>
+        
+        {/* Mobile Content with white overlay and curved corners */}
+        <div className="flex-1 relative">
+          <div className="absolute inset-0 bg-white/90 rounded-t-3xl"></div>
+          <div className="relative z-10 max-h-[60vh] overflow-y-auto flex items-start justify-center px-4 pt-8 pb-4">
+            <div className="w-full max-w-sm">
+              <div className="text-center mb-6">
+                <h1 className="text-2xl font-bold text-gray-800 mb-1">
+                  Select your Role
+                </h1>
+                <p className="text-gray-600 text-sm">
+                  Choose your partner type
+                </p>
+              </div>
 
-                <div className="space-y-4">
-                  <Link to="/campus-ambassador-signup" className="block">
-                    <div className="bg-white border border-gray-200 rounded-xl p-4 hover:bg-gray-50 transition-colors cursor-pointer relative">
-                      <ArrowWithTail />
-                      <div className="pr-8">
-                        <h3 className="font-bold text-gray-800 text-sm mb-2">Become a Campus Ambassador</h3>
-                        <p className="text-gray-600 text-xs leading-relaxed">
-                          Promote STEM programs within your campus and build your leadership profile.
-                        </p>
-                      </div>
+              <div className="space-y-4">
+                <Link to="/campus-ambassador-signup" className="block">
+                  <div className="bg-white border border-gray-200 rounded-xl p-4 hover:bg-gray-50 transition-colors cursor-pointer relative">
+                    <ArrowWithTail />
+                    <div className="pr-8">
+                      <h3 className="font-bold text-gray-800 text-sm mb-2">Become a Campus Ambassador</h3>
+                      <p className="text-gray-600 text-xs leading-relaxed">
+                        Promote STEM programs within your campus and build your leadership profile.
+                      </p>
                     </div>
-                  </Link>
+                  </div>
+                </Link>
 
-                  <Link to="/partner-institution-signup" className="block">
-                    <div className="bg-white border border-gray-200 rounded-xl p-4 hover:bg-gray-50 transition-colors cursor-pointer relative">
-                      <ArrowWithTail />
-                      <div className="pr-8">
-                        <h3 className="font-bold text-gray-800 text-sm mb-2">Partner Institution Portal</h3>
-                        <p className="text-gray-600 text-xs leading-relaxed">
-                          Manage collaborations and access insights for your students' growth.
-                        </p>
-                      </div>
+                <Link to="/partner-institution-signup" className="block">
+                  <div className="bg-white border border-gray-200 rounded-xl p-4 hover:bg-gray-50 transition-colors cursor-pointer relative">
+                    <ArrowWithTail />
+                    <div className="pr-8">
+                      <h3 className="font-bold text-gray-800 text-sm mb-2">Partner Institution Portal</h3>
+                      <p className="text-gray-600 text-xs leading-relaxed">
+                        Manage collaborations and access insights for your students' growth.
+                      </p>
                     </div>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
+              </div>
 
-                <div className="text-center mt-6">
-                  <Link to="/login" className="text-blue-600 hover:text-blue-700 hover:underline font-semibold text-sm">
-                    Back to Login
-                  </Link>
-                </div>
+              <div className="text-center mt-6">
+                <Link to="/login" className="text-blue-600 hover:text-blue-700 hover:underline font-semibold text-sm">
+                  Back to Login
+                </Link>
               </div>
             </div>
           </div>

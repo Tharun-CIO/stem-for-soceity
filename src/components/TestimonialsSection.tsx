@@ -52,7 +52,7 @@ const TestimonialsSection = () => {
           <div className="flex animate-scroll space-x-4">
             {/* First set of testimonials */}
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="flex-shrink-0 w-72 md:w-80 p-3 md:p-4" style={{ backgroundColor: '#C0E1FF' }}>
+              <Card key={index} className="flex-shrink-0 w-72 md:w-80 p-3 md:p-4 rounded-xl" style={{ backgroundColor: '#C0E1FF' }}>
                 <CardContent className="p-0">
                   <div className="flex mb-2">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -67,7 +67,7 @@ const TestimonialsSection = () => {
             ))}
             {/* Duplicate set for seamless scrolling */}
             {testimonials.map((testimonial, index) => (
-              <Card key={`duplicate-${index}`} className="flex-shrink-0 w-72 md:w-80 p-3 md:p-4" style={{ backgroundColor: '#C0E1FF' }}>
+              <Card key={`duplicate-${index}`} className="flex-shrink-0 w-72 md:w-80 p-3 md:p-4 rounded-xl" style={{ backgroundColor: '#C0E1FF' }}>
                 <CardContent className="p-0">
                   <div className="flex mb-2">
                     {[...Array(testimonial.rating)].map((_, i) => (

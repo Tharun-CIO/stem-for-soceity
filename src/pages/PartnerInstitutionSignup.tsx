@@ -40,6 +40,12 @@ const PartnerInstitutionSignup = () => {
     }
   };
 
+  const handleBack = () => {
+    if (currentStep > 1) {
+      setCurrentStep(currentStep - 1);
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Partner Institution signup:", formData);
@@ -51,15 +57,33 @@ const PartnerInstitutionSignup = () => {
 
   const StepIndicator = ({ currentStep, totalSteps }: { currentStep: number, totalSteps: number }) => (
     <div className="flex justify-center mb-6">
-      <div className="flex space-x-2">
-        {Array.from({ length: totalSteps }, (_, index) => (
-          <div
-            key={index}
-            className={`w-3 h-3 rounded-full ${
-              index + 1 <= currentStep ? 'bg-blue-600' : 'bg-gray-300'
-            }`}
-          />
-        ))}
+      <div className="flex items-center space-x-4">
+        {Array.from({ length: totalSteps }, (_, index) => {
+          const stepNumber = index + 1;
+          const isActive = stepNumber === currentStep;
+          const isCompleted = stepNumber < currentStep;
+          
+          return (
+            <div key={stepNumber} className="flex items-center">
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
+                isActive 
+                  ? 'bg-[#0389FF] text-white' 
+                  : isCompleted 
+                    ? 'bg-green-500 text-white' 
+                    : 'bg-gray-300 text-gray-600'
+              }`}>
+                {stepNumber}
+              </div>
+              {stepNumber < totalSteps && (
+                <div className={`w-16 h-0.5 ${
+                  isCompleted || stepNumber === currentStep 
+                    ? 'bg-[#0389FF] bg-opacity-30' 
+                    : 'bg-gray-300'
+                }`}></div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -170,7 +194,7 @@ const PartnerInstitutionSignup = () => {
                 type="button" 
                 size="sm" 
                 onClick={sendOTP}
-                className="bg-blue-600 hover:bg-blue-700 rounded-xl"
+                className="bg-[#0389FF] hover:bg-[#0389FF]/90 rounded-xl"
               >
                 Send OTP
               </Button>
@@ -178,7 +202,7 @@ const PartnerInstitutionSignup = () => {
             
             <div>
               <Input
-                placeholder="Send OTP"
+                placeholder="Enter OTP"
                 value={formData.otp}
                 onChange={(e) => handleInputChange('otp', e.target.value)}
                 className="bg-white/80 rounded-xl"
@@ -204,10 +228,10 @@ const PartnerInstitutionSignup = () => {
                 G
               </button>
               <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md">
-                @
+                L
               </button>
               <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md">
-                f
+                F
               </button>
             </div>
           </div>
@@ -246,7 +270,7 @@ const PartnerInstitutionSignup = () => {
               />
               <label htmlFor="terms" className="text-sm text-gray-600">
                 I accept{" "}
-                <Link to="/terms" className="text-blue-600 hover:underline">
+                <Link to="/terms" className="text-[#0389FF] hover:underline">
                   the terms and conditions
                 </Link>
                 .
@@ -280,35 +304,48 @@ const PartnerInstitutionSignup = () => {
           
           {renderStepContent()}
 
-          <div className="space-y-4">
+          <div className="flex justify-between space-x-4">
+            {currentStep > 1 && (
+              <Button
+                type="button"
+                onClick={handleBack}
+                variant="outline"
+                className="px-6 rounded-xl border-[#0389FF] text-[#0389FF] hover:bg-[#0389FF] hover:text-white"
+              >
+                Back
+              </Button>
+            )}
+            
+            <div className="flex-1" />
+            
             {currentStep < 3 ? (
               <Button
                 type="button"
                 onClick={handleNext}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl"
+                className="bg-[#0389FF] hover:bg-[#0389FF]/90 text-white px-6 rounded-xl"
               >
                 CONTINUE
               </Button>
             ) : (
               <Button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl"
+                className="bg-[#0389FF] hover:bg-[#0389FF]/90 text-white px-6 rounded-xl"
                 disabled={!formData.acceptTerms}
               >
                 SIGN UP
               </Button>
             )}
           </div>
-
-          <div className="text-center">
-            <p className="text-sm text-gray-600">
-              Already have an account?{" "}
-              <Link to="/login" className="text-blue-600 hover:text-blue-700 hover:underline font-semibold">
-                login
-              </Link>
-            </p>
-          </div>
         </form>
+
+        <div className="text-center mt-6">
+          <p className="text-sm text-gray-600">
+            Already have an account?{" "}
+            <Link to="/login" className="text-[#0389FF] hover:text-[#0389FF]/80 hover:underline font-semibold">
+              login
+            </Link>
+          </p>
+        </div>
       </div>
     </SignupLayout>
   );

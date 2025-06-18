@@ -17,7 +17,7 @@ const ProgramStructure = () => {
       hoverSubtitle: "Stay Connected with Industry Trends",
       hoverDuration: "Weekly Sessions",
       hoverFeatures: ["Live Q&A", "Expert Networking"],
-      icon: <BookOpen className="h-5 w-5 text-blue-600" />,
+      icon: <BookOpen className="h-5 w-5 text-[#0389FF]" />,
       expandedContent: {
         description: "Join our regular seminars and webinars to stay updated with the latest industry trends and connect with experts.",
         highlights: ["Expert speakers", "Interactive sessions", "Networking opportunities", "Certificate of participation"]
@@ -31,7 +31,7 @@ const ProgramStructure = () => {
       hoverSubtitle: "Foundation Skills Development",
       hoverDuration: "Self-Paced Learning",
       hoverFeatures: ["24/7 Support", "Lifetime Access"],
-      icon: <Award className="h-5 w-5 text-blue-600" />,
+      icon: <Award className="h-5 w-5 text-[#0389FF]" />,
       expandedContent: {
         description: "Get certified with our comprehensive basic programs designed for beginners and professionals looking to upskill.",
         highlights: ["Industry-recognized certificate", "Self-paced learning", "24/7 support", "Lifetime access"]
@@ -45,7 +45,7 @@ const ProgramStructure = () => {
       hoverSubtitle: "Team Excellence Programs",
       hoverDuration: "Intensive Bootcamp",
       hoverFeatures: ["Custom Curriculum", "Team Assessment"],
-      icon: <Users className="h-5 w-5 text-blue-600" />,
+      icon: <Users className="h-5 w-5 text-[#0389FF]" />,
       expandedContent: {
         description: "Intensive corporate training programs designed to enhance team skills and organizational capabilities.",
         highlights: ["Customized curriculum", "Team assessments", "Progress tracking", "Corporate certification"]
@@ -59,7 +59,7 @@ const ProgramStructure = () => {
       hoverSubtitle: "Professional Lab Experience",
       hoverDuration: "Intensive Practical",
       hoverFeatures: ["Real Equipment", "Expert Mentorship"],
-      icon: <TestTube className="h-5 w-5 text-blue-600" />,
+      icon: <TestTube className="h-5 w-5 text-[#0389FF]" />,
       expandedContent: {
         description: "Advanced hands-on training with real instruments and equipment for practical learning experience.",
         highlights: ["Real equipment training", "Lab access", "Expert mentorship", "Project-based learning"]
@@ -86,7 +86,7 @@ const ProgramStructure = () => {
         <h2 className="text-2xl font-bold text-center mb-6">Program Structure</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {programStructure.map((program, index) => (
-            <Card key={index} className="p-4 bg-white border border-gray-200 rounded-lg relative transition-all duration-300 hover:shadow-md hover:bg-blue-600 group cursor-pointer">
+            <Card key={index} className="p-4 bg-white border border-gray-200 rounded-xl relative transition-all duration-300 hover:shadow-md hover:bg-[#0389FF] group cursor-pointer">
               <ArrowWithTail />
               <CardContent className="p-0">
                 <div className="flex items-center mb-3">
@@ -140,12 +140,12 @@ const ProgramStructure = () => {
 
                 {/* Expanded Content */}
                 {expandedCard === index && (
-                  <div className="mb-3 p-3 bg-blue-50 group-hover:bg-blue-500 rounded-lg animate-fade-in transition-colors">
+                  <div className="mb-3 p-3 bg-blue-50 group-hover:bg-blue-500 rounded-xl animate-fade-in transition-colors">
                     <p className="text-xs text-gray-700 group-hover:text-blue-100 mb-2">{program.expandedContent.description}</p>
                     <div className="space-y-1">
                       {program.expandedContent.highlights.map((highlight, idx) => (
                         <div key={idx} className="flex items-center text-xs text-gray-600 group-hover:text-blue-100">
-                          <div className="w-1 h-1 bg-blue-500 group-hover:bg-blue-200 rounded-full mr-2"></div>
+                          <div className="w-1 h-1 bg-[#0389FF] group-hover:bg-blue-200 rounded-full mr-2"></div>
                           {highlight}
                         </div>
                       ))}
@@ -157,7 +157,7 @@ const ProgramStructure = () => {
                   <Button 
                     variant="outline" 
                     size="sm" 
-                    className="flex-1 text-xs py-2 h-8 group-hover:bg-transparent group-hover:border-white group-hover:text-white transition-colors"
+                    className="flex-1 text-xs py-2 h-8 rounded-xl group-hover:bg-transparent group-hover:border-white group-hover:text-white transition-colors"
                     onClick={() => toggleExpanded(index)}
                   >
                     <span className="mr-1">More info</span>
@@ -170,7 +170,7 @@ const ProgramStructure = () => {
                   {expandedCard === index && (
                     <Button 
                       size="sm" 
-                      className="text-xs py-2 h-8 bg-blue-500 hover:bg-blue-600 group-hover:bg-white group-hover:text-blue-600 transition-colors"
+                      className="text-xs py-2 h-8 bg-[#0389FF] hover:bg-[#0389FF]/90 group-hover:bg-white group-hover:text-[#0389FF] transition-colors rounded-xl"
                     >
                       START LEARNING
                     </Button>
