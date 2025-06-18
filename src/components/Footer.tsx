@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 
@@ -11,9 +12,9 @@ const Footer = () => {
           {/* Left Section - Logo and Address */}
           <div className="lg:w-1/4 space-y-4">
             {/* Logo and Brand */}
-            <div className="p-4 rounded-lg">
+            <div className="p-4 rounded-xl">
               <div className="flex items-center space-x-3 mb-2">
-                <div className="h-16 w-16 rounded-lg bg-white/10 flex items-center justify-center p-2">
+                <div className="h-16 w-16 rounded-xl bg-white/10 flex items-center justify-center p-2">
                   <img 
                     src="/lovable-uploads/b0da6a24-f85c-48ba-8f2f-2fce65f2f2d1.png" 
                     alt="STEM for Society Logo" 
@@ -41,9 +42,9 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold mb-3 text-white">PROGRAMS</h4>
               <ul className="space-y-2 text-blue-100">
-                <li><a href="#" className="hover:text-white transition-colors">Explore Courses</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Psychology counselling</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Career counselling</a></li>
+                <li><a href="#" className="hover:text-white transition-colors rounded-xl">Explore Courses</a></li>
+                <li><a href="#" className="hover:text-white transition-colors rounded-xl">Psychology counselling</a></li>
+                <li><a href="#" className="hover:text-white transition-colors rounded-xl">Career counselling</a></li>
               </ul>
             </div>
 
@@ -51,8 +52,8 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold mb-3 text-white">FOR INSTITUTIONS</h4>
               <ul className="space-y-2 text-blue-100">
-                <li><a href="#" className="hover:text-white transition-colors">Plans and pricings</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Campus Ambassador Program</a></li>
+                <li><a href="#" className="hover:text-white transition-colors rounded-xl">Plans and pricings</a></li>
+                <li><a href="#" className="hover:text-white transition-colors rounded-xl">Campus Ambassador Program</a></li>
               </ul>
             </div>
 
@@ -60,9 +61,9 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold mb-3 text-white">COMMUNITY</h4>
               <ul className="space-y-2 text-blue-100">
-                <li><a href="#" className="hover:text-white transition-colors">Join Community</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Scientific Communication Blog</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Our Youtube Channel</a></li>
+                <li><a href="#" className="hover:text-white transition-colors rounded-xl">Join Community</a></li>
+                <li><a href="#" className="hover:text-white transition-colors rounded-xl">Scientific Communication Blog</a></li>
+                <li><a href="#" className="hover:text-white transition-colors rounded-xl">Our Youtube Channel</a></li>
               </ul>
             </div>
 
@@ -70,8 +71,8 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold mb-3 text-white">QUICK LINKS</h4>
               <ul className="space-y-2 text-blue-100">
-                <li><a href="#" className="hover:text-white transition-colors">Register</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Login</a></li>
+                <li><a href="#" className="hover:text-white transition-colors rounded-xl">Register</a></li>
+                <li><a href="#" className="hover:text-white transition-colors rounded-xl">Login</a></li>
               </ul>
             </div>
           </div>
@@ -84,17 +85,17 @@ const Footer = () => {
                 <label className="block text-sm text-blue-100 mb-1">First name</label>
                 <input
                   type="text"
-                  className="w-full px-3 py-2 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-300 text-sm"
+                  className="w-full px-3 py-2 rounded-xl bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-300 text-sm transition-all duration-300"
                 />
               </div>
               <div>
                 <label className="block text-sm text-blue-100 mb-1">Email</label>
                 <input
                   type="email"
-                  className="w-full px-3 py-2 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-300 text-sm"
+                  className="w-full px-3 py-2 rounded-xl bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-300 text-sm transition-all duration-300"
                 />
               </div>
-              <Button className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-2 rounded-lg font-medium text-sm w-full">
+              <Button className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-2 rounded-xl font-medium text-sm w-full transition-all duration-300 hover:scale-105">
                 Subscribe
               </Button>
             </div>
@@ -103,22 +104,22 @@ const Footer = () => {
 
         {/* Social Media Icons - Above the line */}
         <div className="flex justify-center space-x-4 mt-8 mb-6">
-          <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+          <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-all duration-300 hover:scale-110">
             <Twitter className="h-5 w-5 text-blue-600" />
           </a>
-          <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+          <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-all duration-300 hover:scale-110">
             <Instagram className="h-5 w-5 text-blue-600" />
           </a>
-          <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+          <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-all duration-300 hover:scale-110">
             <Linkedin className="h-5 w-5 text-blue-600" />
           </a>
-          <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+          <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-all duration-300 hover:scale-110">
             <Youtube className="h-5 w-5 text-blue-600" />
           </a>
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-blue-400 pt-6">
+        <div className="border-t border-blue-400 pt-6 rounded-t-xl">
           {/* Copyright */}
           <div className="text-center text-sm text-blue-100">
             © 2025 STEM for society. All rights reserved.

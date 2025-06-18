@@ -77,7 +77,7 @@ const HeroSection = () => {
         </p>
         
         <Link to="/explore-program-dashboard">
-          <Button size="lg" className="mb-12 bg-blue-500 hover:bg-blue-600 px-8 py-4 text-lg rounded-lg">
+          <Button size="lg" className="mb-12 bg-blue-500 hover:bg-blue-600 px-8 py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105">
             EXPLORE OUR PROGRAMS
           </Button>
         </Link>
@@ -87,7 +87,7 @@ const HeroSection = () => {
           {stats.map((stat, index) => {
             const isMiddleCard = index === 1;
             return (
-              <Card key={index} className={`p-4 rounded-2xl border-2 ${isMiddleCard ? 'bg-blue-100 border-blue-200' : 'bg-white border-gray-200'}`}>
+              <Card key={index} className={`p-4 rounded-2xl border-2 transition-all duration-300 hover:scale-105 ${isMiddleCard ? 'bg-blue-100 border-blue-200' : 'bg-white border-gray-200'}`}>
                 <CardContent className="p-0">
                   <div className="flex items-center mb-3">
                     <Badge variant="secondary" className={`rounded-full px-3 py-1 text-sm ${isMiddleCard ? 'bg-blue-200 text-blue-800' : 'bg-gray-100 text-gray-700'}`}>
@@ -116,6 +116,16 @@ const HeroSection = () => {
                       </div>
                     ))}
                   </div>
+
+                  {stat.title === "Discover Our Courses" && (
+                    <div className="mt-4">
+                      <Link to="/courses">
+                        <Button size="sm" className="w-full bg-blue-500 hover:bg-blue-600 rounded-xl transition-all duration-300">
+                          Browse Courses
+                        </Button>
+                      </Link>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             );
