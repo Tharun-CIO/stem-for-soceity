@@ -48,10 +48,10 @@ const Signup = () => {
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-20"></div>
       
-      {/* Main Content Container */}
-      <div className="relative z-10 min-h-screen flex">
+      {/* Desktop Layout - Hidden on mobile */}
+      <div className="hidden lg:flex relative z-10 min-h-screen">
         {/* Left Section - Logo */}
-        <div className="hidden lg:flex lg:w-1/2 relative items-center justify-center">
+        <div className="lg:w-1/2 relative items-center justify-center flex">
           <div className="text-center text-white mt-16">
             <img 
               src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
@@ -64,9 +64,9 @@ const Signup = () => {
         </div>
 
         {/* Right Section - Signup Form */}
-        <div className="w-full lg:w-1/2 relative">
+        <div className="lg:w-1/2 relative">
           {/* White transparent overlay with curved left corner */}
-          <div className="absolute inset-0 bg-white/90 lg:rounded-l-3xl"></div>
+          <div className="absolute inset-0 bg-white/90 rounded-l-3xl"></div>
           
           {/* Form Container with scroll */}
           <div className="relative z-10 h-full max-h-screen overflow-y-auto flex items-center justify-center px-4 md:px-8 py-8">
@@ -177,7 +177,7 @@ const Signup = () => {
                 
                 <Button 
                   type="submit" 
-                  className="w-full h-10 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base transition-all duration-200 transform hover:scale-[1.02] mt-6"
+                  className="w-full h-10 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base transition-all duration-200 transform hover:scale-[1.02] mt-6 rounded-lg"
                 >
                   SIGN UP
                 </Button>
@@ -193,7 +193,7 @@ const Signup = () => {
                 </div>
               </div>
               
-              {/* Social Sign Up Buttons */}
+              {/* Social Sign Up Buttons - 3 Circular Buttons */}
               <div className="flex justify-center space-x-4 mb-4">
                 <Button variant="outline" className="h-10 w-10 rounded-full bg-white border-gray-200 hover:bg-gray-50 p-0">
                   <svg className="w-4 h-4" viewBox="0 0 24 24">
@@ -228,105 +228,105 @@ const Signup = () => {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Layout */}
-        <div className="lg:hidden absolute inset-0 flex flex-col">
-          {/* Mobile Logo */}
-          <div className="flex-1 flex items-center justify-center pt-20">
-            <div className="text-center text-white">
-              <img 
-                src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
-                alt="STEM for Society Logo" 
-                className="h-24 w-24 mx-auto mb-4 opacity-50"
-              />
-              <h1 className="text-2xl font-bold mb-2">STEM FOR SOCIETY</h1>
-              <p className="text-sm">Join us to Innovate, Incubate and Impact!</p>
-            </div>
+      {/* Mobile Layout - Only visible on mobile */}
+      <div className="lg:hidden relative z-10 min-h-screen flex flex-col">
+        {/* Mobile Logo */}
+        <div className="flex-1 flex items-center justify-center pt-20">
+          <div className="text-center text-white">
+            <img 
+              src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
+              alt="STEM for Society Logo" 
+              className="h-24 w-24 mx-auto mb-4 opacity-50"
+            />
+            <h1 className="text-2xl font-bold mb-2">STEM FOR SOCIETY</h1>
+            <p className="text-sm">Join us to Innovate, Incubate and Impact!</p>
           </div>
-          
-          {/* Mobile Form with white overlay and curved corners */}
-          <div className="flex-1 relative">
-            <div className="absolute inset-0 bg-white/90 rounded-t-3xl"></div>
-            <div className="relative z-10 max-h-[60vh] overflow-y-auto flex items-start justify-center px-4 pt-8 pb-4">
-              <div className="w-full max-w-sm">
-                {/* Mobile simplified form */}
-                <div className="text-center mb-4">
-                  <h1 className="text-2xl font-bold text-gray-800 mb-1">
-                    Create Account
-                  </h1>
-                  <p className="text-gray-600 text-sm">
-                    Enter your details to proceed
-                  </p>
-                </div>
-                <form onSubmit={handleSubmit} className="space-y-3">
-                  <div className="space-y-1">
-                    <Label htmlFor="mobileName" className="text-gray-700 font-medium text-sm">
-                      Name
-                    </Label>
-                    <Input
-                      id="mobileName"
-                      name="name"
-                      type="text"
-                      placeholder="Your name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="h-9 bg-white border-gray-300 text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
-                      required
-                    />
-                  </div>
-
-                  <div className="space-y-1">
-                    <Label htmlFor="mobileEmail" className="text-gray-700 font-medium text-sm">
-                      Email
-                    </Label>
-                    <Input
-                      id="mobileEmail"
-                      name="email"
-                      type="email"
-                      placeholder="Your email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="h-9 bg-white border-gray-300 text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
-                      required
-                    />
-                  </div>
-
-                  <div className="space-y-1">
-                    <Label htmlFor="mobilePassword" className="text-gray-700 font-medium text-sm">
-                      Password
-                    </Label>
-                    <Input
-                      id="mobilePassword"
-                      name="password"
-                      type="password"
-                      placeholder="Your password"
-                      value={formData.password}
-                      onChange={handleChange}
-                      className="h-9 bg-white border-gray-300 text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
-                      required
-                    />
-                  </div>
-                  
-                  <div className="flex items-center space-x-2 py-2">
-                    <Checkbox 
-                      id="mobileTerms"
-                      checked={formData.acceptTerms}
-                      onCheckedChange={handleCheckboxChange}
-                      className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                    />
-                    <Label htmlFor="mobileTerms" className="text-sm text-gray-600 cursor-pointer">
-                      I accept the terms
-                    </Label>
-                  </div>
-                  
-                  <Button 
-                    type="submit" 
-                    className="w-full h-9 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base transition-all duration-200 transform hover:scale-[1.02] mt-4"
-                  >
-                    Sign Up
-                  </Button>
-                </form>
+        </div>
+        
+        {/* Mobile Form with white overlay and curved corners */}
+        <div className="flex-1 relative">
+          <div className="absolute inset-0 bg-white/90 rounded-t-3xl"></div>
+          <div className="relative z-10 max-h-[60vh] overflow-y-auto flex items-start justify-center px-4 pt-8 pb-4">
+            <div className="w-full max-w-sm">
+              {/* Mobile simplified form */}
+              <div className="text-center mb-4">
+                <h1 className="text-2xl font-bold text-gray-800 mb-1">
+                  Create Account
+                </h1>
+                <p className="text-gray-600 text-sm">
+                  Enter your details to proceed
+                </p>
               </div>
+              <form onSubmit={handleSubmit} className="space-y-3">
+                <div className="space-y-1">
+                  <Label htmlFor="mobileName" className="text-gray-700 font-medium text-sm">
+                    Name
+                  </Label>
+                  <Input
+                    id="mobileName"
+                    name="name"
+                    type="text"
+                    placeholder="Your name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="h-9 bg-white border-gray-300 text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <Label htmlFor="mobileEmail" className="text-gray-700 font-medium text-sm">
+                    Email
+                  </Label>
+                  <Input
+                    id="mobileEmail"
+                    name="email"
+                    type="email"
+                    placeholder="Your email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="h-9 bg-white border-gray-300 text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <Label htmlFor="mobilePassword" className="text-gray-700 font-medium text-sm">
+                    Password
+                  </Label>
+                  <Input
+                    id="mobilePassword"
+                    name="password"
+                    type="password"
+                    placeholder="Your password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    className="h-9 bg-white border-gray-300 text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+                
+                <div className="flex items-center space-x-2 py-2">
+                  <Checkbox 
+                    id="mobileTerms"
+                    checked={formData.acceptTerms}
+                    onCheckedChange={handleCheckboxChange}
+                    className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  />
+                  <Label htmlFor="mobileTerms" className="text-sm text-gray-600 cursor-pointer">
+                    I accept the terms
+                  </Label>
+                </div>
+                
+                <Button 
+                  type="submit" 
+                  className="w-full h-9 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base transition-all duration-200 transform hover:scale-[1.02] mt-4 rounded-lg"
+                >
+                  Sign Up
+                </Button>
+              </form>
             </div>
           </div>
         </div>

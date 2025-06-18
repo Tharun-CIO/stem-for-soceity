@@ -17,8 +17,8 @@ const Login = () => {
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-20"></div>
       
-      {/* Main Content Container */}
-      <div className="relative z-10 min-h-screen">
+      {/* Desktop Layout - Hidden on mobile */}
+      <div className="hidden md:block relative z-10 min-h-screen">
         <LoginStages>
           {(stage) => (
             <>
@@ -75,33 +75,31 @@ const Login = () => {
                   <LoginForm />
                 </div>
               </div>
-
-              {/* Mobile Layout */}
-              <div className={`md:hidden absolute inset-0 transition-all duration-1000 ease-out ${
-                stage === 'logoTransition' ? 'opacity-100' : 'opacity-0'
-              }`}>
-                {/* Mobile Logo */}
-                <div className="flex-1 flex items-center justify-center pt-16">
-                  <img 
-                    src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
-                    alt="STEM for Society Logo" 
-                    className="h-24 w-24 object-contain animate-pulse-glow-delayed opacity-50"
-                  />
-                </div>
-                
-                {/* Mobile Form with white overlay and curved corners */}
-                <div className="flex-1 relative">
-                  <div className="absolute inset-0 bg-white/90 rounded-t-3xl"></div>
-                  <div className="relative z-10 max-h-[60vh] overflow-y-auto flex items-start justify-center px-4 pt-8 pb-4">
-                    <div className="w-full max-w-sm">
-                      <LoginForm />
-                    </div>
-                  </div>
-                </div>
-              </div>
             </>
           )}
         </LoginStages>
+      </div>
+
+      {/* Mobile Layout - Only visible on mobile */}
+      <div className="md:hidden relative z-10 min-h-screen flex flex-col">
+        {/* Mobile Logo */}
+        <div className="flex-1 flex items-center justify-center pt-16">
+          <img 
+            src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
+            alt="STEM for Society Logo" 
+            className="h-24 w-24 object-contain animate-pulse-glow-delayed opacity-50"
+          />
+        </div>
+        
+        {/* Mobile Form with white overlay and curved corners */}
+        <div className="flex-1 relative">
+          <div className="absolute inset-0 bg-white/90 rounded-t-3xl"></div>
+          <div className="relative z-10 max-h-[60vh] overflow-y-auto flex items-start justify-center px-4 pt-8 pb-4">
+            <div className="w-full max-w-sm">
+              <LoginForm />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

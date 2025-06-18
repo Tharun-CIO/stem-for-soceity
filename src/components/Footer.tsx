@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 
@@ -14,13 +13,12 @@ const Footer = () => {
             {/* Logo and Brand */}
             <div className="p-4 rounded-lg">
               <div className="flex items-center space-x-3 mb-2">
-                <div className="h-10 w-10 rounded-lg bg-white/10 flex items-center justify-center">
-                  <svg width="84" height="85" viewBox="0 0 84 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M24.4619 41.3662L25.6298 39.0822C26.3827 39.6531 27.4987 40.1592 28.7964 40.1592C29.2507 40.1592 29.5232 40.0555 29.5232 39.8219C29.5232 39.4714 29.0041 39.4455 28.3293 39.3287C26.9277 39.0951 24.8901 38.7317 24.8901 36.5774C24.8901 34.6177 26.5382 33.6963 28.8354 33.6963C30.795 33.6963 31.9631 34.3192 32.4692 34.6567L31.2883 36.876C30.7042 36.5124 29.6271 36.1102 28.6018 36.1102C28.1346 36.1102 27.9139 36.214 27.9139 36.4217C27.9139 36.7072 28.2645 36.7331 28.7964 36.837C30.1461 37.0965 32.586 37.369 32.586 39.6401C32.586 41.496 31.1584 42.6641 28.5239 42.6641C26.9146 42.6641 25.4093 42.1059 24.4619 41.3662Z" fill="#0389FF"/>
-                    <path d="M35.4016 36.364H33.0137V33.8332H40.7875V36.364H38.3995V42.5156H35.4016V36.364Z" fill="#0389FF"/>
-                    <path d="M44.5121 40.0238H48.3666V42.5156H41.6309V33.8332H48.2238V36.3251H44.5121V37.0388H48.12V39.297H44.5121V40.0238Z" fill="#0389FF"/>
-                    <path d="M57.0746 33.8332H59.9426V42.5156H57.0746V38.8169L55.7119 40.9841H53.778L52.4024 38.8038V42.5156H49.5342V33.8332H52.4153L54.7255 37.7656L57.0746 33.8332Z" fill="#0389FF"/>
-                  </svg>
+                <div className="h-16 w-16 rounded-lg bg-white/10 flex items-center justify-center p-2">
+                  <img 
+                    src="/lovable-uploads/b0da6a24-f85c-48ba-8f2f-2fce65f2f2d1.png" 
+                    alt="STEM for Society Logo" 
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div>
                   <div className="text-lg font-bold">STEM FOR SOCIETY</div>

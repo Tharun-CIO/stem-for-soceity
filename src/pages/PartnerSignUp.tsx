@@ -1,10 +1,8 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Link } from "react-router-dom";
-import SignupLayout from "@/components/ui/SignupLayout";
 import StepIndicator from "@/components/ui/StepIndicator";
 
 const PartnerSignUp = () => {
@@ -64,7 +62,7 @@ const PartnerSignUp = () => {
                 placeholder="Enter the institution name"
                 value={formData.institutionName}
                 onChange={(e) => handleInputChange('institutionName', e.target.value)}
-                className="bg-white/80"
+                className="bg-white/80 rounded-lg"
               />
             </div>
             
@@ -247,56 +245,162 @@ const PartnerSignUp = () => {
   };
 
   return (
-    <SignupLayout 
-      title="Partner with us to make an impact" 
-      subtitle="Let's Partner and Impact!"
-    >
-      <div className="w-full max-w-md mx-auto">
-        <div className="text-center mb-6">
-          <h1 className="text-2xl font-bold text-gray-800 mb-2">Partner with us</h1>
-          <p className="text-gray-600 text-sm">
-            {currentStep === 1 && "Enter your details to proceed further"}
-            {currentStep === 2 && "Enter your credentials to proceed further"}
-            {currentStep === 3 && "Enter your credentials to proceed further"}
-          </p>
-        </div>
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Animated Background */}
+      <div 
+        className="absolute inset-0 bg-cover animate-subtle-zoom"
+        style={{
+          backgroundImage: `url("/lovable-uploads/cc0094aa-ced3-4e50-b5f1-d61b7b6d2988.png")`,
+          backgroundPosition: 'center 75%',
+        }}
+      />
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <StepIndicator currentStep={currentStep} totalSteps={3} />
-          
-          {renderStepContent()}
+      {/* Background Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-20"></div>
 
-          <div className="space-y-4">
-            {currentStep < 3 ? (
-              <Button
-                type="button"
-                onClick={handleNext}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
-              >
-                CONTINUE
-              </Button>
-            ) : (
-              <Button
-                type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
-                disabled={!formData.acceptTerms}
-              >
-                SIGN UP
-              </Button>
-            )}
-          </div>
-
-          <div className="text-center">
-            <p className="text-sm text-gray-600">
-              Already have an account?{" "}
-              <Link to="/login" className="text-blue-600 hover:text-blue-700 hover:underline font-semibold">
-                login
-              </Link>
+      {/* Desktop Layout - Hidden on mobile */}
+      <div className="hidden lg:flex relative z-10 min-h-screen">
+        {/* Left Section - Logo (Desktop Only) */}
+        <div className="lg:w-1/2 relative items-center justify-center flex">
+          <div className="text-center text-white">
+            <img 
+              src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
+              alt="STEM for Society Logo" 
+              className="h-40 w-40 md:h-56 md:w-56 lg:h-72 lg:w-72 opacity-50 mx-auto mb-8 animate-pulse-glow-delayed"
+            />
+            <h1 className="text-4xl font-bold mb-4">STEM FOR SOCIETY</h1>
+            <p className="text-xl">
+              Join us to Partner with us to make an impact
             </p>
           </div>
-        </form>
+        </div>
+
+        {/* Right Section - Form with White Transparent Background and Curved Left Corner */}
+        <div className="lg:w-1/2 relative min-h-screen">
+          {/* White transparent overlay with curved left corner - full coverage */}
+          <div className="absolute inset-0 bg-white/90 rounded-l-3xl"></div>
+          
+          {/* Form Container with scroll */}
+          <div className="relative z-10 h-full min-h-screen overflow-y-auto flex items-center justify-center px-4 md:px-8 py-8">
+            <div className="w-full max-w-md">
+              <div className="text-center mb-6">
+                <h1 className="text-2xl font-bold text-gray-800 mb-2">Partner with us</h1>
+                <p className="text-gray-600 text-sm">
+                  {currentStep === 1 && "Enter your details to proceed further"}
+                  {currentStep === 2 && "Enter your credentials to proceed further"}
+                  {currentStep === 3 && "Enter your credentials to proceed further"}
+                </p>
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <StepIndicator currentStep={currentStep} totalSteps={3} />
+                
+                {renderStepContent()}
+
+                <div className="space-y-4">
+                  {currentStep < 3 ? (
+                    <Button
+                      type="button"
+                      onClick={handleNext}
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg"
+                    >
+                      CONTINUE
+                    </Button>
+                  ) : (
+                    <Button
+                      type="submit"
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg"
+                      disabled={!formData.acceptTerms}
+                    >
+                      SIGN UP
+                    </Button>
+                  )}
+                </div>
+
+                <div className="text-center">
+                  <p className="text-sm text-gray-600">
+                    Already have an account?{" "}
+                    <Link to="/login" className="text-blue-600 hover:text-blue-700 hover:underline font-semibold">
+                      login
+                    </Link>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-    </SignupLayout>
+
+      {/* Mobile Layout - Only visible on mobile */}
+      <div className="lg:hidden relative z-10 min-h-screen flex flex-col">
+        {/* Mobile Logo */}
+        <div className="flex-1 flex items-center justify-center pt-16">
+          <div className="text-center text-white">
+            <img 
+              src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
+              alt="STEM for Society Logo" 
+              className="h-24 w-24 mx-auto mb-4 opacity-50"
+            />
+            <h1 className="text-2xl font-bold mb-2">STEM FOR SOCIETY</h1>
+            <p className="text-sm">
+              Let's Partner and Impact!
+            </p>
+          </div>
+        </div>
+        
+        {/* Mobile Content with white overlay and curved corners - full coverage */}
+        <div className="flex-1 relative">
+          <div className="absolute inset-0 bg-white/90 rounded-t-3xl"></div>
+          <div className="relative z-10 h-full overflow-y-auto flex items-start justify-center px-4 pt-8 pb-4">
+            <div className="w-full max-w-sm">
+              <div className="text-center mb-6">
+                <h1 className="text-xl font-bold text-gray-800 mb-2">Partner with us</h1>
+                <p className="text-gray-600 text-sm">
+                  {currentStep === 1 && "Enter your details to proceed further"}
+                  {currentStep === 2 && "Enter your credentials to proceed further"}
+                  {currentStep === 3 && "Enter your credentials to proceed further"}
+                </p>
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <StepIndicator currentStep={currentStep} totalSteps={3} />
+                
+                {renderStepContent()}
+
+                <div className="space-y-4">
+                  {currentStep < 3 ? (
+                    <Button
+                      type="button"
+                      onClick={handleNext}
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg"
+                    >
+                      CONTINUE
+                    </Button>
+                  ) : (
+                    <Button
+                      type="submit"
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg"
+                      disabled={!formData.acceptTerms}
+                    >
+                      SIGN UP
+                    </Button>
+                  )}
+                </div>
+
+                <div className="text-center">
+                  <p className="text-sm text-gray-600">
+                    Already have an account?{" "}
+                    <Link to="/login" className="text-blue-600 hover:text-blue-700 hover:underline font-semibold">
+                      login
+                    </Link>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

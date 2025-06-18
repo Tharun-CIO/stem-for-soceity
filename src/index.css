@@ -22,6 +22,14 @@
   .animate-pulse-glow-delayed {
     animation: pulse-glow 3s ease-in-out infinite 1s;
   }
+  
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .transition-smooth-slow {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 @keyframes subtle-zoom {
@@ -41,5 +49,22 @@
   50% {
     opacity: 0.8;
     filter: brightness(1.2);
+  }
+}
+
+/* Ensure smooth transitions for all interactive elements */
+button, input, select, textarea {
+  @apply transition-smooth;
+}
+
+/* Smooth hover effects */
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive breakpoint adjustments */
+@media (max-width: 768px) {
+  .transition-smooth {
+    transition: all 0.2s ease-in-out;
   }
 }
