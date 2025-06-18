@@ -150,9 +150,11 @@ const Header = () => {
           
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="hover:scale-105 transition-transform duration-300 font-semibold px-6 py-2 border-2 rounded-xl">
-              Partner with Us
-            </Button>
+            <Link to="/partner-role">
+              <Button variant="outline" className="hover:scale-105 transition-transform duration-300 font-semibold px-6 py-2 border-2 rounded-xl">
+                Partner with Us
+              </Button>
+            </Link>
             <Link to="/login">
               <Button className="bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all duration-300 font-semibold px-6 py-2 shadow-lg rounded-xl">
                 LOGIN
@@ -199,9 +201,11 @@ const Header = () => {
                 Contact
               </Link>
               <div className="pt-4 space-y-3">
-                <Button variant="outline" className="w-full font-semibold rounded-xl">
-                  Partner with Us
-                </Button>
+                <Link to="/partner-role" className="block">
+                  <Button variant="outline" className="w-full font-semibold rounded-xl">
+                    Partner with Us
+                  </Button>
+                </Link>
                 <Link to="/login" className="block">
                   <Button className="w-full bg-blue-600 hover:bg-blue-700 font-semibold rounded-xl">
                     LOGIN

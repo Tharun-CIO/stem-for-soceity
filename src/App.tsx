@@ -30,6 +30,9 @@ import InstitutionBookingFlow from "./pages/InstitutionBookingFlow";
 import ExploreProgramDashboard from "./pages/ExploreProgramDashboard";
 import NotFound from "./pages/NotFound";
 import SelectRole from "./pages/SelectRole";
+import PartnerRole from "./pages/PartnerRole";
+import CampusAmbassadorSignup from "./pages/CampusAmbassadorSignup";
+import PartnerInstitutionSignup from "./pages/PartnerInstitutionSignup";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -80,6 +83,9 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/cover" element={<Cover />} />
               <Route path="/select-role" element={<SelectRole />} />
+              <Route path="/partner-role" element={<PartnerRole />} />
+              <Route path="/campus-ambassador-signup" element={<CampusAmbassadorSignup />} />
+              <Route path="/partner-institution-signup" element={<PartnerInstitutionSignup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/partner-login" element={<PartnerLogin />} />
               <Route path="/institution-login" element={<InstitutionLogin />} />
