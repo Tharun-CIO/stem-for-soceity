@@ -57,7 +57,7 @@ const Login = () => {
                 </h1>
               </div>
 
-              {/* Login Form with White Transparent Background and Curved Left Corner */}
+              {/* Login Form with 50% opacity White Transparent Background and Curved Left Corner */}
               <div className={`absolute right-0 top-0 h-full w-1/2 transition-all duration-[2500ms] ${
                 stage === 'logoTransition' 
                   ? 'translate-x-0 opacity-100' 
@@ -67,8 +67,8 @@ const Login = () => {
                 transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
                 transform: 'translate3d(var(--tw-translate-x), var(--tw-translate-y), 0)'
               }}>
-                {/* White transparent overlay with curved left corner */}
-                <div className="absolute inset-0 bg-white/90 rounded-l-3xl"></div>
+                {/* White transparent overlay with 50% opacity and curved left corner */}
+                <div className="absolute inset-0 bg-white/50 rounded-l-3xl backdrop-blur-sm"></div>
                 
                 {/* Form Container with scroll */}
                 <div className="relative z-10 h-full max-h-screen overflow-y-auto flex items-center justify-center px-4 md:px-8 py-4">
@@ -91,9 +91,9 @@ const Login = () => {
           />
         </div>
         
-        {/* Mobile Form with white overlay and curved corners */}
+        {/* Mobile Form with 50% opacity white overlay and curved corners */}
         <div className="flex-1 relative">
-          <div className="absolute inset-0 bg-white/90 rounded-t-3xl"></div>
+          <div className="absolute inset-0 bg-white/50 rounded-t-3xl backdrop-blur-sm"></div>
           <div className="relative z-10 max-h-[60vh] overflow-y-auto flex items-start justify-center px-4 pt-8 pb-4">
             <div className="w-full max-w-sm">
               <LoginForm />

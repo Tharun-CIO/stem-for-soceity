@@ -23,10 +23,10 @@ const SignupLayout = ({ children, title, subtitle, formBackgroundColor = false }
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-20"></div>
 
-      {/* Main Content Container */}
-      <div className="relative z-10 min-h-screen flex">
-        {/* Left Section - Logo (Desktop Only) */}
-        <div className="hidden lg:flex lg:w-1/2 relative items-center justify-center">
+      {/* Desktop Layout */}
+      <div className="hidden lg:flex min-h-screen relative z-10">
+        {/* Left Section - Logo */}
+        <div className="lg:w-1/2 relative flex items-center justify-center">
           <div className="text-center text-white">
             <img 
               src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
@@ -40,61 +40,71 @@ const SignupLayout = ({ children, title, subtitle, formBackgroundColor = false }
           </div>
         </div>
 
-        {/* Right Section - Form with White Transparent Background and Curved Left Corner */}
-        <div className="w-full lg:w-1/2 relative min-h-screen">
-          {/* White transparent overlay with curved left corner - full coverage */}
-          <div className="absolute inset-0 bg-white/90 rounded-l-3xl"></div>
+        {/* Right Section - Form with 50% opacity and curved left corner */}
+        <div className="lg:w-1/2 relative">
+          {/* White overlay with 50% opacity and curved left corner */}
+          <div className="absolute inset-0 bg-white/50 rounded-l-3xl backdrop-blur-sm"></div>
           
-          {/* Form Container with scroll */}
+          {/* Form Container */}
           <div className="relative z-10 h-full min-h-screen overflow-y-auto flex items-center justify-center px-4 md:px-8 py-8">
             {formBackgroundColor ? (
-              <div className="w-full max-w-md bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">
+              <div className="w-full max-w-md bg-white/30 backdrop-blur-sm rounded-xl p-6 shadow-lg">
                 {children}
               </div>
             ) : (
-              children
+              <div className="w-full max-w-md">
+                {children}
+              </div>
             )}
           </div>
         </div>
       </div>
 
       {/* Mobile Layout */}
-      <div className="lg:hidden absolute inset-0 flex flex-col"
-        style={{
-          backgroundImage: `url("/lovable-uploads/cc0094aa-ced3-4e50-b5f1-d61b7b6d2988.png")`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center bottom',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-        
-        {/* Mobile Logo */}
-        <div className="flex-1 flex items-center justify-center pt-16 relative z-10">
-          <div className="text-center text-white">
-            <img 
-              src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
-              alt="STEM for Society Logo" 
-              className="h-24 w-24 mx-auto mb-4 opacity-50"
-            />
-            <h1 className="text-2xl font-bold mb-2">STEM FOR SOCIETY</h1>
-            <p className="text-sm">
-              {subtitle || "Join us to Innovate, Incubate and Impact!"}
-            </p>
-          </div>
+      <div className="lg:hidden relative z-10 min-h-screen">
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("/lovable-uploads/cc0094aa-ced3-4e50-b5f1-d61b7b6d2988.png")`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center bottom',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         </div>
         
-        {/* Mobile Content with white overlay and curved corners - full coverage */}
-        <div className="flex-1 relative">
-          <div className="absolute inset-0 bg-white/90 rounded-t-3xl"></div>
-          <div className="relative z-10 h-full overflow-y-auto flex items-start justify-center px-4 pt-8 pb-4">
-            {formBackgroundColor ? (
-              <div className="w-full max-w-sm bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-lg">
-                {children}
-              </div>
-            ) : (
-              children
-            )}
+        {/* Mobile Content */}
+        <div className="relative z-10 min-h-screen flex flex-col">
+          {/* Mobile Logo */}
+          <div className="flex-1 flex items-center justify-center pt-16">
+            <div className="text-center text-white">
+              <img 
+                src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
+                alt="STEM for Society Logo" 
+                className="h-24 w-24 mx-auto mb-4 opacity-50"
+              />
+              <h1 className="text-2xl font-bold mb-2">STEM FOR SOCIETY</h1>
+              <p className="text-sm">
+                {subtitle || "Join us to Innovate, Incubate and Impact!"}
+              </p>
+            </div>
+          </div>
+          
+          {/* Mobile Form with 50% opacity and curved corners */}
+          <div className="flex-1 relative">
+            <div className="absolute inset-0 bg-white/50 rounded-t-3xl backdrop-blur-sm"></div>
+            <div className="relative z-10 h-full overflow-y-auto flex items-start justify-center px-4 pt-8 pb-4">
+              {formBackgroundColor ? (
+                <div className="w-full max-w-sm bg-white/30 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                  {children}
+                </div>
+              ) : (
+                <div className="w-full max-w-sm">
+                  {children}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
