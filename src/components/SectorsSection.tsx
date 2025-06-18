@@ -52,8 +52,8 @@ const SectorsSection = () => {
   ];
 
   const SectorCard = ({ name, icon: Icon }) => (
-    <div className="bg-blue-200 rounded-2xl p-3 flex items-center space-x-3 transition-all duration-300 hover:bg-blue-400 group cursor-pointer">
-      <div className="transition-all duration-300">
+    <div className="bg-blue-200 rounded-2xl p-3 flex items-center space-x-3 transition-all duration-300 hover:bg-blue-400 group cursor-pointer min-h-[60px]">
+      <div className="transition-all duration-300 flex-shrink-0">
         <div className="group-hover:hidden">
           <FourCornerStar />
         </div>
@@ -61,7 +61,7 @@ const SectorsSection = () => {
           <Icon size={38} className="text-blue-800" />
         </div>
       </div>
-      <span className="text-gray-800 font-medium text-sm group-hover:text-white transition-colors duration-300">{name}</span>
+      <span className="text-gray-800 font-medium text-sm sm:text-base group-hover:text-white transition-colors duration-300 flex-1">{name}</span>
     </div>
   );
 
@@ -71,7 +71,7 @@ const SectorsSection = () => {
         <h2 className="text-xl md:text-2xl font-bold mb-4 text-gray-500 text-center md:text-left">Sectors we Focus</h2>
         <div className="max-w-6xl mx-auto">
           {/* Row 1 - 3 items */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mb-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mb-2">
             {sectors[0].map((sector, index) => (
               <SectorCard key={index} name={sector.name} icon={sector.icon} />
             ))}
@@ -85,14 +85,14 @@ const SectorsSection = () => {
           </div>
           
           {/* Row 3 - 3 items */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mb-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mb-2">
             {sectors[2].map((sector, index) => (
               <SectorCard key={index} name={sector.name} icon={sector.icon} />
             ))}
           </div>
           
           {/* Row 4 - 2 items centered */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-2xl mx-auto">
             {sectors[3].map((sector, index) => (
               <SectorCard key={index} name={sector.name} icon={sector.icon} />
             ))}

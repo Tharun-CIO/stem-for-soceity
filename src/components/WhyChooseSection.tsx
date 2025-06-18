@@ -79,16 +79,20 @@ const WhyChooseSection = () => {
                   onClick={() => toggleExpanded(index)}
                 >
                   <div className="flex items-center space-x-3">
-                    <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
+                    {/* Icon - only shows on hover */}
+                    <div className="h-8 w-8 rounded-full bg-blue-100 items-center justify-center group-hover:bg-blue-500 transition-colors hidden group-hover:flex">
                       <div className="group-hover:[&>svg]:text-white transition-colors">
                         {item.icon}
                       </div>
                     </div>
+                    
                     <div className="transition-all duration-300">
+                      {/* Default state - only title */}
                       <div className="group-hover:hidden">
                         <span className="text-sm md:text-base font-medium">{item.title}</span>
-                        <p className="text-xs text-gray-600 mt-1">{item.content}</p>
                       </div>
+                      
+                      {/* Hover state - title and detailed content */}
                       <div className="hidden group-hover:block">
                         <span className="text-sm md:text-base font-medium text-white">{item.title}</span>
                         <p className="text-xs text-blue-100 mt-1">{item.hoverContent}</p>
