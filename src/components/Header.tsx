@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <header 
-      className="relative shadow-sm sticky top-0 z-50"
+      className="relative shadow-sm"
       style={{
         backgroundImage: `url("/lovable-uploads/cc0094aa-ced3-4e50-b5f1-d61b7b6d2988.png")`,
         backgroundSize: 'cover',
@@ -48,7 +48,7 @@ const Header = () => {
             <Menubar className="border-none bg-transparent p-0 h-auto">
               {/* Courses/Trainings Dropdown */}
               <MenubarMenu>
-                <MenubarTrigger className="bg-white/70 hover:bg-white/90 data-[state=open]:bg-white/90 px-6 py-3 rounded-full cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium shadow-sm backdrop-blur-sm">
+                <MenubarTrigger className="bg-transparent hover:bg-white/20 data-[state=open]:bg-white/20 px-6 py-3 rounded-full cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium shadow-none backdrop-blur-sm border-none outline-none">
                   <span>Courses/Trainings</span>
                   <ChevronDown className="h-4 w-4" />
                 </MenubarTrigger>
@@ -90,7 +90,7 @@ const Header = () => {
 
               {/* Services Dropdown */}
               <MenubarMenu>
-                <MenubarTrigger className="bg-white/70 hover:bg-white/90 data-[state=open]:bg-white/90 px-6 py-3 rounded-full cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium shadow-sm backdrop-blur-sm">
+                <MenubarTrigger className="bg-transparent hover:bg-white/20 data-[state=open]:bg-white/20 px-6 py-3 rounded-full cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium shadow-none backdrop-blur-sm border-none outline-none">
                   <span>Services</span>
                   <ChevronDown className="h-4 w-4" />
                 </MenubarTrigger>
@@ -124,7 +124,7 @@ const Header = () => {
 
               {/* Resources Dropdown */}
               <MenubarMenu>
-                <MenubarTrigger className="bg-white/70 hover:bg-white/90 data-[state=open]:bg-white/90 px-6 py-3 rounded-full cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium shadow-sm backdrop-blur-sm">
+                <MenubarTrigger className="bg-transparent hover:bg-white/20 data-[state=open]:bg-white/20 px-6 py-3 rounded-full cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium shadow-none backdrop-blur-sm border-none outline-none">
                   <span>Resources</span>
                   <ChevronDown className="h-4 w-4" />
                 </MenubarTrigger>
