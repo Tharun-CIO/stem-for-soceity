@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Search, Plus } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const Blog = () => {
   const blogPosts = [
@@ -46,7 +47,7 @@ const Blog = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <div className="pt-24 pb-12">
+      <div className="pt-8 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header Section */}
           <div className="text-center mb-12">
@@ -137,20 +138,7 @@ const Blog = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-blue-800 text-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4">
-              <span className="text-blue-800 font-bold text-xl">S</span>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold">STEM FOR SOCIETY</h3>
-              <p className="text-blue-200">Let's Innovate, Incubate and Impact the world together!</p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
