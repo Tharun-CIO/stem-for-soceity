@@ -11,7 +11,7 @@ const PsychologyCounselling = () => {
     <div className="min-h-screen bg-gray-50">
       <Header />
       
-      {/* Navigation Bar - Removed pt-20 to fix spacing */}
+      {/* Navigation Bar */}
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
@@ -36,18 +36,16 @@ const PsychologyCounselling = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Psychology Counselling</h1>
         </div>
 
-        {/* Hero Image Section - Doubled height from h-full to h-96 */}
-        <div className="relative bg-gradient-to-r from-teal-400 to-teal-500 rounded-2xl overflow-hidden mb-12">
-          <div className="absolute inset-0">
-            <img 
-              src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-              alt="Psychology Counselling" 
-              className="w-full h-96 object-cover mix-blend-overlay"
-            />
-          </div>
-          <div className="relative p-12">
-            <div className="text-white">
-              <p className="text-lg leading-relaxed max-w-2xl">
+        {/* Hero Image Section with uploaded image */}
+        <div className="relative rounded-2xl overflow-hidden mb-12">
+          <img 
+            src="/lovable-uploads/f291c67a-bf35-47b5-9858-59f6970d9466.png" 
+            alt="Psychology Counselling" 
+            className="w-full h-96 object-cover"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+            <div className="p-8">
+              <p className="text-white text-lg leading-relaxed max-w-2xl">
                 Stem For Society Initiated to Support students with psychological problems is 
                 essential for their well-being and academic success.
               </p>
@@ -109,7 +107,6 @@ const PsychologyCounselling = () => {
         </div>
       </div>
 
-      {/* Standard Footer */}
       <Footer />
     </div>
   );

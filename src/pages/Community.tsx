@@ -11,7 +11,7 @@ const Community = () => {
     <div className="min-h-screen bg-gray-50">
       <Header />
       
-      {/* Navigation Bar - Removed pt-20 to fix spacing */}
+      {/* Navigation Bar */}
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
@@ -36,7 +36,7 @@ const Community = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Join our community!</h1>
         </div>
 
-        {/* QR Code Section - Updated with new QR code */}
+        {/* QR Code Section */}
         <div className="bg-green-100 rounded-2xl p-8 mb-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             {/* QR Code */}
@@ -73,10 +73,10 @@ const Community = () => {
           </div>
         </div>
 
-        {/* Community Image Section */}
+        {/* Community Image Section with uploaded image */}
         <div className="relative rounded-2xl overflow-hidden mb-8">
           <img 
-            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=2832&q=80"
+            src="/lovable-uploads/bff01f4f-452e-4451-a1b9-f8107813a7d7.png"
             alt="Community members" 
             className="w-full h-80 object-cover"
           />
@@ -100,7 +100,6 @@ const Community = () => {
         </div>
       </div>
 
-      {/* Standard Footer */}
       <Footer />
     </div>
   );

@@ -36,22 +36,21 @@ const CareerCounselling = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Career Counselling</h1>
         </div>
 
-        {/* Hero Image Section */}
-        <div className="relative bg-gradient-to-r from-gray-600 to-gray-700 rounded-2xl overflow-hidden mb-12">
-          <div className="absolute inset-0">
-            <img 
-              src="/lovable-uploads/68900e8a-ac41-4c5f-ac2c-d8e77058ece2.png" 
-              alt="Career Counselling" 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-          </div>
-          <div className="relative p-12">
-            <div className="text-white">
-              <p className="text-lg leading-relaxed max-w-2xl">
-                Stem For Society provide career counselling services by subject experts in 
-                making career choices by assessing their interests, skills, and goals.
-              </p>
+        {/* Hero Image Section with uploaded image */}
+        <div className="relative rounded-2xl overflow-hidden mb-12">
+          <img 
+            src="/lovable-uploads/6fabb0fb-f5ce-4b4f-b5d4-2c8d51061b10.png" 
+            alt="Career Counselling" 
+            className="w-full h-96 object-cover"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+            <div className="p-8">
+              <div className="text-white">
+                <p className="text-lg leading-relaxed max-w-2xl">
+                  Stem For Society provide career counselling services by subject experts in 
+                  making career choices by assessing their interests, skills, and goals.
+                </p>
+              </div>
             </div>
           </div>
         </div>

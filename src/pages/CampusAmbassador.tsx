@@ -36,10 +36,10 @@ const CampusAmbassador = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Campus Ambassador Program!</h1>
         </div>
 
-        {/* Hero Image Section */}
+        {/* Hero Image Section with uploaded image */}
         <div className="relative rounded-2xl overflow-hidden mb-12 shadow-lg">
           <img 
-            src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=2832&q=80"
+            src="/lovable-uploads/7ad0419e-10ce-4c0c-820c-586b0195f354.png"
             alt="Campus Ambassador Program" 
             className="w-full h-96 object-cover"
           />

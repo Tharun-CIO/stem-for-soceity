@@ -36,22 +36,21 @@ const InstitutionPricing = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Institution Plans & Pricing</h1>
         </div>
 
-        {/* Hero Image Section */}
-        <div className="relative bg-gradient-to-r from-gray-600 to-gray-700 rounded-2xl overflow-hidden mb-12">
-          <div className="absolute inset-0">
-            <img 
-              src="/lovable-uploads/39a6ec81-88d1-451f-af43-fc8a5337cb8f.png" 
-              alt="Institution Plans & Pricing" 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-          </div>
-          <div className="relative p-12">
-            <div className="text-white max-w-2xl">
-              <p className="text-lg leading-relaxed">
-                Plans for Schools, Institutions and Universities STEM for Society initiatives in 
-                universities and institutions aim to enhance the skill development.
-              </p>
+        {/* Hero Image Section with uploaded image */}
+        <div className="relative rounded-2xl overflow-hidden mb-12">
+          <img 
+            src="/lovable-uploads/39558913-b076-4d6b-8dfc-daece1423218.png" 
+            alt="Institution Plans & Pricing" 
+            className="w-full h-96 object-cover"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+            <div className="p-8">
+              <div className="text-white max-w-2xl">
+                <p className="text-lg leading-relaxed">
+                  Plans for Schools, Institutions and Universities STEM for Society initiatives in 
+                  universities and institutions aim to enhance the skill development.
+                </p>
+              </div>
             </div>
           </div>
         </div>
