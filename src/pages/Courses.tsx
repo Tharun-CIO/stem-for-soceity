@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Share2, Filter, Search, Calendar, MapPin, DollarSign } from 'lucide-react';
@@ -136,18 +137,18 @@ const Courses = () => {
       <Header />
       
       {/* Navigation Bar */}
-      <div className="bg-white border-b pt-20">
+      <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Link to="/">
-                <Button variant="outline" size="sm" className="flex items-center space-x-2">
+                <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90">
                   <ArrowLeft className="h-4 w-4" />
                   <span>Back</span>
                 </Button>
               </Link>
             </div>
-            <Button variant="outline" size="sm" className="flex items-center space-x-2">
+            <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90">
               <Share2 className="h-4 w-4" />
               <span>Share</span>
             </Button>
@@ -267,7 +268,7 @@ const Courses = () => {
                       {/* Action Buttons */}
                       <div className="flex items-center space-x-3">
                         <Button variant="outline" size="sm">More Info</Button>
-                        <Button className="bg-blue-600 hover:bg-blue-700">REGISTER NOW</Button>
+                        <Button className="bg-[#0389FF] hover:bg-[#0389FF]/90">REGISTER NOW</Button>
                       </div>
                     </div>
                   </CardContent>
@@ -304,106 +305,15 @@ const Courses = () => {
                 <p className="text-xl text-gray-700">Book a free counselling session and we'll guide you.</p>
               </div>
             </div>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
+            <Button className="bg-[#0389FF] hover:bg-[#0389FF]/90 text-white px-8 py-3">
               BOOK COUNSELLING
             </Button>
           </div>
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-blue-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-            {/* Logo and Description */}
-            <div className="md:col-span-2">
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-blue-900 font-bold text-xl">S</span>
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold">STEM FOR SOCIETY</h4>
-                  <p className="text-sm text-blue-200">Let's innovate, incubate and impact the world together!</p>
-                </div>
-              </div>
-              <div className="space-y-2 text-sm text-blue-200">
-                <p>37 Broadway floor 2, New York NY 10007</p>
-                <p>844-344-4431</p>
-                <p>hello@stemforsociety.com</p>
-              </div>
-            </div>
-
-            {/* Programs */}
-            <div>
-              <h5 className="font-semibold mb-4">PROGRAMS</h5>
-              <div className="space-y-2 text-sm text-blue-200">
-                <p>Explore Courses</p>
-                <p>Psychology counselling</p>
-                <p>Career counselling</p>
-              </div>
-            </div>
-
-            {/* For Institutions */}
-            <div>
-              <h5 className="font-semibold mb-4">FOR INSTITUTIONS</h5>
-              <div className="space-y-2 text-sm text-blue-200">
-                <p>Plans and pricing</p>
-                <p>Campus Ambassador Program</p>
-              </div>
-            </div>
-
-            {/* Company */}
-            <div>
-              <h5 className="font-semibold mb-4">COMPANY</h5>
-              <div className="space-y-2 text-sm text-blue-200">
-                <p>Join Community</p>
-                <p>Scientific Communication Blog</p>
-                <p>Our YouTube Channel</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Links and Newsletter */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 pt-8 border-t border-blue-800">
-            <div>
-              <h5 className="font-semibold mb-4">QUICK LINKS</h5>
-              <div className="flex space-x-4">
-                <Button className="bg-blue-800 hover:bg-blue-700">Register</Button>
-                <Button className="bg-blue-800 hover:bg-blue-700">Login</Button>
-              </div>
-            </div>
-            
-            <div>
-              <h5 className="font-semibold mb-4">SUBSCRIBE FOR THE LATEST UPDATES</h5>
-              <div className="space-y-3">
-                <input 
-                  type="email" 
-                  placeholder="First name"
-                  className="w-full px-4 py-2 rounded bg-blue-800 text-white placeholder-blue-300 border border-blue-700"
-                />
-                <input 
-                  type="email" 
-                  placeholder="Your email"
-                  className="w-full px-4 py-2 rounded bg-blue-800 text-white placeholder-blue-300 border border-blue-700"
-                />
-                <Button className="bg-blue-600 hover:bg-blue-500">Subscribe</Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Social Links and Copyright */}
-          <div className="flex items-center justify-between mt-8 pt-8 border-t border-blue-800">
-            <div className="flex space-x-4">
-              {/* Social media icons would go here */}
-              <div className="w-8 h-8 bg-blue-800 rounded-full"></div>
-              <div className="w-8 h-8 bg-blue-800 rounded-full"></div>
-              <div className="w-8 h-8 bg-blue-800 rounded-full"></div>
-              <div className="w-8 h-8 bg-blue-800 rounded-full"></div>
-            </div>
-            <p className="text-sm text-blue-300">© 2025-25 STEM for Society. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      {/* Standard Footer */}
+      <Footer />
     </div>
   );
 };
