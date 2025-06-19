@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 
 const PartnersSection = () => {
   const partners = [
-    { name: "IMrobonix", logo: "/lovable-uploads/d88d2b4d-0321-4441-9398-624b1edb0225.png" },
-    { name: "Geneaura", logo: "/lovable-uploads/55a829cd-5ea3-4b4c-8289-3bf37ffc1cfa.png" },
-    { name: "Xera Robotics", logo: "/lovable-uploads/511de311-f1ad-430f-a63c-ea1783e0a2d0.png" },
-    { name: "Bangalore Bioinnovation Centre", logo: "/lovable-uploads/963f5bf1-43c9-4b4e-92b8-d68509ab57bd.png" },
-    { name: "B-Actrol Biosciences", logo: "/lovable-uploads/f8b10282-becb-4c17-99db-d7d4ef915092.png" },
-    { name: "Shewell", logo: "/lovable-uploads/ba31b9e6-58b3-4b4e-b2de-48328d38ed73.png" },
-    { name: "Sri Ramachandra Innovation Incubation Centre", logo: "/lovable-uploads/6cd13f7d-0b7a-4635-b9d2-ce320f19793c.png" }
+    { name: "Geneaura", logo: "/images/13b76e8a-3a28-44a2-9a65-076bc07802ea.png" },
+    { name: "Bangalore Bioinnovation Centre", logo: "/images/b2a19225-779c-406c-88ac-8d03db9df977.png" },
+    { name: "Shewell", logo: "/images/e5c70965-bf2b-44ba-8248-a2875d564db4.png" },
+    { name: "IMrobonix", logo: "/images/6b1a7a01-f1f8-4ae7-be27-8dce9e59396c.png" },
+    { name: "Sri Ramachandra Innovation Incubation Centre", logo: "/images/e6f46177-2abd-4bd1-a709-4cd86bd45f15.png" },
+    { name: "B-Actrol Biosciences", logo: "/images/c5b5990b-9879-4f95-a323-45fb4cede345.png" },
+    { name: "Xera Robotics", logo: "/images/934c37c4-e9eb-49f9-ae73-bc13705acd49.png" }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
