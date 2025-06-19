@@ -48,15 +48,15 @@ const Header = () => {
             <Menubar className="border-none bg-transparent p-0 h-auto">
               {/* Courses/Trainings Dropdown */}
               <MenubarMenu>
-                <MenubarTrigger className="bg-white/70 hover:bg-white/90 data-[state=open]:bg-white/90 px-6 py-3 rounded-full cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium shadow-sm backdrop-blur-sm">
+                <MenubarTrigger className="bg-white/70 hover:bg-white/90 data-[state=open]:bg-white/90 px-6 py-3 rounded-full cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium shadow-sm backdrop-blur-sm border border-gray-200">
                   <span>Courses/Trainings</span>
                   <ChevronDown className="h-4 w-4" />
                 </MenubarTrigger>
-                <MenubarContent className="bg-white/95 backdrop-blur-md border border-gray-200 shadow-xl rounded-3xl p-3 min-w-[240px] z-50 mt-2">
+                <MenubarContent className="bg-white backdrop-blur-md border-2 border-gray-300 shadow-xl rounded-3xl p-3 min-w-[240px] z-50 mt-2">
                   <MenubarItem asChild>
                     <Link 
                       to="/courses" 
-                      className="block px-5 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium"
+                      className="block px-5 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium border border-transparent hover:border-gray-200"
                     >
                       Seminars/Webinar
                     </Link>
@@ -64,7 +64,7 @@ const Header = () => {
                   <MenubarItem asChild>
                     <Link 
                       to="/courses" 
-                      className="block px-5 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium"
+                      className="block px-5 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium border border-transparent hover:border-gray-200"
                     >
                       Certificate Program
                     </Link>
@@ -72,7 +72,7 @@ const Header = () => {
                   <MenubarItem asChild>
                     <Link 
                       to="/courses" 
-                      className="block px-5 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium"
+                      className="block px-5 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium border border-transparent hover:border-gray-200"
                     >
                       Corporate Training
                     </Link>
@@ -80,7 +80,7 @@ const Header = () => {
                   <MenubarItem asChild>
                     <Link 
                       to="/courses" 
-                      className="block px-5 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium"
+                      className="block px-5 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium border border-transparent hover:border-gray-200"
                     >
                       Instrumentation Hands-on
                     </Link>
@@ -90,15 +90,15 @@ const Header = () => {
 
               {/* Services Dropdown */}
               <MenubarMenu>
-                <MenubarTrigger className="bg-white/70 hover:bg-white/90 data-[state=open]:bg-white/90 px-6 py-3 rounded-full cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium shadow-sm backdrop-blur-sm">
+                <MenubarTrigger className="bg-white/70 hover:bg-white/90 data-[state=open]:bg-white/90 px-6 py-3 rounded-full cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium shadow-sm backdrop-blur-sm border border-gray-200">
                   <span>Services</span>
                   <ChevronDown className="h-4 w-4" />
                 </MenubarTrigger>
-                <MenubarContent className="bg-white/95 backdrop-blur-md border border-gray-200 shadow-xl rounded-3xl p-3 min-w-[240px] z-50 mt-2">
+                <MenubarContent className="bg-white backdrop-blur-md border-2 border-gray-300 shadow-xl rounded-3xl p-3 min-w-[240px] z-50 mt-2">
                   <MenubarItem asChild>
                     <Link 
                       to="/psychology-counselling" 
-                      className="block px-5 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium"
+                      className="block px-5 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium border border-transparent hover:border-gray-200"
                     >
                       Psychology Counselling
                     </Link>
@@ -106,7 +106,7 @@ const Header = () => {
                   <MenubarItem asChild>
                     <Link 
                       to="/career-counselling" 
-                      className="block px-5 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium"
+                      className="block px-5 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium border border-transparent hover:border-gray-200"
                     >
                       Career Counselling
                     </Link>
@@ -114,7 +114,7 @@ const Header = () => {
                   <MenubarItem asChild>
                     <Link 
                       to="/institution-pricing" 
-                      className="block px-5 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium"
+                      className="block px-5 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium border border-transparent hover:border-gray-200"
                     >
                       Institution Plan & Pricing
                     </Link>
@@ -124,15 +124,15 @@ const Header = () => {
 
               {/* Resources Dropdown */}
               <MenubarMenu>
-                <MenubarTrigger className="bg-white/70 hover:bg-white/90 data-[state=open]:bg-white/90 px-6 py-3 rounded-full cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium shadow-sm backdrop-blur-sm">
+                <MenubarTrigger className="bg-white/70 hover:bg-white/90 data-[state=open]:bg-white/90 px-6 py-3 rounded-full cursor-pointer flex items-center space-x-1 text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium shadow-sm backdrop-blur-sm border border-gray-200">
                   <span>Resources</span>
                   <ChevronDown className="h-4 w-4" />
                 </MenubarTrigger>
-                <MenubarContent className="bg-white/95 backdrop-blur-md border border-gray-200 shadow-xl rounded-3xl p-3 min-w-[240px] z-50 mt-2">
+                <MenubarContent className="bg-white backdrop-blur-md border-2 border-gray-300 shadow-xl rounded-3xl p-3 min-w-[240px] z-50 mt-2">
                   <MenubarItem asChild>
                     <Link 
                       to="/blog" 
-                      className="block px-5 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium"
+                      className="block px-5 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium border border-transparent hover:border-gray-200"
                     >
                       Scientific Communications
                     </Link>
@@ -140,7 +140,7 @@ const Header = () => {
                   <MenubarItem asChild>
                     <Link 
                       to="/community" 
-                      className="block px-5 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium"
+                      className="block px-5 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium border border-transparent hover:border-gray-200"
                     >
                       Join the community
                     </Link>
@@ -148,7 +148,7 @@ const Header = () => {
                   <MenubarItem asChild>
                     <Link 
                       to="/campus-ambassador" 
-                      className="block px-5 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium"
+                      className="block px-5 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-2xl transition-all duration-200 cursor-pointer font-medium border border-transparent hover:border-gray-200"
                     >
                       Campus Ambassador (CA)
                     </Link>
