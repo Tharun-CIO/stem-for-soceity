@@ -37,7 +37,18 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="py-12 bg-white relative overflow-hidden">
+    <section 
+      className="py-16 relative overflow-hidden"
+      style={{
+        backgroundImage: `url("/lovable-uploads/cc0094aa-ced3-4e50-b5f1-d61b7b6d2988.png")`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      {/* Background overlay */}
+      <div className="absolute inset-0 bg-white/85"></div>
+
       {/* Fading Grid Background */}
       <div 
         className="absolute inset-0 opacity-10 pointer-events-none"
@@ -65,7 +76,7 @@ const HeroSection = () => {
         <div className="w-32 h-px bg-gradient-to-l from-blue-500 to-transparent -mt-1 animate-pulse delay-900"></div>
       </div>
       
-      <div className="container mx-auto text-center px-4 relative max-w-7xl">
+      <div className="container mx-auto text-center px-4 relative max-w-7xl z-10">
         <p className="text-gray-600 mb-4 text-lg">Empowering Future Innovators through STEM Learning</p>
         
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight max-w-4xl mx-auto">
@@ -77,7 +88,7 @@ const HeroSection = () => {
         </p>
         
         <Link to="/explore-program-dashboard">
-          <Button size="lg" className="mb-12 bg-blue-500 hover:bg-blue-600 px-8 py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105">
+          <Button size="lg" className="mb-12 bg-blue-500 hover:bg-blue-600 px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
             EXPLORE OUR PROGRAMS
           </Button>
         </Link>
@@ -87,7 +98,7 @@ const HeroSection = () => {
           {stats.map((stat, index) => {
             const isMiddleCard = index === 1;
             return (
-              <Card key={index} className={`p-4 rounded-2xl border-2 transition-all duration-300 hover:scale-105 ${isMiddleCard ? 'bg-blue-100 border-blue-200' : 'bg-white border-gray-200'}`}>
+              <Card key={index} className={`p-4 rounded-3xl border-2 transition-all duration-300 hover:scale-105 backdrop-blur-sm ${isMiddleCard ? 'bg-blue-100/80 border-blue-200' : 'bg-white/80 border-gray-200'}`}>
                 <CardContent className="p-0">
                   <div className="flex items-center mb-3">
                     <Badge variant="secondary" className={`rounded-full px-3 py-1 text-sm ${isMiddleCard ? 'bg-blue-200 text-blue-800' : 'bg-gray-100 text-gray-700'}`}>
@@ -120,7 +131,7 @@ const HeroSection = () => {
                   {stat.title === "Discover Our Courses" && (
                     <div className="mt-4">
                       <Link to="/courses">
-                        <Button size="sm" className="w-full bg-blue-500 hover:bg-blue-600 rounded-xl transition-all duration-300">
+                        <Button size="sm" className="w-full bg-blue-500 hover:bg-blue-600 rounded-full transition-all duration-300">
                           Browse Courses
                         </Button>
                       </Link>
