@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import { GraduationCap, Building2 } from 'lucide-react';
+import { GraduationCap, Building2, ArrowRight } from 'lucide-react';
 
 const PartnerRole = () => {
   return (
@@ -40,15 +40,22 @@ const PartnerRole = () => {
           {/* White overlay with 50% opacity and curved left corner */}
           <div className="absolute inset-0 bg-white/50 rounded-l-3xl backdrop-blur-sm"></div>
           
+          {/* Arrow in top right corner */}
+          <div className="absolute top-8 right-8 z-20">
+            <div className="w-12 h-12 bg-[#0389FF] rounded-full flex items-center justify-center">
+              <ArrowRight className="h-6 w-6 text-white" />
+            </div>
+          </div>
+          
           {/* Content Container */}
           <div className="relative z-10 h-full flex items-center justify-center px-12 py-20">
-            <div className="w-full max-w-lg space-y-12">
+            <div className="w-full max-w-lg space-y-16">
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold text-gray-800 mb-6">Select your Role</h2>
                 <p className="text-gray-600 text-lg">Log in as a student, ambassador, or partner institution.</p>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-12">
                 <Link to="/campus-ambassador-signup">
                   <Card className="group hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer border-2 hover:border-[#0389FF] bg-white/70 backdrop-blur-sm rounded-xl">
                     <CardContent className="p-10 text-left">
@@ -127,14 +134,22 @@ const PartnerRole = () => {
           {/* Mobile Role Selection with 50% opacity */}
           <div className="flex-1 relative">
             <div className="absolute inset-0 bg-white/50 rounded-t-3xl backdrop-blur-sm"></div>
+            
+            {/* Arrow in top right corner for mobile */}
+            <div className="absolute top-6 right-6 z-20">
+              <div className="w-10 h-10 bg-[#0389FF] rounded-full flex items-center justify-center">
+                <ArrowRight className="h-5 w-5 text-white" />
+              </div>
+            </div>
+            
             <div className="relative z-10 h-full overflow-y-auto flex items-start justify-center px-6 pt-12 pb-8">
-              <div className="w-full max-w-sm space-y-8">
+              <div className="w-full max-w-sm space-y-12">
                 <div className="text-center mb-8">
                   <h2 className="text-2xl font-bold text-gray-800 mb-4">Select your Role</h2>
                   <p className="text-gray-600 text-sm">Log in as a student, ambassador, or partner institution.</p>
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-8">
                   <Link to="/campus-ambassador-signup">
                     <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer border-2 hover:border-[#0389FF] bg-white/70 backdrop-blur-sm rounded-xl">
                       <CardContent className="p-6 text-left">
