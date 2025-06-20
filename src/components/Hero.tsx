@@ -39,19 +39,37 @@ const HeroSection = () => {
   return (
     <section 
       className="py-16 relative overflow-hidden" >
+{/* Left Side - Horizontal Arrows at Different Heights */}
+<div className="absolute top-48 left-96 hidden lg:flex flex-row gap-x-24">
+  {/* Arrow 1 - higher */}
+  <div className="flex flex-col items-center mt-12">
+    <div className="w-px h-24 bg-gradient-to-b from-transparent to-blue-500 animate-pulse delay-500"></div>
+    <div className="w-2 h-2 bg-blue-500 rounded-full"></div> {/* No gap */}
+  </div>
 
-      {/* Animated connection elements */}
-      <div className="absolute top-16 left-12 hidden lg:block">
-        <div className="w-2 h-2 bg-blue-500 rounded-full animate-ping"></div>
-        <div className="w-px h-24 bg-gradient-to-b from-blue-500 to-transparent ml-1 mt-2 animate-pulse"></div>
-        <div className="w-40 h-px bg-gradient-to-r from-blue-500 to-transparent mt-2 animate-pulse delay-300"></div>
-      </div>
-      
-      <div className="absolute top-32 right-16 hidden lg:block">
-        <div className="w-px h-32 bg-gradient-to-b from-transparent to-blue-500 animate-pulse delay-500"></div>
-        <div className="w-2 h-2 bg-blue-500 rounded-full -ml-1 animate-ping delay-700"></div>
-        <div className="w-32 h-px bg-gradient-to-l from-blue-500 to-transparent -mt-1 animate-pulse delay-900"></div>
-      </div>
+  {/* Arrow 2 - lower */}
+  <div className="flex flex-col items-center mt-0">
+    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+    <div className="w-px h-24 bg-gradient-to-b from-blue-500 to-transparent animate-pulse"></div> {/* Removed mt-2 */}
+  </div>
+</div>
+
+{/* Right Side - Horizontal Arrows at Different Heights */}
+<div className="absolute top-48 right-96 hidden lg:flex flex-row gap-x-24 items-end">
+  {/* Arrow 1 - lower */}
+  <div className="flex flex-col items-center mt-12">
+    <div className="w-px h-24 bg-gradient-to-b from-transparent to-blue-500 animate-pulse delay-500"></div>
+    <div className="w-2 h-2 bg-blue-500 rounded-full"></div> {/* No gap */}
+  </div>
+
+  {/* Arrow 2 - higher */}
+  <div className="flex flex-col items-center mt-0">
+    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+    <div className="w-px h-24 bg-gradient-to-b from-blue-500 to-transparent animate-pulse"></div> {/* Removed mt-2 */}
+  </div>
+</div>
+
+
       
       <div className="container mx-auto text-center px-4 relative max-w-7xl z-10">
         <p className="text-gray-600 mb-4 text-lg">Empowering Future Innovators through STEM Learning</p>
