@@ -39,12 +39,12 @@ const HeroSection = () => {
   return (
     <section 
       className="py-16 relative overflow-hidden"
-      style={{
-        backgroundImage: `url("/lovable-uploads/cc0094aa-ced3-4e50-b5f1-d61b7b6d2988.png")`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+      // style={{
+      //   backgroundImage: `url("/lovable-uploads/cc0094aa-ced3-4e50-b5f1-d61b7b6d2988.png")`,
+      //   backgroundSize: 'cover',
+      //   backgroundPosition: 'center',
+      //   backgroundRepeat: 'no-repeat'
+      // }}
     >
       {/* Background overlay */}
       <div className="absolute inset-0 bg-white/85"></div>
