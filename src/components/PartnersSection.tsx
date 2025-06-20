@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const PartnersSection = () => {
   const partners = [
     { name: "Geneaura", logo: "/lovable-uploads/Geneaura.png" },
-    { name: "Bangalore Bioinnovation Centre", logo: "/bioinnovation.png" },
+    { name: "Bangalore Bioinnovation Centre", logo: "/lovable-uploads/bioinnovation.png" },
     { name: "Shewell", logo: "/lovable-uploads/shewell.png" },
     { name: "IMrobonix", logo: "/lovable-uploads/IMrobonix.png" },
     { name: "Sri Ramachandra Innovation Incubation Centre", logo: "/lovable-uploads/Ramachandra.png" },
