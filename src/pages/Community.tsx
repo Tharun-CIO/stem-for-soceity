@@ -40,16 +40,17 @@ const Community = () => {
         <div className="bg-green-100 rounded-2xl p-8 mb-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             {/* QR Code */}
-            <div className="flex flex-col items-center">
-              <div className="w-48 h-48 bg-white rounded-lg p-4 mb-4 shadow-sm">
-                <img 
-                  src="/lovable-uploads/218f64aa-6d49-4fa7-8c34-97cddea68f5e.png"
-                  alt="QR Code" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <p className="text-gray-800 font-medium">Stem for Society</p>
-            </div>
+            
+              <div className="w-48 h-64 bg-white rounded-xl p-1 mb-4 shadow-sm overflow-hidden">
+  <img 
+    src="/lovable-uploads/QR.jpg"
+    alt="QR Code" 
+    className="w-full h-full object-cover rounded-lg"
+  />
+</div>
+
+              
+          
 
             {/* Content */}
             <div className="flex-1 text-center md:text-left">
@@ -62,7 +63,7 @@ const Community = () => {
                 Events, trainings, workshop
               </p>
               <a 
-                href="https://chat.whatsapp.com" 
+                href="https://api.whatsapp.com/send/?phone=918296155821&text&type=phone_number&app_absent=0" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:text-blue-600 font-medium text-lg inline-flex items-center gap-2"
