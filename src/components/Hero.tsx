@@ -38,30 +38,7 @@ const HeroSection = () => {
 
   return (
     <section 
-      className="py-16 relative overflow-hidden"
-      // style={{
-      //   backgroundImage: `url("/lovable-uploads/cc0094aa-ced3-4e50-b5f1-d61b7b6d2988.png")`,
-      //   backgroundSize: 'cover',
-      //   backgroundPosition: 'center',
-      //   backgroundRepeat: 'no-repeat'
-      // }}
-    >
-      {/* Background overlay */}
-      <div className="absolute inset-0 bg-white/85"></div>
-
-      {/* Fading Grid Background */}
-      <div 
-        className="absolute inset-0 opacity-10 pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
-          `,
-          backgroundSize: '30px 30px',
-          mask: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 100%)',
-          WebkitMask: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 100%)'
-        }}
-      />
+      className="py-16 relative overflow-hidden" >
 
       {/* Animated connection elements */}
       <div className="absolute top-16 left-12 hidden lg:block">

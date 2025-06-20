@@ -22,15 +22,8 @@ const Header = () => {
   return (
     <header 
       className="relative shadow-sm"
-      style={{
-        backgroundImage: `url("/lovable-uploads/cc0094aa-ced3-4e50-b5f1-d61b7b6d2988.png")`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
     >
-      {/* Background overlay for better text contrast */}
-      <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
+ 
       
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="flex items-center justify-between h-16">

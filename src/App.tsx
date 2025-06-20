@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
 import { Suspense } from "react";
 import Index from "./pages/Index";
-import Cover from "./pages/Cover";
 import Login from "./pages/Login";
 import PartnerLogin from "./pages/PartnerLogin";
 import InstitutionLogin from "./pages/InstitutionLogin";
@@ -33,7 +32,6 @@ import SelectRole from "./pages/SelectRole";
 import PartnerRole from "./pages/PartnerRole";
 import CampusAmbassadorSignup from "./pages/CampusAmbassadorSignup";
 import PartnerInstitutionSignup from "./pages/PartnerInstitutionSignup";
-
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -80,8 +78,10 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <Routes>
+          
               <Route path="/" element={<Index />} />
-              <Route path="/cover" element={<Cover />} />
+
+
               <Route path="/select-role" element={<SelectRole />} />
               <Route path="/partner-role" element={<PartnerRole />} />
               <Route path="/campus-ambassador-signup" element={<CampusAmbassadorSignup />} />
