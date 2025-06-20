@@ -43,25 +43,35 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-12 bg-white overflow-hidden">
+    <section className="py-16 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Testimonials</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Testimonials</h2>
         
         {/* Scrolling container */}
         <div className="relative">
           <div className="flex animate-scroll space-x-4">
             {/* First set of testimonials */}
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="flex-shrink-0 w-72 md:w-80 p-3 md:p-4 rounded-xl" style={{ backgroundColor: '#C0E1FF' }}>
+              <Card key={index} className="flex-shrink-0 w-80 md:w-96 p-4 md:p-6 rounded-xl" style={{ backgroundColor: '#C0E1FF' }}>
                 <CardContent className="p-0">
-                  <div className="flex mb-2">
+                  <div className="flex mb-3 gap-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-3 w-3 fill-current text-current" style={{ color: '#00549F' }} />
+                      <svg 
+  key={i}
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 512 512"
+  fill="#00549F"
+  className="h-5 w-5 mx-0.5"
+>
+  <path d="M256 0l73 149 165 24-119 116 28 164-147-77-147 77 28-164L18 173l165-24L256 0z" />
+</svg>
+
+
                     ))}
                   </div>
-                  <h4 className="font-semibold mb-2 text-xs md:text-sm line-clamp-2">{testimonial.title}</h4>
-                  <p className="text-xs text-gray-600 mb-2 line-clamp-3">{testimonial.text}</p>
-                  <p className="font-medium text-xs md:text-sm">- {testimonial.name}</p>
+                  <h4 className="font-semibold mb-2 text-sm md:text-base line-clamp-2">{testimonial.title}</h4>
+                  <p className="text-sm text-gray-600 mb-3 line-clamp-3">{testimonial.text}</p>
+                  <p className="font-medium text-sm md:text-base">- {testimonial.name}</p>
                 </CardContent>
               </Card>
             ))}
