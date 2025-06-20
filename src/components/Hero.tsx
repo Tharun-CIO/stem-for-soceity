@@ -83,9 +83,17 @@ const HeroSection = () => {
         </p>
         
         <Link to="/explore-program-dashboard">
-          <Button size="lg" className="mb-12 bg-blue-500 hover:bg-blue-600 px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
-            EXPLORE OUR PROGRAMS
-          </Button>
+          <Button
+  size="lg"
+  className="mb-12 px-8 py-4 text-lg rounded transition-all duration-300 hover:scale-105 shadow-lg"
+  style={{
+    backgroundColor: "#0389FF",
+    color: "white",
+  }}
+>
+  EXPLORE OUR PROGRAMS
+</Button>
+
         </Link>
 
         {/* Stats Cards */}
@@ -126,9 +134,16 @@ const HeroSection = () => {
                   {stat.title === "Discover Our Courses" && (
                     <div className="mt-4">
                       <Link to="/courses">
-                        <Button size="sm" className="w-full bg-blue-500 hover:bg-blue-600 rounded-full transition-all duration-300">
-                          Browse Courses
-                        </Button>
+                       <Button
+  size="sm"
+  className="w-full rounded transition-all duration-300"
+  style={{
+    backgroundColor: "#0389FF",
+    color: "white",
+  }}
+>
+  Browse Courses
+</Button>
                       </Link>
                     </div>
                   )}
