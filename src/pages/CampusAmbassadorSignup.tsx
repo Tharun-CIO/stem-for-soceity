@@ -115,10 +115,25 @@ const CampusAmbassadorSignup = () => {
                   <SelectValue placeholder="Select your domain" />
                 </SelectTrigger>
                 <SelectContent className="rounded-xl">
-                  <SelectItem value="engineering">Engineering</SelectItem>
-                  <SelectItem value="technology">Technology</SelectItem>
-                  <SelectItem value="science">Science</SelectItem>
-                  <SelectItem value="mathematics">Mathematics</SelectItem>
+                  <SelectItem value="engineering" className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+
+>Engineering</SelectItem>
+                  <SelectItem value="technology" className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+
+>Technology</SelectItem>
+                  <SelectItem value="science" className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+
+>Science</SelectItem>
+                  <SelectItem value="mathematics" className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Mathematics</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -129,11 +144,26 @@ const CampusAmbassadorSignup = () => {
                   <SelectValue placeholder="Select your state" />
                 </SelectTrigger>
                 <SelectContent className="rounded-xl">
-                  <SelectItem value="maharashtra">Maharashtra</SelectItem>
-                  <SelectItem value="karnataka">Karnataka</SelectItem>
-                  <SelectItem value="tamil-nadu">Tamil Nadu</SelectItem>
-                  <SelectItem value="gujarat">Gujarat</SelectItem>
-                  <SelectItem value="delhi">Delhi</SelectItem>
+                  <SelectItem value="maharashtra" className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Maharashtra</SelectItem>
+                  <SelectItem value="karnataka" className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Karnataka</SelectItem>
+                  <SelectItem value="tamil-nadu" className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Tamil Nadu</SelectItem>
+                  <SelectItem value="gujarat" className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Gujarat</SelectItem>
+                  <SelectItem value="delhi" className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Delhi</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -171,10 +201,22 @@ const CampusAmbassadorSignup = () => {
                   <SelectValue placeholder="Select your country" />
                 </SelectTrigger>
                 <SelectContent className="rounded-xl">
-                  <SelectItem value="India">India</SelectItem>
-                  <SelectItem value="USA">United States</SelectItem>
-                  <SelectItem value="UK">United Kingdom</SelectItem>
-                  <SelectItem value="Canada">Canada</SelectItem>
+                  <SelectItem value="India"className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>India</SelectItem>
+                  <SelectItem value="USA"className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>United States</SelectItem>
+                  <SelectItem value="UK"className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>United Kingdom</SelectItem>
+                  <SelectItem value="Canada"className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Canada</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -254,12 +296,30 @@ const CampusAmbassadorSignup = () => {
                   <SelectValue placeholder="Which topic do you want to teach?" />
                 </SelectTrigger>
                 <SelectContent className="rounded-xl">
-                  <SelectItem value="programming">Programming & Coding</SelectItem>
-                  <SelectItem value="data-science">Data Science</SelectItem>
-                  <SelectItem value="ai-ml">AI & Machine Learning</SelectItem>
-                  <SelectItem value="robotics">Robotics</SelectItem>
-                  <SelectItem value="web-development">Web Development</SelectItem>
-                  <SelectItem value="mobile-development">Mobile Development</SelectItem>
+                  <SelectItem value="programming" className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Programming & Coding</SelectItem>
+                  <SelectItem value="data-science"className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Data Science</SelectItem>
+                  <SelectItem value="ai-ml"className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>AI & Machine Learning</SelectItem>
+                  <SelectItem value="robotics"className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Robotics</SelectItem>
+                  <SelectItem value="web-development"className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Web Development</SelectItem>
+                  <SelectItem value="mobile-development"className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Mobile Development</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -270,12 +330,30 @@ const CampusAmbassadorSignup = () => {
                   <SelectValue placeholder="Which sector do you want to work in?" />
                 </SelectTrigger>
                 <SelectContent className="rounded-xl">
-                  <SelectItem value="education">Education</SelectItem>
-                  <SelectItem value="healthcare">Healthcare</SelectItem>
-                  <SelectItem value="finance">Finance</SelectItem>
-                  <SelectItem value="technology">Technology</SelectItem>
-                  <SelectItem value="manufacturing">Manufacturing</SelectItem>
-                  <SelectItem value="agriculture">Agriculture</SelectItem>
+                  <SelectItem value="education" className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Education</SelectItem>
+                  <SelectItem value="healthcare" className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Healthcare</SelectItem>
+                  <SelectItem value="finance"className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Finance</SelectItem>
+                  <SelectItem value="technology"className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Technology</SelectItem>
+                  <SelectItem value="manufacturing"className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Manufacturing</SelectItem>
+                  <SelectItem value="agriculture" className="bg-white text-black rounded-xl 
+            data-[highlighted]:bg-white data-[highlighted]:text-black data-[highlighted]:rounded-xl 
+            data-[state=checked]:bg-[#0389FF] data-[state=checked]:text-white"
+>Agriculture</SelectItem>
                 </SelectContent>
               </Select>
             </div>
