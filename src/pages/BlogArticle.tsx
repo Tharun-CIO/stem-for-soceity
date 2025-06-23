@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { ArrowLeft, Upload, AlertTriangle } from 'lucide-react';
+import { ArrowLeft,Share2, Upload, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 
@@ -237,29 +237,72 @@ const BlogArticle = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
-      
-      <div className="pt-24 pb-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Back Button */}
-          <div className="mb-8">
-            <Button 
-              variant="outline" 
-              onClick={handleBack}
-              className="bg-blue-600 text-white hover:bg-blue-700 border-0 rounded-full px-6 py-2"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back
-            </Button>
-          </div>
+      <div className="relative overflow-hidden min-h-screen"style={{ height: '100%', minHeight: '100%' }}
+>
+  {/* Grid background */}
+  <div 
+    className="absolute inset-0 opacity-50 pointer-events-none z-0"
+    style={{
+      minHeight: '100vh',
+      backgroundImage: `
+        linear-gradient(rgba(107,114,128,0.5) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(107,114,128,0.5) 2px, transparent 2px)
+      `,
+      backgroundSize: '100px 100px',
+     WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 100%)',
+maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 100%)',
 
-          {/* Header */}
-          <div className="text-center mb-12">
+
+      WebkitMaskRepeat: 'no-repeat',
+      maskRepeat: 'no-repeat',
+      WebkitMaskSize: '100% 100%',
+      maskSize: '100% 100%',
+    }}
+  />
+
+  {/* Content above grid */}
+  <div className="relative z-10">
+    <Header />
+
+    {/* Navigation Bar */}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className="flex items-center justify-between">
+        <Link to="/">
+          <Button
+            variant="outline"
+            size="sm"
+            className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            <span>Back</span>
+          </Button>
+        </Link>
+
+        <Button
+          variant="outline"
+          size="sm"
+          className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90"
+        >
+          <Share2 className="h-4 w-4" />
+          <span>Share</span>
+        </Button>
+      </div>
+    </div>
+      <div className="text-center mb-12">
             <p className="text-gray-600 mb-2">Scientific communication</p>
             <h1 className="text-4xl md:text-5xl font-bold">
               Create your <span className="text-yellow-400">Article!</span>
             </h1>
           </div>
+  </div>
+</div>
+      
+      
+        
+<div className="pt-24 pb-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          
 
           {/* Progress Steps */}
           <div className="flex justify-center mb-12">

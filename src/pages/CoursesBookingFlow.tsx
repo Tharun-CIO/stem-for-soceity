@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { ArrowLeft, Check, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft,Share2, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
@@ -213,20 +213,63 @@ const CoursesBookingFlow = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <GridBackground>
-        <Header />
-        
-        <div className="pt-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <Link to="/courses">
-              <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-blue-600 text-white border-blue-600 rounded-full px-4 hover:bg-blue-700">
-                <ArrowLeft className="h-4 w-4" />
-                <span>Back</span>
-              </Button>
-            </Link>
-          </div>
+     <div className="relative overflow-hidden min-h-screen"style={{ height: '100%', minHeight: '100%' }}
+>
+  {/* Grid background */}
+  <div 
+    className="absolute inset-0 opacity-50 pointer-events-none z-0"
+    style={{
+      minHeight: '100vh',
+      backgroundImage: `
+        linear-gradient(rgba(107,114,128,0.5) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(107,114,128,0.5) 2px, transparent 2px)
+      `,
+      backgroundSize: '100px 100px',
+     WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 100%)',
+maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 100%)',
+
+
+      WebkitMaskRepeat: 'no-repeat',
+      maskRepeat: 'no-repeat',
+      WebkitMaskSize: '100% 100%',
+      maskSize: '100% 100%',
+    }}
+  />
+
+  {/* Content above grid */}
+  <div className="relative z-10">
+    <Header />
+
+    {/* Navigation Bar */}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className="flex items-center justify-between">
+        <Link to="/">
+          <Button
+            variant="outline"
+            size="sm"
+            className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            <span>Back</span>
+          </Button>
+        </Link>
+
+        <Button
+          variant="outline"
+          size="sm"
+          className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90"
+        >
+          <Share2 className="h-4 w-4" />
+          <span>Share</span>
+        </Button>
+      </div>
+    </div>
+       <div className="text-center mb-8">
+          <h1 className="text-2xl font-semibold text-gray-900 mb-2">Explore Courses</h1>
+          <h2 className="text-3xl font-bold text-gray-900">Get trained and become Certified Professional</h2>
         </div>
-      </GridBackground>
+  </div>
+</div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center mb-8">

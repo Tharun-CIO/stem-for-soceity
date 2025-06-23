@@ -9,34 +9,69 @@ import { Link } from 'react-router-dom';
 const PsychologyCounselling = () => {
   return (
     <div className="min-h-screen bg-gray-50">
-      <GridBackground>
-        <Header />
-        
-        {/* Navigation Bar */}
-        <div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex items-center justify-between">
-              <Link to="/">
-                <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90">
-                  <ArrowLeft className="h-4 w-4" />
-                  <span>Back</span>
-                </Button>
-              </Link>
-              <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90">
-                <Share2 className="h-4 w-4" />
-                <span>Share</span>
-              </Button>
-            </div>
-          </div>
+      <div className="relative overflow-hidden min-h-screen"style={{ height: '100%', minHeight: '100%' }}
+>
+  {/* Grid background */}
+  <div 
+    className="absolute inset-0 opacity-50 pointer-events-none z-0"
+    style={{
+      minHeight: '100vh',
+      backgroundImage: `
+        linear-gradient(rgba(107,114,128,0.5) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(107,114,128,0.5) 2px, transparent 2px)
+      `,
+      backgroundSize: '100px 100px',
+     WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 100%)',
+maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 100%)',
+
+
+      WebkitMaskRepeat: 'no-repeat',
+      maskRepeat: 'no-repeat',
+      WebkitMaskSize: '100% 100%',
+      maskSize: '100% 100%',
+    }}
+  />
+
+  {/* Content above grid */}
+  <div className="relative z-10">
+    <Header />
+
+    {/* Navigation Bar */}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className="flex items-center justify-between">
+        <Link to="/">
+          <Button
+            variant="outline"
+            size="sm"
+            className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            <span>Back</span>
+          </Button>
+        </Link>
+
+        <Button
+          variant="outline"
+          size="sm"
+          className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90"
+        >
+          <Share2 className="h-4 w-4" />
+          <span>Share</span>
+        </Button>
+      </div>
+    </div>
+      <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-6">Psychology Counselling</h1>
         </div>
-      </GridBackground>
+  </div>
+</div>
+
+
 
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Page Title */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">Psychology Counselling</h1>
-        </div>
+        
 
         {/* Hero Image Section with uploaded image */}
         <div className="relative rounded-2xl overflow-hidden mb-12">
