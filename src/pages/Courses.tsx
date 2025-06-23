@@ -1,6 +1,8 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import Header from '@/components/Header';
 import GridBackground from '@/components/GridBackground';
+import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Share2, Filter, Search, Calendar, MapPin, DollarSign } from 'lucide-react';
@@ -13,7 +15,135 @@ interface FilterOption {
   checked: boolean;
 }
 
+interface Course {
+  id: string;
+  title: string;
+  type: string;
+  sector: string;
+  date: string;
+  day: string;
+  mode: string;
+  location: string;
+  price: string;
+}
+
 const Courses = () => {
+  // Filter state
+  const [sectorFilters, setSectorFilters] = useState<FilterOption[]>([
+    { id: 'biotech', label: 'Biotechnology', checked: false },
+    { id: 'ai', label: 'AI & Machine Learning', checked: false },
+    { id: 'renewable', label: 'Renewable Energy', checked: false },
+    { id: 'healthcare', label: 'Healthcare', checked: false },
+  ]);
+
+  const [courseTypeFilters, setCourseTypeFilters] = useState<FilterOption[]>([
+    { id: 'certification', label: 'Certification', checked: false },
+    { id: 'workshop', label: 'Workshop', checked: false },
+    { id: 'bootcamp', label: 'Bootcamp', checked: false },
+    { id: 'masterclass', label: 'Masterclass', checked: false },
+  ]);
+
+  const [startDateFilters, setStartDateFilters] = useState<FilterOption[]>([
+    { id: 'this-week', label: 'This Week', checked: false },
+    { id: 'next-week', label: 'Next Week', checked: false },
+    { id: 'this-month', label: 'This Month', checked: false },
+    { id: 'next-month', label: 'Next Month', checked: false },
+  ]);
+
+  const [modeFilters, setModeFilters] = useState<FilterOption[]>([
+    { id: 'online', label: 'Online', checked: false },
+    { id: 'offline', label: 'Offline', checked: false },
+    { id: 'hybrid', label: 'Hybrid', checked: false },
+  ]);
+
+  // Sample course data
+  const courses: Course[] = [
+    {
+      id: '1',
+      title: 'Introduction to Biotechnology',
+      type: 'Certification',
+      sector: 'Biotechnology',
+      date: 'Jan 15, 2024',
+      day: 'Monday',
+      mode: 'Online',
+      location: 'Virtual',
+      price: '299'
+    },
+    {
+      id: '2',
+      title: 'AI Fundamentals Workshop',
+      type: 'Workshop',
+      sector: 'AI & ML',
+      date: 'Jan 20, 2024',
+      day: 'Saturday',
+      mode: 'Hybrid',
+      location: 'New York',
+      price: '199'
+    },
+    {
+      id: '3',
+      title: 'Renewable Energy Systems',
+      type: 'Bootcamp',
+      sector: 'Renewable Energy',
+      date: 'Feb 1, 2024',
+      day: 'Thursday',
+      mode: 'Online',
+      location: 'Virtual',
+      price: '499'
+    }
+  ];
+
+  // Group courses by month
+  const groupedCourses = courses.reduce((acc, course) => {
+    const month = new Date(course.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+    if (!acc[month]) {
+      acc[month] = [];
+    }
+    acc[month].push(course);
+    return acc;
+  }, {} as Record<string, Course[]>);
+
+  // Filter handlers
+  const handleFilterChange = (filterType: string, optionId: string, checked: boolean) => {
+    switch (filterType) {
+      case 'sector':
+        setSectorFilters(prev => 
+          prev.map(filter => 
+            filter.id === optionId ? { ...filter, checked } : filter
+          )
+        );
+        break;
+      case 'courseType':
+        setCourseTypeFilters(prev => 
+          prev.map(filter => 
+            filter.id === optionId ? { ...filter, checked } : filter
+          )
+        );
+        break;
+      case 'startDate':
+        setStartDateFilters(prev => 
+          prev.map(filter => 
+            filter.id === optionId ? { ...filter, checked } : filter
+          )
+        );
+        break;
+      case 'mode':
+        setModeFilters(prev => 
+          prev.map(filter => 
+            filter.id === optionId ? { ...filter, checked } : filter
+          )
+        );
+        break;
+    }
+  };
+
+  const resetFilters = () => {
+    setSectorFilters(prev => prev.map(filter => ({ ...filter, checked: false })));
+    setCourseTypeFilters(prev => prev.map(filter => ({ ...filter, checked: false })));
+    setStartDateFilters(prev => prev.map(filter => ({ ...filter, checked: false })));
+    setModeFilters(prev => prev.map(filter => ({ ...filter, checked: false })));
+  };
+
   return (
     <div className="min-h-screen w-full">
       <GridBackground>
