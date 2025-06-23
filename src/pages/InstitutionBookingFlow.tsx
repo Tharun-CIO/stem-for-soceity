@@ -509,11 +509,15 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
       </div>
 
       {/* Footer */}
-      <footer className="bg-blue-900 text-white py-8 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3">
-              <span className="text-blue-900 font-bold text-lg">S</span>
+<footer className="bg-blue-900 text-white py-8 mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center">
+            <div className="w-10 h-10  rounded-full flex items-center justify-center mr-3">
+              <span className="text-blue-900 font-bold text-lg"><img 
+                    src="/lovable-uploads/FooterLogo.png" 
+                    alt="STEM for Society Logo" 
+                    className="w-full h-full object-contain"
+                  /></span>
             </div>
             <div>
               <h4 className="text-xl font-bold">STEM FOR SOCIETY</h4>
