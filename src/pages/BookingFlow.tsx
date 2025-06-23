@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import GridBackground from '@/components/GridBackground';
@@ -495,7 +496,7 @@ const BookingFlow = () => {
         <Header />
         
         {/* Navigation Bar */}
-        <div className="bg-white pt-20">
+        <div className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <Link to="/career-counselling">
               <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-blue-600 text-white border-blue-600 rounded-full px-4 hover:bg-blue-700">
