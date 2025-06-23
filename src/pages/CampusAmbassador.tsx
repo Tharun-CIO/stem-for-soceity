@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import GridBackground from '@/components/GridBackground';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Share2, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -9,25 +10,27 @@ import { Link } from 'react-router-dom';
 const CampusAmbassador = () => {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
-      
-      {/* Navigation Bar */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/">
+      <GridBackground>
+        <Header />
+        
+        {/* Navigation Bar */}
+        <div className="bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex items-center justify-between">
+              <Link to="/">
+                <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90">
+                  <ArrowLeft className="h-4 w-4" />
+                  <span>Back</span>
+                </Button>
+              </Link>
               <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90">
-                <ArrowLeft className="h-4 w-4" />
-                <span>Back</span>
+                <Share2 className="h-4 w-4" />
+                <span>Share</span>
               </Button>
-            </Link>
-            <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90">
-              <Share2 className="h-4 w-4" />
-              <span>Share</span>
-            </Button>
+            </div>
           </div>
         </div>
-      </div>
+      </GridBackground>
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

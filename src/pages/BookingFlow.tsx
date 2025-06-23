@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Header from '@/components/Header';
+import GridBackground from '@/components/GridBackground';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
@@ -455,7 +456,9 @@ const BookingFlow = () => {
           <div className="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
             <span className="text-yellow-800 text-sm font-bold">!</span>
           </div>
-          <span className="text-yellow-800 text-sm">After payment, your session will be booked and a Meet link will be shared instantly.</span>
+          <span className="text-yellow-800 text-sm">
+            After payment, your session will be booked and a Meet link will be shared instantly.
+          </span>
         </div>
       </div>
     </div>
@@ -488,19 +491,21 @@ const BookingFlow = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
-      
-      {/* Navigation Bar */}
-      <div className="bg-white border-b pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Link to="/career-counselling">
-            <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-blue-600 text-white border-blue-600 rounded-full px-4 hover:bg-blue-700">
-              <ArrowLeft className="h-4 w-4" />
-              <span>Back</span>
-            </Button>
-          </Link>
+      <GridBackground>
+        <Header />
+        
+        {/* Navigation Bar */}
+        <div className="bg-white pt-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <Link to="/career-counselling">
+              <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-blue-600 text-white border-blue-600 rounded-full px-4 hover:bg-blue-700">
+                <ArrowLeft className="h-4 w-4" />
+                <span>Back</span>
+              </Button>
+            </Link>
+          </div>
         </div>
-      </div>
+      </GridBackground>
 
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
