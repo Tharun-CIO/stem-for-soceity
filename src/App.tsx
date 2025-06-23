@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -25,6 +26,7 @@ import BlogPost from "./pages/BlogPost";
 import BookingFlow from "./pages/BookingFlow";
 import CoursesBookingFlow from "./pages/CoursesBookingFlow";
 import PsychologyBookingFlow from "./pages/PsychologyBookingFlow";
+import CareerCounsellingBookingFlow from "./pages/CareerCounsellingBookingFlow";
 import InstitutionBookingFlow from "./pages/InstitutionBookingFlow";
 import ExploreProgramDashboard from "./pages/ExploreProgramDashboard";
 import NotFound from "./pages/NotFound";
@@ -103,6 +105,7 @@ const App = () => (
               <Route path="/booking-flow" element={<BookingFlow />} />
               <Route path="/courses-booking" element={<CoursesBookingFlow />} />
               <Route path="/psychology-booking" element={<PsychologyBookingFlow />} />
+              <Route path="/career-counselling-booking" element={<CareerCounsellingBookingFlow />} />
               <Route path="/institution-booking" element={<InstitutionBookingFlow />} />
               <Route path="/explore-program-dashboard" element={<ExploreProgramDashboard />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

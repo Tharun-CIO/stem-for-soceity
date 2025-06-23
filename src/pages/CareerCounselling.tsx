@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -162,9 +161,11 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
                 <span className="text-gray-500 text-sm">/ Service</span>
               </div>
               
-              <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium">
-                GET STARTED
-              </Button>
+              <Link to="/career-counselling-booking">
+                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium">
+                  GET STARTED
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -179,9 +180,11 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
                 <span className="text-gray-500 text-sm">/ Person</span>
               </div>
               
-              <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium">
-                GET STARTED
-              </Button>
+              <Link to="/career-counselling-booking">
+                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium">
+                  GET STARTED
+                </Button>
+              </Link>
             </div>
 
             <div className="space-y-3 text-sm">
@@ -219,9 +222,11 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
                 <span className="text-gray-500 text-sm">/ Person</span>
               </div>
               
-              <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium">
-                GET STARTED
-              </Button>
+              <Link to="/career-counselling-booking">
+                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium">
+                  GET STARTED
+                </Button>
+              </Link>
             </div>
 
             <div className="space-y-3 text-sm">
