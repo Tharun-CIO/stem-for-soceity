@@ -1,106 +1,99 @@
-
-import LoginStages from "@/components/ui/LoginStages";
-import LoginForm from "@/components/ui/LoginForm";
+import React from 'react';
+import Header from '@/components/Header';
+import GridBackground from '@/components/GridBackground';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Link } from "react-router-dom";
+import SignupLayout from "@/components/ui/SignupLayout";
 
 const Login = () => {
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Animated Background */}
-      <div 
-        className="absolute inset-0 bg-cover animate-subtle-zoom"
-        style={{
-          backgroundImage: `url("/lovable-uploads/cc0094aa-ced3-4e50-b5f1-d61b7b6d2988.png")`,
-          backgroundPosition: 'center 70%',
-        }}
-      />
-      
-      {/* Background Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-      
-      {/* Desktop Layout - Hidden on mobile */}
-      <div className="hidden md:block relative z-10 min-h-screen">
-        <LoginStages>
-          {(stage) => (
-            <>
-              {/* Logo Element */}
-              <div className={`absolute top-1/2 -translate-y-1/2 transition-all duration-[2500ms] ${
-                stage === 'initial' || stage === 'textFadeOut'
-                  ? 'left-1/2 -translate-x-1/2' 
-                  : 'left-[25%] -translate-x-1/2'
-              }`}
-              style={{
-                transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
-                transform: 'translate3d(var(--tw-translate-x), var(--tw-translate-y), 0)'
-              }}>
-                <img 
-                  src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
-                  alt="STEM for Society Logo" 
-                  className={`object-contain transition-all duration-[2500ms] ${
-                    stage === 'initial' || stage === 'textFadeOut'
-                      ? 'h-32 w-32 md:h-48 md:w-48 lg:h-64 lg:w-64' 
-                      : 'h-40 w-40 md:h-56 md:w-56 lg:h-72 lg:w-72 opacity-50'
-                  } ${stage === 'logoTransition' ? 'animate-pulse-glow-delayed' : ''}`}
-                  style={{
-                    transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)'
-                  }}
-                />
-              </div>
-
-              {/* Text Element */}
-              <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 ease-out ${
-                stage === 'initial' 
-                  ? 'opacity-100 translate-y-24 md:translate-y-32 lg:translate-y-40' 
-                  : 'opacity-0 -translate-y-5'
-              }`}>
-                <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white text-center px-4 leading-tight">
-                  Let's Innovate, Incubate and Impact the world together!
-                </h1>
-              </div>
-
-              {/* Login Form with 50% opacity White Transparent Background and Curved Left Corner */}
-              <div className={`absolute right-0 top-0 h-full w-1/2 transition-all duration-[2500ms] ${
-                stage === 'logoTransition' 
-                  ? 'translate-x-0 opacity-100' 
-                  : 'translate-x-full opacity-0'
-              }`}
-              style={{
-                transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
-                transform: 'translate3d(var(--tw-translate-x), var(--tw-translate-y), 0)'
-              }}>
-                {/* White transparent overlay with 50% opacity and curved left corner */}
-                <div className="absolute inset-0 bg-white/50 rounded-l-3xl backdrop-blur-sm"></div>
-                
-                {/* Form Container with scroll */}
-                <div className="relative z-10 h-full max-h-screen overflow-y-auto flex items-center justify-center px-4 md:px-8 py-4">
-                  <LoginForm />
-                </div>
-              </div>
-            </>
-          )}
-        </LoginStages>
-      </div>
-
-      {/* Mobile Layout - Only visible on mobile */}
-      <div className="md:hidden relative z-10 min-h-screen flex flex-col">
-        {/* Mobile Logo */}
-        <div className="flex-1 flex items-center justify-center pt-16">
-          <img 
-            src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
-            alt="STEM for Society Logo" 
-            className="h-24 w-24 object-contain animate-pulse-glow-delayed opacity-50"
-          />
+    <div className="min-h-screen w-full">
+      <GridBackground>
+        <Header />
+        <SignupLayout
+      title="Welcome Back!"
+      subtitle="Login to continue your learning journey"
+    >
+      <div className="w-full max-w-md mx-auto">
+        <div className="text-center mb-6">
+          <h1 className="text-2xl font-bold text-gray-800 mb-2">Login</h1>
+          <p className="text-gray-600 text-sm">
+            Enter your credentials to access your account
+          </p>
         </div>
-        
-        {/* Mobile Form with 50% opacity white overlay and curved corners */}
-        <div className="flex-1 relative">
-          <div className="absolute inset-0 bg-white/50 rounded-t-3xl backdrop-blur-sm"></div>
-          <div className="relative z-10 max-h-[60vh] overflow-y-auto flex items-start justify-center px-4 pt-8 pb-4">
-            <div className="w-full max-w-sm">
-              <LoginForm />
-            </div>
+
+        <form className="space-y-6">
+          <div>
+            <Input
+              type="email"
+              placeholder="Email Address"
+              className="bg-white/80 rounded-xl"
+            />
           </div>
+
+          <div>
+            <Input
+              type="password"
+              placeholder="Password"
+              className="bg-white/80 rounded-xl"
+            />
+          </div>
+
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <input
+                type="checkbox"
+                id="remember"
+                className="rounded-sm text-[#0389FF] focus:ring-[#0389FF]"
+              />
+              <label htmlFor="remember" className="text-sm text-gray-600">
+                Remember me
+              </label>
+            </div>
+            <Link
+              to="/forgot-password"
+              className="text-sm text-[#0389FF] hover:text-[#0389FF]/80 hover:underline"
+            >
+              Forgot Password?
+            </Link>
+          </div>
+
+          <Button className="w-full bg-[#0389FF] hover:bg-[#0389FF]/90 text-white rounded-xl">
+            LOGIN
+          </Button>
+        </form>
+
+        <div className="text-center mt-6">
+          <p className="text-sm text-gray-600">
+            Don't have an account?{" "}
+            <Link
+              to="/signup"
+              className="text-[#0389FF] hover:text-[#0389FF]/80 hover:underline font-semibold"
+            >
+              Sign up
+            </Link>
+          </p>
+        </div>
+
+        <div className="text-center text-sm text-gray-600 mt-8">
+          — or sign in with —
+        </div>
+
+        <div className="flex justify-center gap-4 mt-4">
+          <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md">
+            G
+          </button>
+          <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md">
+            L
+          </button>
+          <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md">
+            F
+          </button>
         </div>
       </div>
+    </SignupLayout>
+      </GridBackground>
     </div>
   );
 };
