@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -22,6 +21,7 @@ import CampusAmbassador from "./pages/CampusAmbassador";
 import CampusAmbassadorBooking from "./pages/CampusAmbassadorBooking";
 import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
+import BlogPost from "./pages/BlogPost";
 import BookingFlow from "./pages/BookingFlow";
 import CoursesBookingFlow from "./pages/CoursesBookingFlow";
 import PsychologyBookingFlow from "./pages/PsychologyBookingFlow";
@@ -32,6 +32,7 @@ import SelectRole from "./pages/SelectRole";
 import PartnerRole from "./pages/PartnerRole";
 import CampusAmbassadorSignup from "./pages/CampusAmbassadorSignup";
 import PartnerInstitutionSignup from "./pages/PartnerInstitutionSignup";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -78,10 +79,7 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <Routes>
-          
               <Route path="/" element={<Index />} />
-
-
               <Route path="/select-role" element={<SelectRole />} />
               <Route path="/partner-role" element={<PartnerRole />} />
               <Route path="/campus-ambassador-signup" element={<CampusAmbassadorSignup />} />
@@ -92,7 +90,7 @@ const App = () => (
               <Route path="/partner-signup" element={<PartnerSignUp />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/courses" element={<Courses />} />
-              <Route path="/course-detail" element={<CourseDetail />} />
+              <Route path="/course-detail/:id" element={<CourseDetail />} />
               <Route path="/psychology-counselling" element={<PsychologyCounselling />} />
               <Route path="/career-counselling" element={<CareerCounselling />} />
               <Route path="/institution-pricing" element={<InstitutionPricing />} />
@@ -101,6 +99,7 @@ const App = () => (
               <Route path="/campus-ambassador-booking" element={<CampusAmbassadorBooking />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog-article" element={<BlogArticle />} />
+              <Route path="/blog/:id" element={<BlogPost />} />
               <Route path="/booking-flow" element={<BookingFlow />} />
               <Route path="/courses-booking" element={<CoursesBookingFlow />} />
               <Route path="/psychology-booking" element={<PsychologyBookingFlow />} />

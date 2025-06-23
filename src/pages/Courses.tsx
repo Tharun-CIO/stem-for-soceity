@@ -7,6 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Share2, Filter, Search, Calendar, MapPin, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import FilterDropdown from '@/components/FilterDropdown';
+import GridBackground from '@/components/GridBackground';
 
 interface FilterOption {
   id: string;
@@ -16,9 +17,9 @@ interface FilterOption {
 
 const Courses = () => {
   const [sectorFilters, setSectorFilters] = useState<FilterOption[]>([
-    { id: 'sector1', label: 'Sector 1', checked: true },
-    { id: 'sector2', label: 'Sector 2', checked: true },
-    { id: 'sector3', label: 'Sector 3', checked: true },
+    { id: 'healthcare', label: 'Healthcare', checked: true },
+    { id: 'technology', label: 'Technology', checked: true },
+    { id: 'biotechnology', label: 'Biotechnology', checked: true },
   ]);
 
   const [courseTypeFilters, setCourseTypeFilters] = useState<FilterOption[]>([
@@ -76,51 +77,59 @@ const Courses = () => {
   const courses = [
     {
       id: 1,
-      title: 'Title',
-      sector: 'sector',
-      date: 'Date',
-      day: 'Day',
-      mode: 'Mode',
-      location: 'Location',
-      price: 'Price',
+      title: 'AI for Medical Diagnosis',
+      sector: 'Healthcare',
+      date: '15 May 2025',
+      day: 'Thursday',
+      mode: 'Online',
+      location: 'Virtual Classroom',
+      price: '₹2,500',
       month: 'May 2025',
-      type: 'Certificate Program'
+      type: 'Certificate Program',
+      duration: '6 weeks',
+      level: 'Intermediate'
     },
     {
       id: 2,
-      title: 'Title',
-      sector: 'sector',
-      date: 'Date',
-      day: 'Day',
-      mode: 'Mode',
-      location: 'Location',
-      price: 'Price',
+      title: 'Machine Learning in Drug Discovery',
+      sector: 'Biotechnology',
+      date: '22 May 2025',
+      day: 'Thursday',
+      mode: 'Hybrid',
+      location: 'IIT Mumbai',
+      price: '₹3,200',
       month: 'May 2025',
-      type: 'Certificate Program'
+      type: 'Certificate Program',
+      duration: '8 weeks',
+      level: 'Advanced'
     },
     {
       id: 3,
-      title: 'Title',
-      sector: 'sector',
-      date: 'Date',
-      day: 'Day',
-      mode: 'Mode',
-      location: 'Location',
-      price: 'Price',
+      title: 'Quantum Computing Fundamentals',
+      sector: 'Technology',
+      date: '5 June 2025',
+      day: 'Thursday',
+      mode: 'Online',
+      location: 'Virtual Classroom',
+      price: '₹2,800',
       month: 'June 2025',
-      type: 'Certificate Program'
+      type: 'Certificate Program',
+      duration: '4 weeks',
+      level: 'Beginner'
     },
     {
       id: 4,
-      title: 'Title',
-      sector: 'sector',
-      date: 'Date',
-      day: 'Day',
-      mode: 'Mode',
-      location: 'Location',
-      price: 'Price',
+      title: 'Blockchain in Healthcare',
+      sector: 'Healthcare',
+      date: '12 June 2025',
+      day: 'Thursday',
+      mode: 'Offline',
+      location: 'AIIMS Delhi',
+      price: '₹4,000',
       month: 'June 2025',
-      type: 'Certificate Program'
+      type: 'Certificate Program',
+      duration: '6 weeks',
+      level: 'Intermediate'
     }
   ];
 
@@ -134,27 +143,29 @@ const Courses = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
-      
-      {/* Navigation Bar */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Link to="/">
-                <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90">
-                  <ArrowLeft className="h-4 w-4" />
-                  <span>Back</span>
-                </Button>
-              </Link>
+      <GridBackground>
+        <Header />
+        
+        {/* Navigation Bar - Removed border-b */}
+        <div className="bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-4">
+                <Link to="/">
+                  <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90">
+                    <ArrowLeft className="h-4 w-4" />
+                    <span>Back</span>
+                  </Button>
+                </Link>
+              </div>
+              <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90">
+                <Share2 className="h-4 w-4" />
+                <span>Share</span>
+              </Button>
             </div>
-            <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90">
-              <Share2 className="h-4 w-4" />
-              <span>Share</span>
-            </Button>
           </div>
         </div>
-      </div>
+      </GridBackground>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -224,55 +235,56 @@ const Courses = () => {
             
             <div className="space-y-4">
               {monthCourses.map((course) => (
-                <Card key={course.id} className="bg-white border border-gray-200">
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-6">
-                        {/* Course Image Placeholder */}
-                        <div className="w-24 h-20 bg-gray-200 rounded flex items-center justify-center">
-                          <span className="text-xs text-gray-500 text-center">{course.type}</span>
+                <Link key={course.id} to={`/course-detail/${course.id}`}>
+                  <Card className="bg-white border border-gray-200 hover:shadow-lg transition-shadow cursor-pointer">
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-6">
+                          {/* Course Image Placeholder */}
+                          <div className="w-24 h-20 bg-gray-200 rounded flex items-center justify-center">
+                            <span className="text-xs text-gray-500 text-center">{course.type}</span>
+                          </div>
+                          
+                          {/* Course Details */}
+                          <div className="space-y-3">
+                            <div className="flex items-center justify-between">
+                              <h4 className="text-lg font-medium text-gray-900">{course.title}</h4>
+                              <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded text-sm font-medium">
+                                {course.sector}
+                              </span>
+                            </div>
+                            
+                            <div className="flex items-center space-x-6 text-sm text-gray-600">
+                              <div className="flex items-center space-x-1">
+                                <Calendar className="h-4 w-4" />
+                                <span>{course.date}</span>
+                                <span>{course.day}</span>
+                              </div>
+                              <div className="flex items-center space-x-1">
+                                <span>Mode:</span>
+                                <span>{course.mode}</span>
+                              </div>
+                              <div className="flex items-center space-x-1">
+                                <MapPin className="h-4 w-4" />
+                                <span>{course.location}</span>
+                              </div>
+                            </div>
+                            
+                            <div className="flex items-center space-x-1 text-lg font-semibold text-gray-900">
+                              <span>{course.price}</span>
+                            </div>
+                          </div>
                         </div>
                         
-                        {/* Course Details */}
-                        <div className="space-y-3">
-                          <div className="flex items-center justify-between">
-                            <h4 className="text-lg font-medium text-gray-900">{course.title}</h4>
-                            <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded text-sm font-medium">
-                              {course.sector}
-                            </span>
-                          </div>
-                          
-                          <div className="flex items-center space-x-6 text-sm text-gray-600">
-                            <div className="flex items-center space-x-1">
-                              <Calendar className="h-4 w-4" />
-                              <span>{course.date}</span>
-                              <span>{course.day}</span>
-                            </div>
-                            <div className="flex items-center space-x-1">
-                              <span>$</span>
-                              <span>{course.mode}</span>
-                            </div>
-                            <div className="flex items-center space-x-1">
-                              <MapPin className="h-4 w-4" />
-                              <span>{course.location}</span>
-                            </div>
-                          </div>
-                          
-                          <div className="flex items-center space-x-1 text-lg font-semibold text-gray-900">
-                            <DollarSign className="h-5 w-5" />
-                            <span>{course.price}</span>
-                          </div>
+                        {/* Action Buttons */}
+                        <div className="flex items-center space-x-3">
+                          <Button variant="outline" size="sm" onClick={(e) => e.preventDefault()}>More Info</Button>
+                          <Button className="bg-[#0389FF] hover:bg-[#0389FF]/90" onClick={(e) => e.preventDefault()}>REGISTER NOW</Button>
                         </div>
                       </div>
-                      
-                      {/* Action Buttons */}
-                      <div className="flex items-center space-x-3">
-                        <Button variant="outline" size="sm">More Info</Button>
-                        <Button className="bg-[#0389FF] hover:bg-[#0389FF]/90">REGISTER NOW</Button>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
@@ -312,7 +324,6 @@ const Courses = () => {
         </div>
       </div>
 
-      {/* Standard Footer */}
       <Footer />
     </div>
   );
