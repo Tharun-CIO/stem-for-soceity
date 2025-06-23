@@ -59,11 +59,11 @@ const ExploreProgramDashboard = () => {
           <LoginStages>
             {(stage) => (
               <>
-                {/* Logo Element */}
+                {/* Logo Element - Improved responsive positioning */}
                 <div className={`absolute top-1/2 -translate-y-1/2 transition-all duration-[2500ms] ${
                   stage === 'initial' || stage === 'textFadeOut'
                     ? 'left-1/2 -translate-x-1/2' 
-                    : 'left-[25%] -translate-x-1/2'
+                    : 'left-[20%] lg:left-[25%] -translate-x-1/2'
                 }`}
                 style={{
                   transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
@@ -74,8 +74,8 @@ const ExploreProgramDashboard = () => {
                     alt="STEM for Society Logo" 
                     className={`object-contain transition-all duration-[2500ms] ${
                       stage === 'initial' || stage === 'textFadeOut'
-                        ? 'h-32 w-32 md:h-48 md:w-48 lg:h-64 lg:w-64' 
-                        : 'h-40 w-40 md:h-56 md:w-56 lg:h-72 lg:w-72 opacity-50'
+                        ? 'h-24 w-24 sm:h-32 sm:w-32 md:h-48 md:w-48 lg:h-64 lg:w-64' 
+                        : 'h-32 w-32 sm:h-40 sm:w-40 md:h-56 md:w-56 lg:h-72 lg:w-72 opacity-50'
                     } ${stage === 'logoTransition' ? 'animate-pulse-glow-delayed' : ''}`}
                     style={{
                       transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)'
@@ -86,19 +86,19 @@ const ExploreProgramDashboard = () => {
                 {/* Text Element */}
                 <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 ease-out ${
                   stage === 'initial' 
-                    ? 'opacity-100 translate-y-24 md:translate-y-32 lg:translate-y-40' 
+                    ? 'opacity-100 translate-y-16 sm:translate-y-24 md:translate-y-32 lg:translate-y-40' 
                     : 'opacity-0 -translate-y-5'
                 }`}>
-                  <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white text-center px-4 leading-tight">
+                  <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white text-center px-4 leading-tight">
                     Explore Our Programs & Services
                   </h1>
                 </div>
 
-                {/* Services Section */}
-                <div className={`absolute right-0 top-0 h-full w-1/2 transition-all duration-[2500ms] ${
+                {/* Desktop Services Section - Improved responsive behavior */}
+                <div className={`hidden md:block absolute right-0 top-0 h-full transition-all duration-[2500ms] ${
                   stage === 'logoTransition' 
-                    ? 'translate-x-0 opacity-100' 
-                    : 'translate-x-full opacity-0'
+                    ? 'translate-x-0 opacity-100 w-[55%] lg:w-1/2' 
+                    : 'translate-x-full opacity-0 w-1/2'
                 }`}
                 style={{
                   transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
@@ -108,38 +108,38 @@ const ExploreProgramDashboard = () => {
                   <div className="absolute inset-0 bg-white/95 rounded-l-3xl"></div>
                   
                   {/* Services Container */}
-                  <div className="relative z-10 h-full max-h-screen overflow-y-auto flex flex-col justify-center px-6 md:px-12 py-8">
-                    <div className="space-y-8">
+                  <div className="relative z-10 h-full max-h-screen overflow-y-auto flex flex-col justify-center px-4 lg:px-8 xl:px-12 py-8">
+                    <div className="space-y-6 lg:space-y-8">
                       {/* Header */}
-                      <div className="mb-8">
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 text-center">
+                      <div className="mb-6 lg:mb-8">
+                        <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-800 mb-4 text-center">
                           Our Services
                         </h2>
                       </div>
 
                       {/* Services Cards */}
-                      <div className="space-y-6">
+                      <div className="space-y-4 lg:space-y-6">
                         {services.map((service, index) => (
                           <div 
                             key={index} 
                             onClick={() => handleServiceClick(service.route)} 
-                            className="bg-white/90 backdrop-blur-sm border border-white/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:bg-white group"
+                            className="bg-white/90 backdrop-blur-sm border border-white/50 rounded-2xl p-4 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:bg-white group"
                           >
                             <div className="flex items-start justify-between">
-                              <div className="flex-1">
-                                <p className="text-sm text-gray-500 font-medium mb-2">
+                              <div className="flex-1 pr-3">
+                                <p className="text-xs lg:text-sm text-gray-500 font-medium mb-2">
                                   {service.category}
                                 </p>
-                                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                                <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2 lg:mb-3">
                                   {service.title}
                                 </h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">
+                                <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
                                   {service.description}
                                 </p>
                               </div>
-                              <div className="ml-4 flex-shrink-0">
-                                <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-                                  <ArrowRight className="w-5 h-5 text-white" />
+                              <div className="flex-shrink-0">
+                                <div className="w-8 h-8 lg:w-10 lg:h-10 bg-blue-500 rounded-full flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                                  <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
                                 </div>
                               </div>
                             </div>
@@ -150,41 +150,53 @@ const ExploreProgramDashboard = () => {
                   </div>
                 </div>
 
-                {/* Mobile Layout */}
+                {/* Mobile Layout - Improved positioning and sizing */}
                 <div className={`md:hidden absolute inset-0 transition-all duration-1000 ease-out ${
                   stage === 'logoTransition' ? 'opacity-100' : 'opacity-0'
                 }`}>
                   {/* Mobile Logo */}
-                  <div className="flex-1 flex items-center justify-center pt-16">
+                  <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <img 
                       src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
                       alt="STEM for Society Logo" 
-                      className="h-24 w-24 object-contain animate-pulse-glow-delayed opacity-50"
+                      className="h-20 w-20 sm:h-24 sm:w-24 object-contain animate-pulse-glow-delayed opacity-50"
                     />
                   </div>
                   
                   {/* Mobile Services with white overlay and curved corners */}
-                  <div className="flex-1 relative">
+                  <div className="absolute bottom-0 left-0 right-0 h-[60vh] sm:h-[65vh]">
                     <div className="absolute inset-0 bg-white/95 rounded-t-3xl"></div>
-                    <div className="relative z-10 max-h-[60vh] overflow-y-auto px-4 pt-8 pb-4">
-                      <div className="text-center mb-6">
-                        <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                    <div className="relative z-10 h-full overflow-y-auto px-4 sm:px-6 pt-6 sm:pt-8 pb-4">
+                      <div className="text-center mb-4 sm:mb-6">
+                        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
                           Our Services
                         </h2>  
                       </div>
-                      <div className="space-y-4">
+                      <div className="space-y-3 sm:space-y-4 pb-safe">
                         {services.map((service, index) => (
                           <div 
                             key={index} 
                             onClick={() => handleServiceClick(service.route)} 
-                            className="bg-white/90 rounded-xl p-4 shadow-lg cursor-pointer"
+                            className="bg-white/90 rounded-xl p-4 sm:p-5 shadow-lg cursor-pointer hover:shadow-xl transition-all duration-300"
                           >
-                            <h3 className="text-lg font-bold text-gray-800 mb-2">
-                              {service.title}
-                            </h3>
-                            <p className="text-gray-600 text-sm">
-                              {service.description}
-                            </p>
+                            <div className="flex items-start justify-between">
+                              <div className="flex-1 pr-3">
+                                <p className="text-xs text-gray-500 font-medium mb-1">
+                                  {service.category}
+                                </p>
+                                <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-2">
+                                  {service.title}
+                                </h3>
+                                <p className="text-gray-600 text-sm leading-relaxed">
+                                  {service.description}
+                                </p>
+                              </div>
+                              <div className="flex-shrink-0">
+                                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                                  <ArrowRight className="w-4 h-4 text-white" />
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         ))}
                       </div>
