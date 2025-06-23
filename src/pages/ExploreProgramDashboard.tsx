@@ -1,4 +1,3 @@
-
 import LoginStages from "@/components/ui/LoginStages";
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -94,7 +93,7 @@ const ExploreProgramDashboard = () => {
                   </h1>
                 </div>
 
-                {/* Desktop Services Section - Improved responsive behavior */}
+                {/* Desktop Services Section - Fixed header positioning */}
                 <div className={`hidden md:block absolute right-0 top-0 h-full transition-all duration-[2500ms] ${
                   stage === 'logoTransition' 
                     ? 'translate-x-0 opacity-100 w-[55%] lg:w-1/2' 
@@ -107,12 +106,12 @@ const ExploreProgramDashboard = () => {
                   {/* White transparent overlay with curved left corner */}
                   <div className="absolute inset-0 bg-white/95 rounded-l-3xl"></div>
                   
-                  {/* Services Container */}
-                  <div className="relative z-10 h-full max-h-screen overflow-y-auto flex flex-col justify-center px-4 lg:px-8 xl:px-12 py-8">
+                  {/* Services Container - Fixed header visibility */}
+                  <div className="relative z-10 h-full max-h-screen overflow-y-auto flex flex-col justify-start px-4 lg:px-8 xl:px-12 py-8 pt-12 lg:pt-16">
                     <div className="space-y-6 lg:space-y-8">
-                      {/* Header */}
+                      {/* Header - Reduced size and ensured visibility */}
                       <div className="mb-6 lg:mb-8">
-                        <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-800 mb-4 text-center">
+                        <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-800 mb-4 text-center">
                           Our Services
                         </h2>
                       </div>

@@ -1,6 +1,6 @@
-
 import React, { useState } from 'react';
 import Header from '@/components/Header';
+import GridBackground from '@/components/GridBackground';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
@@ -213,18 +213,20 @@ const CoursesBookingFlow = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
-      
-      <div className="bg-white border-b pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Link to="/courses">
-            <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-blue-600 text-white border-blue-600 rounded-full px-4 hover:bg-blue-700">
-              <ArrowLeft className="h-4 w-4" />
-              <span>Back</span>
-            </Button>
-          </Link>
+      <GridBackground>
+        <Header />
+        
+        <div className="pt-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <Link to="/courses">
+              <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-blue-600 text-white border-blue-600 rounded-full px-4 hover:bg-blue-700">
+                <ArrowLeft className="h-4 w-4" />
+                <span>Back</span>
+              </Button>
+            </Link>
+          </div>
         </div>
-      </div>
+      </GridBackground>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center mb-8">
