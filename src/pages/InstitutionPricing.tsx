@@ -74,7 +74,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
         {/* Hero Image Section with uploaded image */}
         <div className="relative rounded-2xl overflow-hidden mb-12">
           <img 
-            src="/lovable-uploads/39558913-b076-4d6b-8dfc-daece1423218.png" 
+            src="/lovable-uploads/img3.png" 
             alt="Institution Plans & Pricing" 
             className="w-full h-96 object-cover"
           />

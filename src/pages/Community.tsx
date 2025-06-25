@@ -79,9 +79,9 @@ const Community = () => {
         {/* Community Image Section with uploaded image */}
         <div className="relative rounded-2xl overflow-hidden mb-8">
           <img 
-            src="/lovable-uploads/bff01f4f-452e-4451-a1b9-f8107813a7d7.png"
+            src="/lovable-uploads/img4.png"
             alt="Community members" 
-            className="w-full h-80 object-cover"
+            className="w-full h-80 object-cover "
           />
           <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end">
             <div className="p-8">

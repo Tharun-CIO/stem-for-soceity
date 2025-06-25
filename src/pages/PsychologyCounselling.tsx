@@ -76,7 +76,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
         {/* Hero Image Section with uploaded image */}
         <div className="relative rounded-2xl overflow-hidden mb-12">
           <img 
-            src="/lovable-uploads/f291c67a-bf35-47b5-9858-59f6970d9466.png" 
+            src="/lovable-uploads/img1.png" 
             alt="Psychology Counselling" 
             className="w-full h-96 object-cover"
           />
@@ -135,9 +135,10 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
               </div>
               
               <Link to="/psychology-booking">
-                <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 text-lg font-semibold">
-                  BOOK YOUR SESSION
-                </Button>
+                <Button className="w-full bg-[#0389FF] hover:bg-[#027ae6] text-white py-3 text-lg font-semibold">
+  BOOK YOUR SESSION
+</Button>
+
               </Link>
             </div>
           </div>
