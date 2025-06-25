@@ -23,7 +23,9 @@ const Login = () => {
           {(stage) => (
             <>
               {/* Logo Element */}
-              <div className={`absolute top-1/2 -translate-y-1/2 transition-all duration-[1500ms] ${
+              <div className={`absolute top-1/2 -translate-y-1/2 transition-all ${
+                stage === 'logoTransition' ? 'duration-[2500ms]' : 'duration-[1500ms]'
+              } ${
                 stage === 'initial' || stage === 'textFadeOut'
                   ? 'left-1/2 -translate-x-1/2' 
                   : 'left-[25%] -translate-x-1/2'
@@ -35,7 +37,9 @@ const Login = () => {
                 <img 
                   src="/lovable-uploads/ceabc523-dba1-475b-b670-7ed6b88782a1.png" 
                   alt="STEM for Society Logo" 
-                  className={`object-contain transition-all duration-[1500ms] ${
+                  className={`object-contain transition-all ${
+                    stage === 'logoTransition' ? 'duration-[2500ms]' : 'duration-[1500ms]'
+                  } ${
                     stage === 'initial' || stage === 'textFadeOut'
                       ? 'h-32 w-32 md:h-48 md:w-48 lg:h-64 lg:w-64' 
                       : 'h-40 w-40 md:h-56 md:w-56 lg:h-72 lg:w-72 opacity-50'
@@ -58,7 +62,9 @@ const Login = () => {
               </div>
 
               {/* Login Form with 50% opacity White Transparent Background and Curved Left Corner */}
-              <div className={`absolute right-0 top-0 h-full w-1/2 transition-all duration-[1500ms] ${
+              <div className={`absolute right-0 top-0 h-full w-1/2 transition-all ${
+                stage === 'logoTransition' ? 'duration-[2500ms]' : 'duration-[1500ms]'
+              } ${
                 stage === 'logoTransition' 
                   ? 'translate-x-0 opacity-100' 
                   : 'translate-x-full opacity-0'
