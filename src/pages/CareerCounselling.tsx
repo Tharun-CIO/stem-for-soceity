@@ -162,7 +162,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
               </div>
               
               <Link to="/career-counselling-booking">
-                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium">
+                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-xl font-medium">
                   GET STARTED
                 </Button>
               </Link>
@@ -181,7 +181,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
               </div>
               
               <Link to="/career-counselling-booking">
-                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium">
+                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-xl font-medium">
                   GET STARTED
                 </Button>
               </Link>
@@ -223,7 +223,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
               </div>
               
               <Link to="/career-counselling-booking">
-                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium">
+                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-xl font-medium">
                   GET STARTED
                 </Button>
               </Link>

@@ -130,7 +130,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
           </p>
           <div className="text-right">
             <Link to="/campus-ambassador-booking">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl text-lg font-semibold">
                 REGISTER NOW
               </Button>
             </Link>
