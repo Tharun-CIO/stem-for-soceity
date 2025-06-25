@@ -66,13 +66,13 @@ const Signup = () => {
         {/* Right Section - Signup Form */}
         <div className="lg:w-1/2 relative">
           {/* White transparent overlay with curved left corner */}
-          <div className="absolute inset-0 bg-white/90 rounded-l-3xl"></div>
+          <div className="absolute inset-0 bg-white/70 rounded-l-3xl"></div>
           
           {/* Form Container with scroll */}
           <div className="relative z-10 h-full max-h-screen overflow-y-auto flex items-center justify-center px-4 md:px-8 py-8">
             <div className="w-full max-w-md">
               {/* Header */}
-              <div className="text-center mb-6">
+              <div className="text-center mb-6 pt-6">
                 <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
                   Create an Account
                 </h1>
@@ -94,7 +94,7 @@ const Signup = () => {
                     placeholder="Enter your name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="h-10 bg-white border-gray-300 text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
+                    className="h-10 bg-white rounded-xl border-gray-300 text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
                     required
                   />
                 </div>
@@ -110,7 +110,7 @@ const Signup = () => {
                     placeholder="Enter your email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="h-10 bg-white border-gray-300 text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
+                    className="h-10 bg-white border-gray-300  rounded-xl text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
                     required
                   />
                 </div>
@@ -126,7 +126,7 @@ const Signup = () => {
                     placeholder="Enter your phone number"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="h-10 bg-white border-gray-300 text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
+                    className="h-10 bg-white border-gray-300 rounded-xl text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
                     required
                   />
                 </div>
@@ -142,7 +142,7 @@ const Signup = () => {
                     placeholder="Enter your password"
                     value={formData.password}
                     onChange={handleChange}
-                    className="h-10 bg-white border-gray-300 text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
+                    className="h-10 bg-white border-gray-300 rounded-xl text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
                     required
                   />
                 </div>
@@ -158,7 +158,7 @@ const Signup = () => {
                     placeholder="Confirm your password"
                     value={formData.confirmPassword}
                     onChange={handleChange}
-                    className="h-10 bg-white border-gray-300 text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
+                    className="h-10 bg-white border-gray-300 rounded-xl text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
                     required
                   />
                 </div>

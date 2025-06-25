@@ -38,7 +38,7 @@ const LoginForm = () => {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="h-10 bg-white border-gray-300 text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
+            className="h-10 bg-white border-gray-300 text-gray-800 rounded-xl placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
             required
           />
         </div>
@@ -53,7 +53,7 @@ const LoginForm = () => {
             placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="h-10 bg-white border-gray-300 text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
+            className="h-10 bg-white border-gray-300 text-gray-800  rounded-xl placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
             required
           />
         </div>
