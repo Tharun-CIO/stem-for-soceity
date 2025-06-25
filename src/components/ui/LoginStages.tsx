@@ -11,8 +11,8 @@ const LoginStages = ({ children }: LoginStagesProps) => {
   const [stage, setStage] = useState<AnimationStage>('initial');
 
   useEffect(() => {
-    const timer1 = setTimeout(() => setStage('textFadeOut'), 3000);   // Text starts fading at 3s
-    const timer2 = setTimeout(() => setStage('logoTransition'), 4000); // Logo moves AND form appears at 4s
+    const timer1 = setTimeout(() => setStage('textFadeOut'), 2000);   // Reduced from 3000ms to 2000ms
+    const timer2 = setTimeout(() => setStage('logoTransition'), 2500); // Reduced from 4000ms to 2500ms
 
     return () => {
       clearTimeout(timer1);

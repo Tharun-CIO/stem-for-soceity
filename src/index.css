@@ -16,19 +16,19 @@
 
 @layer utilities {
   .animate-subtle-zoom {
-    animation: subtle-zoom 20s ease-in-out infinite;
+    animation: subtle-zoom 15s ease-in-out infinite; /* Reduced from 20s to 15s */
   }
   
   .animate-pulse-glow-delayed {
-    animation: pulse-glow 3s ease-in-out infinite 1s;
+    animation: pulse-glow 2s ease-in-out infinite 0.5s; /* Reduced delay from 1s to 0.5s */
   }
   
   .transition-smooth {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); /* Reduced from 0.3s to 0.2s */
   }
   
   .transition-smooth-slow {
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Reduced from 0.5s to 0.3s */
   }
 }
 
@@ -65,6 +65,6 @@ button, input, select, textarea {
 /* Responsive breakpoint adjustments */
 @media (max-width: 768px) {
   .transition-smooth {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.15s ease-in-out; /* Reduced from 0.2s to 0.15s */
   }
 }
