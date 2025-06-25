@@ -42,10 +42,10 @@ const SelectRole = () => {
           </div>
 
           {/* Role Cards */}
-          <div className="space-y-6">
+          <div className="space-y-6 ">
             {/* Partner - Individual Card */}
             <div onClick={handlePartnerIndividual} className="bg-white/60 backdrop-blur-sm border border-white/30 rounded-2xl p-8 hover:bg-white/70 transition-all duration-200 cursor-pointer group shadow-lg">
-              <div className="flex items-start justify-between">
+              <div className="flex items-start justify-between ">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-gray-600 text-lg font-medium">Partner – Individual</span>
