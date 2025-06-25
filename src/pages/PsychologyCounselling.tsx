@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -43,7 +44,8 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
           <Button
             variant="outline"
             size="sm"
-            className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90"
+            className="flex items-center space-x-2 text-white border-[#00549FB8] rounded-full px-4 hover:bg-[#00549FB8]/90"
+            style={{ backgroundColor: '#00549FB8' }}
           >
             <ArrowLeft className="h-4 w-4" />
             <span>Back</span>
@@ -53,7 +55,8 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
         <Button
           variant="outline"
           size="sm"
-          className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90"
+          className="flex items-center space-x-2 text-white border-[#00549FB8] rounded-full px-4 hover:bg-[#00549FB8]/90"
+          style={{ backgroundColor: '#00549FB8' }}
         >
           <Share2 className="h-4 w-4" />
           <span>Share</span>
@@ -135,7 +138,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
               </div>
               
               <Link to="/psychology-booking">
-                <Button className="w-full bg-[#0389FF] hover:bg-[#027ae6] text-white py-3 text-lg font-semibold">
+                <Button className="w-full bg-[#0389FF] hover:bg-[#0389FF]/90 text-white py-3 text-lg font-semibold">
   BOOK YOUR SESSION
 </Button>
 

@@ -1,34 +1,33 @@
 
 import React, { useState } from 'react';
 import Header from '@/components/Header';
-import GridBackground from '@/components/GridBackground';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { ArrowLeft, Share2, Check, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Share2, Check, Shield, Leaf } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 const CareerCounsellingBookingFlow = () => {
   const [currentStep, setCurrentStep] = useState(1);
-  const [selectedPlan, setSelectedPlan] = useState('');
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     mobileNumber: '',
-    plan: '',
+    age: '',
+    careerStage: '',
+    concerns: '',
+    studentId: '',
     selectedDate: null as Date | null,
     selectedTime: '4:30 PM',
   });
 
-  const [currentMonth, setCurrentMonth] = useState(new Date(2023, 8));
-
   const steps = [
     { number: 1, title: 'Personal Information' },
     { number: 2, title: 'Contact Information' },
-    { number: 3, title: 'Select Plan' },
+    { number: 3, title: 'Career Background' },
     { number: 4, title: 'Schedule Session' },
   ];
 
@@ -36,10 +35,25 @@ const CareerCounsellingBookingFlow = () => {
     '10:30 AM', '11:30 AM', '12:30 PM', '3:30 PM', '4:30 PM', '5:30 PM'
   ];
 
-  const plans = [
-    { id: 'basic', name: 'Basic', price: 2000, description: 'Want a Specific Service?' },
-    { id: 'standard', name: 'Standard', price: 30000, description: 'Essential Skills to Shape a Promising Future' },
-    { id: 'premium', name: 'Premium', price: 50000, description: 'Comprehensive Training for a Brighter Tomorrow' }
+  const careerStages = [
+    'Student - Choosing Major',
+    'Fresh Graduate',
+    'Early Career (0-3 years)',
+    'Mid Career (3-7 years)',
+    'Senior Career (7+ years)',
+    'Career Change',
+    'Returning to Work'
+  ];
+
+  const concerns = [
+    'Career Path Selection',
+    'Job Search Strategy',
+    'Interview Preparation',
+    'Skill Development',
+    'Work-Life Balance',
+    'Career Advancement',
+    'Industry Transition',
+    'Entrepreneurship'
   ];
 
   const nextStep = () => {
@@ -50,6 +64,10 @@ const CareerCounsellingBookingFlow = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+  const calculatePrice = () => {
+    return formData.studentId ? 375 : 1500; // 75% discount for students
+  };
+
   const renderStepIndicator = () => (
     <div className="flex items-center justify-center mb-8">
       {steps.map((step, index) => (
@@ -57,9 +75,9 @@ const CareerCounsellingBookingFlow = () => {
           <div className={cn(
             "w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium",
             currentStep === step.number 
-              ? "bg-blue-600 text-white" 
+              ? "bg-[#0389FF] text-white" 
               : currentStep > step.number 
-                ? "bg-blue-600 text-white"
+                ? "bg-[#0389FF] text-white"
                 : "bg-gray-200 text-gray-600"
           )}>
             {step.number}
@@ -91,11 +109,22 @@ const CareerCounsellingBookingFlow = () => {
           className="bg-gray-100 border-0 h-12"
         />
       </div>
+      <Input
+        placeholder="Age"
+        value={formData.age}
+        onChange={(e) => updateFormData('age', e.target.value)}
+        className="bg-gray-100 border-0 h-12"
+      />
     </div>
   );
 
   const renderContactInfo = () => (
     <div className="space-y-6">
+      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-center space-x-3">
+        <Shield className="h-5 w-5 text-yellow-600" />
+        <span className="text-yellow-800 font-medium">Your identity will be 100% confidential</span>
+      </div>
+      
       <Input
         placeholder="Email"
         type="email"
@@ -109,52 +138,57 @@ const CareerCounsellingBookingFlow = () => {
         onChange={(e) => updateFormData('mobileNumber', e.target.value)}
         className="bg-gray-100 border-0 h-12"
       />
+      <Input
+        placeholder="Student ID (Optional - for discount)"
+        value={formData.studentId}
+        onChange={(e) => updateFormData('studentId', e.target.value)}
+        className="bg-gray-100 border-0 h-12"
+      />
+      
+      {formData.studentId && (
+        <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-start space-x-3">
+          <Leaf className="h-5 w-5 text-green-600 mt-0.5" />
+          <div className="text-green-800 text-sm">
+            <p className="font-medium">75% fee waived off with valid student ID!</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 
-  const renderSelectPlan = () => (
+  const renderCareerBackground = () => (
     <div className="space-y-6">
-      <h2 className="text-2xl font-semibold text-gray-900 mb-6">Choose Your Plan</h2>
+      <h2 className="text-2xl font-semibold text-gray-900 mb-6">Tell us about your career journey</h2>
       
-      <div className="grid grid-cols-1 gap-6">
-        {plans.map((plan) => (
-          <div
-            key={plan.id}
-            className={cn(
-              "border rounded-lg p-6 cursor-pointer transition-all",
-              selectedPlan === plan.id 
-                ? "border-blue-600 bg-blue-50" 
-                : "border-gray-200 hover:border-gray-300"
-            )}
-            onClick={() => {
-              setSelectedPlan(plan.id);
-              updateFormData('plan', plan.id);
-            }}
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900">{plan.name}</h3>
-                <p className="text-gray-600 text-sm mt-1">{plan.description}</p>
-              </div>
-              <div className="text-right">
-                <div className="text-2xl font-bold text-gray-900">₹ {plan.price.toLocaleString()}.00</div>
-                <div className="text-gray-500 text-sm">
-                  {plan.id === 'basic' ? '/ Service' : '/ Person'}
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <Select value={formData.careerStage} onValueChange={(value) => updateFormData('careerStage', value)}>
+        <SelectTrigger className="bg-gray-100 border-0 h-12">
+          <SelectValue placeholder="Select your career stage" />
+        </SelectTrigger>
+        <SelectContent>
+          {careerStages.map((stage) => (
+            <SelectItem key={stage} value={stage}>{stage}</SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
 
-      {selectedPlan && (
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-          <div className="text-3xl font-bold text-blue-600 mb-2">
-            ₹ {plans.find(p => p.id === selectedPlan)?.price.toLocaleString()}.00
-          </div>
-          <div className="text-gray-600">Selected Plan: {plans.find(p => p.id === selectedPlan)?.name}</div>
-        </div>
-      )}
+      <Select value={formData.concerns} onValueChange={(value) => updateFormData('concerns', value)}>
+        <SelectTrigger className="bg-gray-100 border-0 h-12">
+          <SelectValue placeholder="What would you like guidance on?" />
+        </SelectTrigger>
+        <SelectContent>
+          {concerns.map((concern) => (
+            <SelectItem key={concern} value={concern}>{concern}</SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <div className="text-3xl font-bold text-blue-600 mb-2">₹ {calculatePrice().toLocaleString()}.00</div>
+        <div className="text-gray-600">45-minute career guidance session</div>
+        {formData.studentId && (
+          <div className="text-green-600 text-sm mt-1">Student discount applied!</div>
+        )}
+      </div>
     </div>
   );
 
@@ -162,19 +196,19 @@ const CareerCounsellingBookingFlow = () => {
     <div className="space-y-6">
       <h2 className="text-2xl font-semibold text-gray-900 mb-6">Schedule Your Session</h2>
       
-      <Select value={formData.selectedDate?.toISOString() || ''} onValueChange={(value) => updateFormData('selectedDate', value)}>
+      <Select>
         <SelectTrigger className="bg-gray-100 border-0 h-12">
           <SelectValue placeholder="Select Date" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="2023-10-01">October 1, 2023</SelectItem>
-          <SelectItem value="2023-10-15">October 15, 2023</SelectItem>
-          <SelectItem value="2023-11-01">November 1, 2023</SelectItem>
+          <SelectItem value="2023-09-18">September 18, 2023</SelectItem>
+          <SelectItem value="2023-09-19">September 19, 2023</SelectItem>
+          <SelectItem value="2023-09-20">September 20, 2023</SelectItem>
         </SelectContent>
       </Select>
 
       <div>
-        <h4 className="font-medium mb-4 text-lg">Preferred Time Slot</h4>
+        <h4 className="font-medium mb-4 text-lg">Available Time Slots</h4>
         <div className="grid grid-cols-2 gap-3">
           {availableTimes.map((time) => (
             <Button
@@ -183,7 +217,7 @@ const CareerCounsellingBookingFlow = () => {
               className={cn(
                 "py-3 h-12",
                 time === formData.selectedTime 
-                  ? "bg-blue-600 text-white hover:bg-blue-700" 
+                  ? "bg-[#0389FF] text-white hover:bg-[#0389FF]/90" 
                   : "bg-gray-100 border-0 text-gray-700 hover:bg-gray-200"
               )}
               onClick={() => updateFormData('selectedTime', time)}
@@ -192,6 +226,11 @@ const CareerCounsellingBookingFlow = () => {
             </Button>
           ))}
         </div>
+      </div>
+
+      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-center space-x-3">
+        <Shield className="h-5 w-5 text-yellow-600" />
+        <span className="text-yellow-800 text-sm">All sessions are completely confidential and conducted by certified career counselors.</span>
       </div>
     </div>
   );
@@ -203,19 +242,19 @@ const CareerCounsellingBookingFlow = () => {
           <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center">
             <Check className="h-8 w-8 text-white" />
           </div>
-          <h2 className="text-3xl font-bold text-gray-900">Booking Successful</h2>
+          <h2 className="text-3xl font-bold text-gray-900">Session Booked Successfully</h2>
           <p className="text-gray-600 max-w-md">
-            Your career counselling session has been booked. You will receive session details and meeting link via email.
+            Your career counselling session has been scheduled. A secure meeting link will be sent to your email.
           </p>
         </div>
       </div>
       
       <div className="flex justify-center space-x-4">
         <Button variant="outline" className="px-8 h-12">
-          Download Receipt
+          Add to Calendar
         </Button>
-        <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 h-12">
-          ACCESS SESSION
+        <Button className="bg-[#0389FF] hover:bg-[#0389FF]/90 text-white px-8 h-12">
+          DOWNLOAD CONFIRMATION
         </Button>
       </div>
     </div>
@@ -223,41 +262,65 @@ const CareerCounsellingBookingFlow = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <GridBackground>
-        <Header />
+      <div className="relative overflow-hidden min-h-screen" style={{ height: '100%', minHeight: '100%' }}>
+        {/* Grid background */}
+        <div 
+          className="absolute inset-0 opacity-50 pointer-events-none z-0"
+          style={{
+            minHeight: '100vh',
+            backgroundImage: `
+              linear-gradient(rgba(107,114,128,0.5) 2px, transparent 2px),
+              linear-gradient(90deg, rgba(107,114,128,0.5) 2px, transparent 2px)
+            `,
+            backgroundSize: '100px 100px',
+            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 100%)',
+            maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 100%)',
+            WebkitMaskRepeat: 'no-repeat',
+            maskRepeat: 'no-repeat',
+            WebkitMaskSize: '100% 100%',
+            maskSize: '100% 100%',
+          }}
+        />
 
-        {/* Navigation Bar */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/career-counselling">
+        {/* Content above grid */}
+        <div className="relative z-10">
+          <Header />
+
+          {/* Navigation Bar */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex items-center justify-between">
+              <Link to="/career-counselling">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="flex items-center space-x-2 text-white border-[#00549FB8] rounded-full px-4 hover:bg-[#00549FB8]/90"
+                  style={{ backgroundColor: '#00549FB8' }}
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  <span>Back</span>
+                </Button>
+              </Link>
+
               <Button
                 variant="outline"
                 size="sm"
-                className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90"
+                className="flex items-center space-x-2 text-white border-[#00549FB8] rounded-full px-4 hover:bg-[#00549FB8]/90"
+                style={{ backgroundColor: '#00549FB8' }}
               >
-                <ArrowLeft className="h-4 w-4" />
-                <span>Back</span>
+                <Share2 className="h-4 w-4" />
+                <span>Share</span>
               </Button>
-            </Link>
+            </div>
+          </div>
 
-            <Button
-              variant="outline"
-              size="sm"
-              className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90"
-            >
-              <Share2 className="h-4 w-4" />
-              <span>Share</span>
-            </Button>
+          <div className="text-center mb-8">
+            <h1 className="text-xl font-medium text-gray-600 mb-2">Book your Session</h1>
+            <h2 className="text-4xl font-bold text-gray-900">
+              <span className="text-blue-500">Career</span> Counselling
+            </h2>
           </div>
         </div>
-
-        <div className="text-center mb-8">
-          <h1 className="text-xl font-medium text-gray-600 mb-2">Book your Session</h1>
-          <h2 className="text-4xl font-bold text-gray-900">
-            <span className="text-blue-600">Career</span> Counselling
-          </h2>
-        </div>
-      </GridBackground>
+      </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {currentStep <= 4 && renderStepIndicator()}
@@ -265,7 +328,7 @@ const CareerCounsellingBookingFlow = () => {
         <Card className="p-8 shadow-sm">
           {currentStep === 1 && renderPersonalInfo()}
           {currentStep === 2 && renderContactInfo()}
-          {currentStep === 3 && renderSelectPlan()}
+          {currentStep === 3 && renderCareerBackground()}
           {currentStep === 4 && renderScheduleSession()}
           {currentStep === 5 && renderSuccess()}
         </Card>
@@ -275,14 +338,14 @@ const CareerCounsellingBookingFlow = () => {
             {currentStep === 4 ? (
               <Button 
                 onClick={nextStep}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg font-semibold h-12"
+                className="bg-[#0389FF] hover:bg-[#0389FF]/90 text-white px-8 py-3 text-lg font-semibold h-12"
               >
                 PROCEED TO PAYMENT
               </Button>
             ) : (
               <Button 
                 onClick={nextStep}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg font-semibold h-12"
+                className="bg-[#0389FF] hover:bg-[#0389FF]/90 text-white px-8 py-3 text-lg font-semibold h-12"
               >
                 CONTINUE
               </Button>

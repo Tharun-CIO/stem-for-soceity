@@ -64,9 +64,9 @@ const PsychologyBookingFlow = () => {
           <div className={cn(
             "w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium",
             currentStep === step.number 
-              ? "bg-teal-600 text-white" 
+              ? "bg-[#0389FF] text-white" 
               : currentStep > step.number 
-                ? "bg-teal-600 text-white"
+                ? "bg-[#0389FF] text-white"
                 : "bg-gray-200 text-gray-600"
           )}>
             {step.number}
@@ -195,7 +195,7 @@ const PsychologyBookingFlow = () => {
               className={cn(
                 "py-3 h-12",
                 time === formData.selectedTime 
-                  ? "bg-teal-600 text-white hover:bg-teal-700" 
+                  ? "bg-[#0389FF] text-white hover:bg-[#0389FF]/90" 
                   : "bg-gray-100 border-0 text-gray-700 hover:bg-gray-200"
               )}
               onClick={() => updateFormData('selectedTime', time)}
@@ -231,7 +231,7 @@ const PsychologyBookingFlow = () => {
         <Button variant="outline" className="px-8 h-12">
           Add to Calendar
         </Button>
-        <Button className="bg-teal-600 hover:bg-teal-700 text-white px-8 h-12">
+        <Button className="bg-[#0389FF] hover:bg-[#0389FF]/90 text-white px-8 h-12">
           DOWNLOAD CONFIRMATION
         </Button>
       </div>
@@ -274,7 +274,8 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
           <Button
             variant="outline"
             size="sm"
-            className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90"
+            className="flex items-center space-x-2 text-white border-[#00549FB8] rounded-full px-4 hover:bg-[#00549FB8]/90"
+            style={{ backgroundColor: '#00549FB8' }}
           >
             <ArrowLeft className="h-4 w-4" />
             <span>Back</span>
@@ -284,7 +285,8 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
         <Button
           variant="outline"
           size="sm"
-          className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90"
+          className="flex items-center space-x-2 text-white border-[#00549FB8] rounded-full px-4 hover:bg-[#00549FB8]/90"
+          style={{ backgroundColor: '#00549FB8' }}
         >
           <Share2 className="h-4 w-4" />
           <span>Share</span>
@@ -318,14 +320,14 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
             {currentStep === 4 ? (
               <Button 
                 onClick={nextStep}
-                className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 text-lg font-semibold h-12"
+                className="bg-[#0389FF] hover:bg-[#0389FF]/90 text-white px-8 py-3 text-lg font-semibold h-12"
               >
                 PROCEED TO PAYMENT
               </Button>
             ) : (
               <Button 
                 onClick={nextStep}
-                className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 text-lg font-semibold h-12"
+                className="bg-[#0389FF] hover:bg-[#0389FF]/90 text-white px-8 py-3 text-lg font-semibold h-12"
               >
                 CONTINUE
               </Button>
