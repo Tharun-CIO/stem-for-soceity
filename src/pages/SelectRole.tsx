@@ -29,7 +29,7 @@ const SelectRole = () => {
       </div>
 
       {/* Right side - Role Selection with glass effect */}
-      <div className="w-full max-w-2xl bg-white/30 backdrop-blur-lg border border-white/20 shadow-2xl flex flex-col justify-center px-12 py-16 relative">
+      <div className="w-full max-w-2xl bg-white/40 backdrop-blur-lg border border-white/20 shadow-2xl flex flex-col justify-center px-12 py-16 relative">
         <div className="space-y-8">
           {/* Header */}
           <div className="text-center mb-12">
