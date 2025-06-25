@@ -208,7 +208,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
        
 
         {/* Filters Section */}
-        <div className="bg-white rounded-lg shadow-sm border p-6 mb-8">
+        <div className="bg-white rounded-xl shadow-sm  p-6 mb-8">
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center space-x-2">
               <Filter className="h-4 w-4 text-gray-500" />
@@ -225,6 +225,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
               title="Course type"
               options={courseTypeFilters}
               onOptionChange={(optionId, checked) => handleFilterChange('courseType', optionId, checked)}
+              
             />
             
             <FilterDropdown
@@ -311,7 +312,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
                         {/* Action Buttons */}
                         <div className="flex items-center space-x-3">
                           <Button variant="outline" size="sm" onClick={(e) => e.preventDefault()}>More Info</Button>
-                          <Button className="bg-[#0389FF] hover:bg-[#0389FF]/90" onClick={(e) => e.preventDefault()}>REGISTER NOW</Button>
+                          <Button className="bg-[#0389FF] hover:bg-[#0389FF]/90 text-white" onClick={(e) => e.preventDefault()}>REGISTER NOW</Button>
                         </div>
                       </div>
                     </CardContent>
@@ -337,9 +338,9 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
-              <div className="w-32 h-32 bg-gray-300 rounded-full overflow-hidden">
+              <div className="w-32 h-32 bg-blue-300 rounded-full overflow-hidden">
                 <img 
-                  src="/lovable-uploads/6a4f0de8-6869-43d7-8444-cc8cd87c0958.png" 
+                  src="/lovable-uploads/b0da6a24-f85c-48ba-8f2f-2fce65f2f2d1.png" 
                   alt="Counselor"
                   className="w-full h-full object-cover"
                 />
