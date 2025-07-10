@@ -105,7 +105,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
         </div>
 
         {/* Course Card */}
-        <div className="bg-white rounded-lg shadow-lg  p-6 mb-8">
+        <div className="bg-white rounded-xl shadow-lg  p-6 mb-8">
           <div className="flex items-start justify-between">
             <div className="flex items-start space-x-6">
               {/* Course Image Placeholder */}
@@ -146,14 +146,14 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
         </div>
 
         {/* Course Description */}
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
           <p className="text-gray-700 leading-relaxed">
             {course.description}
           </p>
         </div>
 
         {/* Topics Covered */}
-        <div className="bg-white rounded-lg shadow-lg mb-8">
+        <div className="bg-white rounded-xl shadow-lg mb-8">
           <div className="bg-blue-100 px-6 py-4 rounded-t-lg">
             <h3 className="text-lg font-medium text-gray-900">Topics Covered</h3>
           </div>
@@ -166,7 +166,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
 
         {/* Instructor and Institution */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <div className="bg-white rounded-lg shadow-lg">
+          <div className="bg-white rounded-xl shadow-lg">
             <div className="bg-blue-100 px-6 py-4 rounded-t-lg">
               <h3 className="text-lg font-medium text-gray-900">Instructor</h3>
             </div>
@@ -175,7 +175,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
             </div>
           </div>
           
-          <div className="bg-white rounded-lg shadow-lg">
+          <div className="bg-white rounded-xl shadow-lg">
             <div className="bg-blue-100 px-6 py-4 rounded-t-lg">
               <h3 className="text-lg font-medium text-gray-900">Institution/Industry</h3>
             </div>
