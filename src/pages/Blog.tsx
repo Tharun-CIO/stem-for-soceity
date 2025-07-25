@@ -117,14 +117,42 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
           </Button>
         </Link>
 
-        <Button
-          variant="outline"
-          size="sm"
-          className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90"
-        >
-          <Share2 className="h-4 w-4" />
-          <span>Share</span>
-        </Button>
+       <Button
+  variant="outline"
+  size="sm"
+  className="flex items-center space-x-2 bg-[#0389FF] text-white border-[#0389FF] rounded-full px-4 hover:bg-[#0389FF]/90"
+  onClick={() => {
+    const currentUrl = window.location.href;
+    navigator.clipboard.writeText(currentUrl)
+      .then(() => {
+        const popup = document.createElement('div');
+        popup.innerText = 'Copied!';
+        popup.classList.add(
+          'fixed', 
+          'top-4', 
+          'right-4', 
+          'bg-white', 
+          'text-black', 
+          'p-2', 
+          'rounded-xl', 
+          'shadow-lg'
+        );
+        document.body.appendChild(popup);
+        
+        // Hide the popup after 2 seconds
+        setTimeout(() => {
+          popup.remove();
+        }, 2000);
+      })
+      .catch((error) => {
+        console.error("Failed to copy link:", error);
+      });
+  }}
+>
+  <Share2 className="h-4 w-4" />
+  <span>Share</span>
+</Button>
+
       </div>
     </div>
        <div className="text-center mb-8">
@@ -145,7 +173,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
             />
           </div>
           <Link to="/blog-article">
-            <Button className="bg-blue-600 hover:bg-blue-700 h-12 px-8 rounded-full">
+            <Button className="bg-blue-600 hover:bg-blue-700 h-12 px-8 rounded-full text-white">
               <Plus className="w-5 h-5 mr-2" />
               Create Article
             </Button>

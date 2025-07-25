@@ -225,13 +225,13 @@ const PartnerInstitutionSignup = () => {
             
             <div className="flex justify-center gap-4">
               <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md">
-                G
+                <img src="../lovable-uploads/google.png" />
               </button>
               <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md">
-                L
+                <img src="../lovable-uploads/email.png" />
               </button>
               <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md">
-                F
+                <img src="../lovable-uploads/person.png" />
               </button>
             </div>
           </div>
