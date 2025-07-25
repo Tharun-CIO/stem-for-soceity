@@ -179,7 +179,7 @@ const BookingFlow = () => {
         <Check className="absolute right-3 top-4 h-4 w-4 text-green-600" />
       </div>
       
-      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-center space-x-3">
+      <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex items-center space-x-3">
         <div className="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
           <span className="text-yellow-800 text-sm font-bold">!</span>
         </div>
@@ -208,7 +208,7 @@ const BookingFlow = () => {
         />
       </div>
 
-      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-center space-x-3">
+      <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex items-center space-x-3">
         <div className="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
           <span className="text-yellow-800 text-sm font-bold">!</span>
         </div>
@@ -315,7 +315,7 @@ const BookingFlow = () => {
         </div>
       </div>
       
-      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-center space-x-3">
+      <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex items-center space-x-3">
         <div className="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
           <span className="text-yellow-800 text-sm font-bold">!</span>
         </div>
@@ -453,7 +453,7 @@ const BookingFlow = () => {
       </div>
 
       <div className="lg:col-span-2">
-        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-center space-x-3">
+        <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex items-center space-x-3">
           <div className="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
             <span className="text-yellow-800 text-sm font-bold">!</span>
           </div>

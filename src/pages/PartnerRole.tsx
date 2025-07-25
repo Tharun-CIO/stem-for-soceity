@@ -64,7 +64,7 @@ const PartnerRole = () => {
                 <div className="space-y-6">
                   {/* Partner - Individual */}
                   <Link to="/campus-ambassador-signup" className="block">
-                    <div className="bg-white border border-gray-200 rounded-lg p-6 hover:bg-gray-50 hover:border-blue-300 transition-all duration-200 hover:shadow-md cursor-pointer group relative">
+                    <div className="bg-white border border-gray-200 rounded-xl p-6 hover:bg-gray-50 hover:border-blue-300 transition-all duration-200 hover:shadow-md cursor-pointer group relative">
                       <ArrowWithTail />
                       <div className="pr-8">
                         <h3 className="text-xl font-bold text-gray-800 mb-3">
@@ -79,7 +79,7 @@ const PartnerRole = () => {
 
                   {/* Partner - Institution */}
                   <Link to="/partner-institution-signup" className="block">
-                    <div className="bg-white border border-gray-200 rounded-lg p-6 hover:bg-gray-50 hover:border-blue-300 transition-all duration-200 hover:shadow-md cursor-pointer group relative">
+                    <div className="bg-white border border-gray-200 rounded-xl p-6 hover:bg-gray-50 hover:border-blue-300 transition-all duration-200 hover:shadow-md cursor-pointer group relative">
                       <ArrowWithTail />
                       <div className="pr-8">
                         <h3 className="text-xl font-bold text-gray-800 mb-3">
@@ -139,7 +139,7 @@ const PartnerRole = () => {
 
               <div className="space-y-4 mb-6">
                 <Link to="/campus-ambassador-signup" className="block">
-                  <div className="bg-white border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors cursor-pointer relative">
+                  <div className="bg-white border border-gray-200 rounded-xl p-4 hover:bg-gray-50 transition-colors cursor-pointer relative">
                     <ArrowWithTail />
                     <div className="pr-10">
                       <h3 className="font-bold text-gray-800 text-sm sm:text-base mb-2">Become a Campus Ambassador</h3>
@@ -151,7 +151,7 @@ const PartnerRole = () => {
                 </Link>
 
                 <Link to="/partner-institution-signup" className="block">
-                  <div className="bg-white border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors cursor-pointer relative">
+                  <div className="bg-white border border-gray-200 rounded-xl p-4 hover:bg-gray-50 transition-colors cursor-pointer relative">
                     <ArrowWithTail />
                     <div className="pr-10">
                       <h3 className="font-bold text-gray-800 text-sm sm:text-base mb-2">Partner Institution Portal</h3>

@@ -78,7 +78,7 @@ const Community = () => {
   <img 
     src="/lovable-uploads/QR.jpg"
     alt="QR Code" 
-    className="w-full h-full object-cover rounded-lg"
+    className="w-full h-full object-cover rounded-xl"
   />
 </div>
 

@@ -109,7 +109,7 @@ const PsychologyBookingFlow = () => {
 
   const renderContactInfo = () => (
     <div className="space-y-6">
-      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-center space-x-3">
+      <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex items-center space-x-3">
         <Shield className="h-5 w-5 text-yellow-600" />
         <span className="text-yellow-800 font-medium">Your identity will be 100% confidential</span>
       </div>
@@ -135,7 +135,7 @@ const PsychologyBookingFlow = () => {
       />
       
       {formData.studentId && (
-        <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-start space-x-3">
+        <div className="bg-green-50 border border-green-200 rounded-xl p-4 flex items-start space-x-3">
           <Leaf className="h-5 w-5 text-green-600 mt-0.5" />
           <div className="text-green-800 text-sm">
             <p className="font-medium">75% fee waived off with valid student ID!</p>
@@ -160,7 +160,7 @@ const PsychologyBookingFlow = () => {
         </SelectContent>
       </Select>
 
-      <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
+      <div className="bg-teal-50 border border-teal-200 rounded-xl p-4">
         <div className="text-3xl font-bold text-teal-600 mb-2">₹ {calculatePrice().toLocaleString()}.00</div>
         <div className="text-gray-600">30-minute confidential session</div>
         {formData.studentId && (
@@ -206,7 +206,7 @@ const PsychologyBookingFlow = () => {
         </div>
       </div>
 
-      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-center space-x-3">
+      <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex items-center space-x-3">
         <Shield className="h-5 w-5 text-yellow-600" />
         <span className="text-yellow-800 text-sm">All sessions are completely confidential and conducted by licensed professionals.</span>
       </div>

@@ -139,7 +139,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
               </div>
               
               <Link to="/institution-booking">
-                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium text-base">
+                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-xl font-medium text-base">
                   GET STARTED
                 </Button>
               </Link>
@@ -177,7 +177,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
               </div>
               
               <Link to="/institution-booking">
-                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium text-base">
+                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-xl font-medium text-base">
                   GET STARTED
                 </Button>
               </Link>

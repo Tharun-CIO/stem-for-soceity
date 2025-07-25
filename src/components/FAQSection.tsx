@@ -141,7 +141,7 @@ const FAQSection = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className={`border rounded-lg overflow-hidden transition-colors ${
+                className={`border rounded-xl overflow-hidden transition-colors ${
                   openItem === `item-${index}` ? 'bg-blue-50 border-blue-200' : 'bg-white border-gray-200'
                 }`}
               >

@@ -177,7 +177,7 @@ const Signup = () => {
                 
                 <Button 
                   type="submit" 
-                  className="w-full h-10 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base transition-all duration-200 transform hover:scale-[1.02] mt-6 rounded-lg"
+                  className="w-full h-10 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base transition-all duration-200 transform hover:scale-[1.02] mt-6 rounded-xl"
                 >
                   SIGN UP
                 </Button>
@@ -322,7 +322,7 @@ const Signup = () => {
                 
                 <Button 
                   type="submit" 
-                  className="w-full h-9 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base transition-all duration-200 transform hover:scale-[1.02] mt-4 rounded-lg"
+                  className="w-full h-9 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base transition-all duration-200 transform hover:scale-[1.02] mt-4 rounded-xl"
                 >
                   Sign Up
                 </Button>

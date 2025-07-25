@@ -111,7 +111,7 @@ const InstitutionBookingFlow = () => {
         />
       </div>
 
-      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-start space-x-3">
+      <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex items-start space-x-3">
         <AlertTriangle className="h-5 w-5 text-yellow-600 mt-0.5 flex-shrink-0" />
         <span className="text-yellow-800 text-sm">
           Select your institution from list or enter manually if not listed.
@@ -213,7 +213,7 @@ const InstitutionBookingFlow = () => {
         </Button>
       </div>
 
-      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-start space-x-3">
+      <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex items-start space-x-3">
         <AlertTriangle className="h-5 w-5 text-yellow-600 mt-0.5 flex-shrink-0" />
         <span className="text-yellow-800 text-sm">
           Enter the OTP sent to your mobile number.
@@ -249,7 +249,7 @@ const InstitutionBookingFlow = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Basics Plan */}
-        <div className={`border rounded-lg p-6 cursor-pointer transition-all ${
+        <div className={`border rounded-xl p-6 cursor-pointer transition-all ${
           selectedPlan === 'basics' ? 'border-blue-500 bg-blue-50' : 'border-gray-200 bg-white'
         }`} onClick={() => setSelectedPlan('basics')}>
           <div className="flex items-center justify-between mb-4">
@@ -268,7 +268,7 @@ const InstitutionBookingFlow = () => {
         </div>
 
         {/* Premium Plan */}
-        <div className={`border rounded-lg p-6 cursor-pointer transition-all ${
+        <div className={`border rounded-xl p-6 cursor-pointer transition-all ${
           selectedPlan === 'premium' ? 'border-blue-500 bg-blue-50' : 'border-gray-200 bg-white'
         }`} onClick={() => setSelectedPlan('premium')}>
           <div className="flex items-center justify-between mb-4">
@@ -332,7 +332,7 @@ const InstitutionBookingFlow = () => {
               <button
                 key={i}
                 onClick={() => isCurrentMonth && setSelectedDate(date)}
-                className={`p-2 text-sm rounded-lg transition-colors ${
+                className={`p-2 text-sm rounded-xl transition-colors ${
                   !isCurrentMonth 
                     ? 'text-gray-300 cursor-not-allowed'
                     : isSelected
@@ -372,7 +372,7 @@ const InstitutionBookingFlow = () => {
               <button
                 key={time}
                 onClick={() => setSelectedTime(time)}
-                className={`p-3 text-sm rounded-lg border transition-colors ${
+                className={`p-3 text-sm rounded-xl border transition-colors ${
                   selectedTime === time
                     ? 'bg-blue-500 text-white border-blue-500'
                     : 'bg-gray-100 text-gray-700 border-gray-200 hover:border-gray-300'
@@ -384,7 +384,7 @@ const InstitutionBookingFlow = () => {
           </div>
         </div>
 
-        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-start space-x-3">
+        <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex items-start space-x-3">
           <AlertTriangle className="h-5 w-5 text-yellow-600 mt-0.5 flex-shrink-0" />
           <span className="text-yellow-800 text-sm">
             After payment, your session will be booked and a Meet link will be shared instantly.

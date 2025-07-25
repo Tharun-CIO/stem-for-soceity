@@ -103,7 +103,7 @@ const WhyChooseSection = () => {
                 
                 {expandedItem === index && (
                   <div className="px-4 pb-4 animate-fade-in">
-                    <div className="bg-blue-50 group-hover:bg-blue-500 rounded-lg p-3 ml-11 transition-colors">
+                    <div className="bg-blue-50 group-hover:bg-blue-500 rounded-xl p-3 ml-11 transition-colors">
                       <p className="text-sm text-gray-700 group-hover:text-blue-100">{item.content}</p>
                     </div>
                   </div>

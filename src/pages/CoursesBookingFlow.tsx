@@ -141,7 +141,7 @@ const CoursesBookingFlow = () => {
         </SelectContent>
       </Select>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
         <div className="text-3xl font-bold text-blue-600 mb-2">₹ 15,000.00</div>
         <div className="text-gray-600">Complete Course Package</div>
       </div>

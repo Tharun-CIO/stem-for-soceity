@@ -62,7 +62,7 @@ const PartnerSignUp = () => {
                 placeholder="Enter the institution name"
                 value={formData.institutionName}
                 onChange={(e) => handleInputChange('institutionName', e.target.value)}
-                className="bg-white/80 rounded-lg"
+                className="bg-white/80 rounded-xl"
               />
             </div>
             
@@ -302,14 +302,14 @@ const PartnerSignUp = () => {
                     <Button
                       type="button"
                       onClick={handleNext}
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg"
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl"
                     >
                       CONTINUE
                     </Button>
                   ) : (
                     <Button
                       type="submit"
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg"
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl"
                       disabled={!formData.acceptTerms}
                     >
                       SIGN UP
@@ -372,14 +372,14 @@ const PartnerSignUp = () => {
                     <Button
                       type="button"
                       onClick={handleNext}
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg"
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl"
                     >
                       CONTINUE
                     </Button>
                   ) : (
                     <Button
                       type="submit"
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg"
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl"
                       disabled={!formData.acceptTerms}
                     >
                       SIGN UP

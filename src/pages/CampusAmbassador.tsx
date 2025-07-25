@@ -114,7 +114,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
 
         {/* Why Join Section */}
         <div className="bg-blue-100 rounded-2xl p-8 mb-8">
-          <h2 className="text-2xl font-bold text-blue-900 mb-6 bg-blue-200 px-4 py-3 rounded-lg inline-block">
+          <h2 className="text-2xl font-bold text-blue-900 mb-6 bg-blue-200 px-4 py-3 rounded-xl inline-block">
             Why Join?
           </h2>
           <div className="space-y-4">
@@ -147,7 +147,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
 
         {/* Ready to Apply Section */}
         <div className="bg-blue-100 rounded-2xl p-8 mb-12">
-          <h2 className="text-2xl font-bold text-blue-900 mb-6 bg-blue-200 px-4 py-3 rounded-lg inline-block">
+          <h2 className="text-2xl font-bold text-blue-900 mb-6 bg-blue-200 px-4 py-3 rounded-xl inline-block">
             Ready to apply?
           </h2>
           <p className="text-gray-800 text-lg mb-8">

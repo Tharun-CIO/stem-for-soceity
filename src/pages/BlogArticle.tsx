@@ -60,19 +60,19 @@ const BlogArticle = () => {
                 placeholder="First Name"
                 value={formData.firstName}
                 onChange={(e) => handleInputChange('firstName', e.target.value)}
-                className="bg-gray-100 border-0 rounded-lg p-4 h-14"
+                className="bg-gray-100 border-0 rounded-xl p-4 h-14"
               />
               <Input
                 placeholder="Last Name"
                 value={formData.lastName}
                 onChange={(e) => handleInputChange('lastName', e.target.value)}
-                className="bg-gray-100 border-0 rounded-lg p-4 h-14"
+                className="bg-gray-100 border-0 rounded-xl p-4 h-14"
               />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Select onValueChange={(value) => handleInputChange('educationLevel', value)}>
-                <SelectTrigger className="bg-gray-100 border-0 rounded-lg p-4 h-14">
+                <SelectTrigger className="bg-gray-100 border-0 rounded-xl p-4 h-14">
                   <SelectValue placeholder="Education Level" />
                 </SelectTrigger>
                 <SelectContent>
@@ -84,7 +84,7 @@ const BlogArticle = () => {
               </Select>
 
               <Select onValueChange={(value) => handleInputChange('department', value)}>
-                <SelectTrigger className="bg-gray-100 border-0 rounded-lg p-4 h-14">
+                <SelectTrigger className="bg-gray-100 border-0 rounded-xl p-4 h-14">
                   <SelectValue placeholder="Department" />
                 </SelectTrigger>
                 <SelectContent>
@@ -99,7 +99,7 @@ const BlogArticle = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Select onValueChange={(value) => handleInputChange('designation', value)}>
-                <SelectTrigger className="bg-gray-100 border-0 rounded-lg p-4 h-14">
+                <SelectTrigger className="bg-gray-100 border-0 rounded-xl p-4 h-14">
                   <SelectValue placeholder="Designation" />
                 </SelectTrigger>
                 <SelectContent>
@@ -114,7 +114,7 @@ const BlogArticle = () => {
                 placeholder="Field Experience"
                 value={formData.fieldExperience}
                 onChange={(e) => handleInputChange('fieldExperience', e.target.value)}
-                className="bg-gray-100 border-0 rounded-lg p-4 h-14"
+                className="bg-gray-100 border-0 rounded-xl p-4 h-14"
               />
             </div>
 
@@ -122,7 +122,7 @@ const BlogArticle = () => {
               placeholder="LinkedIn Profile"
               value={formData.linkedinProfile}
               onChange={(e) => handleInputChange('linkedinProfile', e.target.value)}
-              className="bg-gray-100 border-0 rounded-lg p-4 h-14"
+              className="bg-gray-100 border-0 rounded-xl p-4 h-14"
             />
           </div>
         );
@@ -137,15 +137,15 @@ const BlogArticle = () => {
             <div className="space-y-4">
               <Input
                 placeholder="Article Title"
-                className="bg-gray-100 border-0 rounded-lg p-4 h-14"
+                className="bg-gray-100 border-0 rounded-xl p-4 h-14"
               />
               <textarea
                 placeholder="Abstract"
-                className="w-full bg-gray-100 border-0 rounded-lg p-4 h-32 resize-none"
+                className="w-full bg-gray-100 border-0 rounded-xl p-4 h-32 resize-none"
               />
               <textarea
                 placeholder="Article Content"
-                className="w-full bg-gray-100 border-0 rounded-lg p-4 h-64 resize-none"
+                className="w-full bg-gray-100 border-0 rounded-xl p-4 h-64 resize-none"
               />
             </div>
           </div>
@@ -155,7 +155,7 @@ const BlogArticle = () => {
         return (
           <div className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-gray-100 rounded-lg p-8 h-80 flex items-center justify-center">
+              <div className="bg-gray-100 rounded-xl p-8 h-80 flex items-center justify-center">
                 <div className="text-center text-gray-500">
                   <div className="text-4xl mb-4">📄</div>
                   <p>Article Preview</p>
@@ -163,9 +163,9 @@ const BlogArticle = () => {
               </div>
 
               <div className="space-y-6">
-                <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50">
+                <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center bg-gray-50">
                   <div className="mb-4">
-                    <div className="w-16 h-16 mx-auto bg-gray-200 rounded-lg flex items-center justify-center mb-4">
+                    <div className="w-16 h-16 mx-auto bg-gray-200 rounded-xl flex items-center justify-center mb-4">
                       <Upload className="w-8 h-8 text-gray-400" />
                     </div>
                     <p className="text-gray-600 mb-2">Drag and Drop the Cover photo</p>
@@ -184,7 +184,7 @@ const BlogArticle = () => {
                   </label>
                 </div>
 
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-start space-x-3">
+                <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex items-start space-x-3">
                   <AlertTriangle className="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0" />
                   <div className="text-sm">
                     <p className="text-yellow-800 font-medium">Do not upload any copyrighted images,</p>
@@ -203,7 +203,7 @@ const BlogArticle = () => {
               </div>
             </div>
 
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-center space-x-3">
+            <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex items-center space-x-3">
               <AlertTriangle className="w-5 h-5 text-yellow-600 flex-shrink-0" />
               <p className="text-sm text-yellow-800">
                 Your article will be reviewed and published within 48 hours.

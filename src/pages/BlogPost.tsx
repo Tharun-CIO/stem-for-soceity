@@ -132,7 +132,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
 
         {/* Featured Image */}
         <div className="mb-8">
-          <div className="h-64 md:h-96 bg-gray-200 rounded-lg overflow-hidden">
+          <div className="h-64 md:h-96 bg-gray-200 rounded-xl overflow-hidden">
             <img
               src={blogPost.image}
               alt={blogPost.title}
@@ -169,7 +169,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
         </div>
 
         {/* Author Bio */}
-        <div className="bg-gray-50 rounded-lg p-6 mb-8">
+        <div className="bg-gray-50 rounded-xl p-6 mb-8">
           <h3 className="text-lg font-semibold mb-3">About the Author</h3>
           <div className="flex items-start space-x-4">
             <div className="w-16 h-16 bg-gray-300 rounded-full flex-shrink-0"></div>
@@ -184,11 +184,11 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
         <div className="border-t pt-8">
           <h3 className="text-xl font-semibold mb-6">Related Articles</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white border rounded-lg p-4 hover:shadow-md transition-shadow">
+            <div className="bg-white border rounded-xl p-4 hover:shadow-md transition-shadow">
               <h4 className="font-medium text-gray-900 mb-2">Career Opportunities in Biotechnology</h4>
               <p className="text-gray-600 text-sm">A comprehensive guide to the growing field of biotechnology...</p>
             </div>
-            <div className="bg-white border rounded-lg p-4 hover:shadow-md transition-shadow">
+            <div className="bg-white border rounded-xl p-4 hover:shadow-md transition-shadow">
               <h4 className="font-medium text-gray-900 mb-2">Research Methodologies in Modern Science</h4>
               <p className="text-gray-600 text-sm">Understanding the latest research methodologies...</p>
             </div>

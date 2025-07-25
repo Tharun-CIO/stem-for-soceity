@@ -166,7 +166,7 @@ const CampusAmbassadorBooking = () => {
         )}
       </div>
 
-      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-center justify-between">
+      <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <AlertTriangle className="h-5 w-5 text-yellow-600 flex-shrink-0" />
           <span className="text-yellow-800 text-sm">
@@ -204,7 +204,7 @@ const CampusAmbassadorBooking = () => {
         </div>
       </div>
 
-      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-center justify-between">
+      <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <AlertTriangle className="h-5 w-5 text-yellow-600 flex-shrink-0" />
           <span className="text-yellow-800 text-sm">
@@ -251,7 +251,7 @@ const CampusAmbassadorBooking = () => {
           className="h-12 bg-gray-100 border-0 placeholder:text-gray-500"
         />
         
-        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 flex items-center space-x-2">
+        <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-3 flex items-center space-x-2">
           <AlertTriangle className="h-4 w-4 text-yellow-600 flex-shrink-0" />
           <span className="text-yellow-800 text-xs">
             Select your institution from list or enter manually if not listed.

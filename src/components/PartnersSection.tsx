@@ -50,7 +50,7 @@ const PartnersSection = () => {
             {[...itemsWithStars, ...itemsWithStars].map((item, index) => (
               <div key={`${item.key}-${index}`} className="flex items-center justify-center flex-shrink-0" style={{ width: `${100 / partners.length}%` }}>
                 {item.type === 'logo' ? (
-                  <div className="flex items-center justify-center h-32 w-56 bg-white rounded-lg shadow-sm p-4 mx-2">
+                  <div className="flex items-center justify-center h-32 w-56 bg-white rounded-xl shadow-sm p-4 mx-2">
                     <img 
                       src={item.logo} 
                       alt={item.name}

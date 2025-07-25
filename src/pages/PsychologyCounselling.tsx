@@ -132,7 +132,7 @@ maskImage: 'linear-gradient(to bottom, black 0%, transparent 35%, transparent 10
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Left Column - Service Info */}
           <div className='shadow-md rounded-xl  p-6 mb-6'>
-            <div className="bg-yellow-50  border-yellow-200 rounded-lg p-4  mb-6 flex items-center space-x-3">
+            <div className="bg-yellow-50  border-yellow-200 rounded-xl p-4  mb-6 flex items-center space-x-3">
               <Shield className="h-5 w-5 text-yellow-600" />
               <span className="text-yellow-800 font-medium">Your identity will be 100% confidential</span>
             </div>
